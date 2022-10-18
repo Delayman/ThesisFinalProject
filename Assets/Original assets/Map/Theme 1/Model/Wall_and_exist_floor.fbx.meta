@@ -3,7 +3,42 @@ guid: d8c1222da7aeb404a8d62141f3643082
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Door_frame_and_pillar_mat
+    second: {fileID: 2100000, guid: 027899fd685a3da41a780c0571774a99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emergency_Door_Mat
+    second: {fileID: 2100000, guid: ed44748edeb61384fbf966752a5b6a5d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_Mat
+    second: {fileID: 2100000, guid: a3b14813412f6494a94aa1ac7327621c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_Set_1_Mat
+    second: {fileID: 2100000, guid: 13474927db5c6d640b26812840e37b9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_Set_2_Mat
+    second: {fileID: 2100000, guid: 48d9855c20a597a43ae5cfe145ab87d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wall_Set_3_Mat
+    second: {fileID: 2100000, guid: e04dd4d3596ff5d4daf1e218eb7d1792, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Windown_Frame_Set_Mat
+    second: {fileID: 2100000, guid: 575228aac5cc0cd499239e496534e91b, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
