@@ -5,14 +5,16 @@ using UnityEngine.AI;
 
 public class FindPathNode : Node
 {
-    private List<GameObject> path;
+    private readonly List<GameObject> savedPath = new List<GameObject>();
+    private readonly List<GameObject> tempPath= new List<GameObject>();
     private NavMeshAgent agent;
     private EnemyAI enemmy;
     private bool isDetected;
 
     public FindPathNode(List<GameObject> _path, NavMeshAgent _agent, EnemyAI _enemmy)
     {
-        path = _path;
+        savedPath.AddRange(_path);
+        tempPath.AddRange(_path);
         agent = _agent;
         enemmy = _enemmy;
     }
@@ -21,27 +23,29 @@ public class FindPathNode : Node
     {
         FindPath();
         isDetected = EnemyAI.isDetectedPlayer;
+        
         return !isDetected ? NodeState.SUCCESS : NodeState.FAILURE;
     }
     
-    private Transform FindPath()
+    private void FindPath()
     {
         enemmy.SetColor(Color.yellow);
-        Transform _destination = null;
-
-        if (path[0] == null) return _destination;
+        var _distance = Vector3.Distance(tempPath[0].transform.position, agent.transform.position);
         
-        if (path[0].transform != null)
+        if (tempPath.Count > 0)
         {
-            return path[0].transform;
+            agent.SetDestination(tempPath[0].transform.position);
+        }
+
+        if (_distance < 0.5f)
+        {
+            tempPath.Remove(tempPath[0]);
+        }
+
+        if (_distance < 1f && tempPath.Count == 1)
+        {
+            tempPath.AddRange(savedPath);
         }
         
-        // foreach (var _waypoint in path)
-        // {
-        //     return _waypoint;
-        // }
-
-
-        return _destination;
     }
 }
