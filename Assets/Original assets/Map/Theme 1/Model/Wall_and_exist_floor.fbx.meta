@@ -12,11 +12,6 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Emergency_Door_Mat
-    second: {fileID: 2100000, guid: ed44748edeb61384fbf966752a5b6a5d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Floor_Mat
     second: {fileID: 2100000, guid: a3b14813412f6494a94aa1ac7327621c, type: 2}
   - first:
@@ -39,6 +34,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Windown_Frame_Set_Mat
     second: {fileID: 2100000, guid: 575228aac5cc0cd499239e496534e91b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert4
+    second: {fileID: 2100000, guid: 0845c371a26e83c43b705836c8ca6c3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert5
+    second: {fileID: 2100000, guid: ed44748edeb61384fbf966752a5b6a5d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
