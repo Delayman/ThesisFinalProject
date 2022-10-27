@@ -7,27 +7,21 @@ public class PlayerInteraction : MonoBehaviour
     public float interactionDistance;
 
     public TMPro.TextMeshProUGUI interactionText;
-    public GameObject interactionHoldGO; // the ui parent to disable when not interacting
-    public UnityEngine.UI.Image interactionHoldProgress; // the progress bar for hold interaction type
+    // public GameObject interactionHoldGO; // the ui parent to disable when not interacting
+    // public UnityEngine.UI.Image interactionHoldProgress; // the progress bar for hold interaction type
 
     public Camera cam;
 
-    void Start()
+    private void Update()
     {
-        
-    }
+        var ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
+        RaycastHit _hit;
 
-    // Update is called once per frame
-    void Update()
-    {
-        Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
-        RaycastHit hit;
+        var successfulHit = false;
 
-        bool successfulHit = false;
-
-        if (Physics.Raycast(ray, out hit, interactionDistance))
+        if (Physics.Raycast(ray, out _hit, interactionDistance))
         {
-            Interactable interactable = hit.collider.GetComponent<Interactable>();
+            var interactable = _hit.collider.GetComponent<Interactable>();
 
             if (interactable != null)
             {
@@ -50,6 +44,7 @@ public class PlayerInteraction : MonoBehaviour
     void HandleInteraction(Interactable interactable)
     {
         KeyCode key = KeyCode.E;
+        
         switch (interactable.interactionType)
         {
             case Interactable.InteractionType.Click:
@@ -64,7 +59,8 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     // we are holding the key, increase the timer until we reach 1f
                     interactable.IncreaseHoldTime();
-                    if (interactable.GetHoldTime() > 1f) {
+                    if (interactable.GetHoldTime() > 1f) 
+                    {
                         interactable.Interact();
                         interactable.ResetHoldTime();
                     }
@@ -73,7 +69,7 @@ public class PlayerInteraction : MonoBehaviour
                 {
                     interactable.ResetHoldTime();
                 }
-                interactionHoldProgress.fillAmount = interactable.GetHoldTime();
+                // interactionHoldProgress.fillAmount = interactable.GetHoldTime();
                 break;
             // helpful error for us in the future
             default:
