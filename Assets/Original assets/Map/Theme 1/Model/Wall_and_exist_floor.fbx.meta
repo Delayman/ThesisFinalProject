@@ -7,8 +7,18 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Door_Mat
+    second: {fileID: 2100000, guid: 0845c371a26e83c43b705836c8ca6c3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Door_frame_and_pillar_mat
     second: {fileID: 2100000, guid: 027899fd685a3da41a780c0571774a99, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Emergency_door_Mat
+    second: {fileID: 2100000, guid: ed44748edeb61384fbf966752a5b6a5d, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
@@ -34,16 +44,6 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Windown_Frame_Set_Mat
     second: {fileID: 2100000, guid: 575228aac5cc0cd499239e496534e91b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert4
-    second: {fileID: 2100000, guid: 0845c371a26e83c43b705836c8ca6c3d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: lambert5
-    second: {fileID: 2100000, guid: ed44748edeb61384fbf966752a5b6a5d, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
