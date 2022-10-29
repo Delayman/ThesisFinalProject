@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class ComputerPuzzleController : MonoBehaviour
 {
+    [Tooltip("Set what to show when completed puzzle")]
     [SerializeField] private GameObject rewardPrefab;
 
     private List<CorrectOne> correctObjList;

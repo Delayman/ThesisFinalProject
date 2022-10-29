@@ -6,7 +6,8 @@ using UnityEngine.UIElements;
 
 public class ComputerPuzzle : Interactable
 {
-    [SerializeField] private Mesh toggledMesh;
+    [Tooltip("Set the look of object when toggled button")] [SerializeField] 
+    private Mesh toggledMesh;
     private Mesh oldMesh;
 
     private ComputerPuzzleController ctr;

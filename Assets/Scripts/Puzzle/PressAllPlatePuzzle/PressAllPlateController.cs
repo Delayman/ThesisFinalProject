@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class PressAllPlateController : MonoBehaviour
 {
+    [Tooltip("Set what to show when completed puzzle")]
     [SerializeField] private GameObject rewardPrefab;
     
     private Checker checker;
@@ -23,6 +24,7 @@ public class PressAllPlateController : MonoBehaviour
     private void Start()
     {
         activatedList = FindObjectsOfType<Checker>().ToList();
+        rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
     }
 
     public void CheckCompleted(Checker _checker)
