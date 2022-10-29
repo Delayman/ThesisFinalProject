@@ -40,7 +40,7 @@ public class FPS_PlayerMovement : MonoBehaviour
         }
     }
 
-    private void Update() 
+    private void FixedUpdate() 
     {
         if (_view.IsMine)
         {
