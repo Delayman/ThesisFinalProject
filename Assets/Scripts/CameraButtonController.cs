@@ -7,7 +7,7 @@ public class CameraButtonController : MonoBehaviour
 {
     [SerializeField] private GameObject[] cameraArray;
 
-    private void DisableAllCam()
+    public void DisableAllCam()
     {
         foreach (var _camera in cameraArray)
         {

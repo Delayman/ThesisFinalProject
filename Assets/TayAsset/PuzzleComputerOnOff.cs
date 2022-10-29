@@ -7,11 +7,13 @@ public class PuzzleComputerOnOff : MonoBehaviour
     public float numberOn ;
     public float numberoff;
     public GameObject b;
+    TheSystemInCamararoomTest the;
     // Start is called before the first frame update
     void Start()
     {
         numberOn = 0;
         numberoff = 0;
+        b.SetActive(false);
     }
 
     // Update is called once per frame
@@ -19,21 +21,28 @@ public class PuzzleComputerOnOff : MonoBehaviour
     {
         
     }
-
-    public void OnCollisionStay(Collision collision)
+   
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.tag =="MustON")
+        if (other.tag =="MustON")
         {
-            numberOn++;
+            numberOn+=1f;
+            Debug.Log("1");
         }
-        if (collision.gameObject.tag == "MustNotOn")
+        if (other.tag == "LightCheck")
         {
-            numberoff++;
+            numberoff+= 1f;
+            Debug.Log("2");
         }
         if (numberOn==numberoff && numberOn!=0)
         {
             b.SetActive(true);
           //  LightSwitch.Blue = true;
+        }
+        if(other.tag == "Player")
+        {
+            b.SetActive(true);
+           
         }
         
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LightSwitch : Interactable
 {
-    public GameObject a;
+    public GameObject CheckPuzzle;
     public Light m_Light; // im using m_Light name since 'light' is already a variable used by unity
     public bool isOn;
     //public static bool Blue;
@@ -16,7 +16,7 @@ public class LightSwitch : Interactable
     void UpdateLight()
     {
         m_Light.enabled = isOn;
-        a.SetActive(isOn);
+        CheckPuzzle.SetActive(isOn);
     }
 
     public override string GetDescription()
