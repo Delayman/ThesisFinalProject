@@ -6,6 +6,7 @@ TagManager:
   tags:
   - EnemyPath
   - Enemy
+  - IceCube
   layers:
   - Default
   - TransparentFX
