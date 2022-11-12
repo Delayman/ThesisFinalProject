@@ -3,17 +3,35 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using Random = UnityEngine.Random;
 
 public class SpawnPlayers : MonoBehaviour
 {
     [SerializeField] private GameObject _playerPrefabs;
+    [SerializeField] private List<GameObject> spawner;
 
-    [SerializeField] private float _minX, _maxX, _minY, _maxY;
-
+    private int id = 0;
+    
     private void Start()
     {
-        Vector2 _randomPos = new Vector2(Random.Range(_minX, _maxX), Random.Range(_minY, _maxY));
-        PhotonNetwork.Instantiate(_playerPrefabs.name, _randomPos, Quaternion.identity);
+        var spawnPos = new Vector3();
+        SetRoleID();
+            
+        switch (id)
+        {
+            case 0 : spawnPos = spawner[0].transform.position; break;
+            case 1 : spawnPos = spawner[1].transform.position; break;
+            case 2 : spawnPos = spawner[2].transform.position; break;
+            default: Debug.Log("Role out of bound"); break;
+        }
+
+        if (PhotonNetwork.LocalPlayer.IsLocal)
+        {
+            PhotonNetwork.Instantiate(_playerPrefabs.name, spawnPos, Quaternion.identity);
+        }
+    }
+
+    private void SetRoleID()
+    {
+        id = SavedRole.savedRoleID;
     }
 }
