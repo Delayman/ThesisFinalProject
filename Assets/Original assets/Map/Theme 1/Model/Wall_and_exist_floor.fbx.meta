@@ -27,6 +27,11 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
+      name: Glass_Mat
+    second: {fileID: 2100000, guid: 6f4c97c8c94a7e844b6c798636eeb75a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Light_Mat
     second: {fileID: 2100000, guid: 438eca736817f5945ae1f8ed1788c722, type: 2}
   - first:
