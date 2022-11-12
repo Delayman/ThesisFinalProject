@@ -14,11 +14,9 @@ GameObject:
   - component: {fileID: 4421393261113564724}
   - component: {fileID: 8344752384610472106}
   - component: {fileID: 6740146939462136849}
-  - component: {fileID: 1021782677883524629}
-  - component: {fileID: 7411353523612435340}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,40 +139,6 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!95 &1021782677883524629
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4421393261113564617}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e2bf5b47e62a98244b0aa7e51684e40d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7411353523612435340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4421393261113564617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6d3d0b2c7e88da4099bcb2a68ce53ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  interactionDistance: 50
-  interactionText: {fileID: 0}
-  cam: {fileID: 4421393261196023202}
 --- !u!1 &4421393261196023205
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FPS_PlayerMovement : MonoBehaviour
 {
@@ -9,7 +10,10 @@ public class FPS_PlayerMovement : MonoBehaviour
     private float playerMoveSpeed = 5f;
     [SerializeField]
     private float playerLookSpeed = 5f;
-
+    [SerializeField] float PlayerMaxStamina = 10f;
+    [SerializeField] float PlayerCurrentStamina = 10f;
+    bool isrun;
+    bool ismove;
     private PhotonView _view;
 
     //Y axis limit cam rotation stuff
@@ -21,6 +25,12 @@ public class FPS_PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private Camera cam;
+    void Awake()
+    {
+        SaveSpeed();
+        isrun = false;
+        ismove = false;
+    }
     private void Start()
     {
         _view = GetComponent<PhotonView>();
@@ -38,6 +48,8 @@ public class FPS_PlayerMovement : MonoBehaviour
         {
             cam.enabled = false;
         }
+
+        isrun = false;
     }
 
     private void FixedUpdate() 
@@ -58,6 +70,11 @@ public class FPS_PlayerMovement : MonoBehaviour
             if(velocity != Vector3.zero)
             {
                 rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+                ismove = true;
+            }
+            else
+            {
+                ismove = false;
             }
 
             //Getting Input from mouse to move screen
@@ -89,7 +106,92 @@ public class FPS_PlayerMovement : MonoBehaviour
                 Cursor.visible = true;
             }
 
+            RunController();
+
+        }
+    
+    }
+
+    PlayerEvent PlayerAnimationEvent = new PlayerEvent();
+    public void playeranimationevent(UnityAction<int> listener)
+    {
+        PlayerAnimationEvent.AddListener(listener);
+        Debug.Log("Invoked!!");
+    }
+
+    void RunController()
+    {
+        PlayerSpeedSet();
+        PlayerSpeedCheck();
+        Staminacontroller();
+    }
+
+    void PlayerSpeedSet()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift)&& PlayerCurrentStamina >= 1)
+        {
+            playerMoveSpeed = PlayerPrefs.GetFloat("PlayerDefaultSpeed") * 2;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || PlayerCurrentStamina <= 0)
+        {
+            playerMoveSpeed = PlayerPrefs.GetFloat("PlayerDefaultSpeed");
+            isrun = false;
         }
     }
-        
+
+    void PlayerSpeedCheck()
+    {
+        if (playerMoveSpeed == PlayerPrefs.GetFloat("PlayerDefaultSpeed"))
+        {
+            isrun = false;
+            if(ismove == true)
+            {
+            PlayerAnimationEvent.Invoke(1);
+            Debug.Log("Call Walk!!");
+            }
+            else if(ismove == false)
+            {
+            PlayerAnimationEvent.Invoke(0);
+            Debug.Log("Call Idle!!");
+            }
+            
+        }
+        if (playerMoveSpeed > PlayerPrefs.GetFloat("PlayerDefaultSpeed"))
+        {
+            isrun = true;
+            PlayerAnimationEvent.Invoke(2);
+            Debug.Log("Call Run!!");
+        }
+    }
+
+    void Staminacontroller()
+    {
+        if (isrun == true)
+        {
+            PlayerCurrentStamina -= 2f * Time.deltaTime;
+        }
+        else if (isrun == false)
+        {
+            StaminaRegeneration();
+        }
+    }
+
+    void StaminaRegeneration()
+    {
+        if (PlayerCurrentStamina <= PlayerMaxStamina)
+        {
+            PlayerCurrentStamina += 1f * Time.deltaTime;
+        }
+        else if (PlayerCurrentStamina > PlayerMaxStamina)
+        {
+            PlayerCurrentStamina = PlayerMaxStamina;
+        }
+    }
+    void SaveSpeed()
+    {
+        PlayerPrefs.SetFloat("PlayerDefaultSpeed", playerMoveSpeed);
+        PlayerPrefs.Save();
+        float speed = PlayerPrefs.GetFloat("PlayerDefaultSpeed");
+        Debug.Log("Save speed : "+speed);
+    }
 }
