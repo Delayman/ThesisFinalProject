@@ -17,6 +17,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsIdle
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: PlayerAnimationID
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1491824973253045324}
   m_Solo: 0
@@ -104,6 +107,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: IsIdle
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: PlayerAnimationID
+    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: PlayerAnimationID
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6466219263704327}
   m_Solo: 0
@@ -203,6 +212,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsIdle
     m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: PlayerAnimationID
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -1491824973253045324}
   m_Solo: 0
@@ -234,6 +246,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: IsIdle
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: PlayerAnimationID
+    m_EventTreshold: 0
+  - m_ConditionMode: 4
+    m_ConditionEvent: PlayerAnimationID
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6466219263704327}
   m_Solo: 0
@@ -293,6 +311,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: IsIdle
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: PlayerAnimationID
+    m_EventTreshold: 1
+  - m_ConditionMode: 4
+    m_ConditionEvent: PlayerAnimationID
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3626670315695067271}
   m_Solo: 0
@@ -324,6 +348,12 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: IsIdle
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: PlayerAnimationID
+    m_EventTreshold: 1
+  - m_ConditionMode: 4
+    m_ConditionEvent: PlayerAnimationID
+    m_EventTreshold: 3
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -3626670315695067271}
   m_Solo: 0
