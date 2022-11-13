@@ -30,20 +30,15 @@ public class ChaseNode : Node
             agent.SetDestination(target.position);
             return NodeState.RUNNING;
         }
-        else
-        {
-            chaseTimer -= Time.deltaTime;
-            Debug.Log($"Timer : {chaseTimer}");
-        }
 
         return chaseTimer <= 0 ? NodeState.SUCCESS : NodeState.FAILURE;
     }
 
-    private void ChasingTime()
-    {
-        agent.isStopped = false;
-        agent.SetDestination(target.position);
-        Debug.Log($"Countdown before stop chase");
-        agent.isStopped = true;
-    }
+    // private void ChasingTime()
+    // {
+    //     agent.isStopped = false;
+    //     agent.SetDestination(target.position);
+    //     Debug.Log($"Countdown before stop chase");
+    //     agent.isStopped = true;
+    // }
 }

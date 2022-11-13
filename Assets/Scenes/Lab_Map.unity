@@ -925,6 +925,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Scene 2 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6330534110175833972, guid: 90e73cbdd03787f46a9073408b6640b5, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 90e73cbdd03787f46a9073408b6640b5, type: 3}
 --- !u!4 &218887137 stripped

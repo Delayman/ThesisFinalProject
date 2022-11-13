@@ -167,9 +167,7 @@ public class LobbyNetworkManager : MonoBehaviourPunCallbacks
     public void CreateRoom()
     {
         if (string.IsNullOrEmpty(roomInput.text) == false)
-        {
             PhotonNetwork.CreateRoom(roomInput.text, new RoomOptions() { MaxPlayers = 3 }, null);
-        }
     }
 
     public void JoinRoom(string roomNameText)

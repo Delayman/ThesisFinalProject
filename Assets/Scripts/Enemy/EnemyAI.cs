@@ -15,13 +15,18 @@ public class EnemyAI : MonoBehaviour
     [SerializeField] private float chasingRange = 3f;
 
     [SerializeField] private Transform playerTransform;
+    
 
     private Material material;
     private NavMeshAgent agent;
 
     private Node topNode;
     private SphereCollider sphereCollider;
+    
     public static bool isDetectedPlayer;
+    public static bool isDistractedbyPlayer;
+    public static Transform DistractPos;
+
 
     #endregion
     
@@ -47,11 +52,13 @@ public class EnemyAI : MonoBehaviour
     {
         var _chaseNode = new ChaseNode(playerTransform, agent, this);
         var _findPathNode = new FindPathNode(pratolPaths, agent, this);
+        var _distractedMode = new DistractedMode(agent, this);
 
-        var _chaseSequnce = new Sequnce(new List<Node> { _chaseNode });
-        var _pratol = new Sequnce(new List<Node> { _findPathNode });
+        var _chaseSequnce = new Sequnce(new List<Node> {_chaseNode });
+        var _pratol = new Sequnce(new List<Node> {_findPathNode, _distractedMode});
+        // var _distractSequnce = new Sequnce(new List<Node> { _distractedMode });
 
-        topNode = new Selector(new List<Node> {_pratol, _chaseSequnce });
+        topNode = new Selector(new List<Node> {_pratol, _chaseSequnce});
     }
 
     private void Update()
@@ -62,7 +69,6 @@ public class EnemyAI : MonoBehaviour
             SetColor(Color.cyan);
             agent.isStopped = true;
         }
-        
     }
 
     public void SetColor(Color _color)

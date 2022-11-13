@@ -13,27 +13,33 @@ public class CameraButtonController : MonoBehaviour
         {
             _camera.SetActive(false);
         }
+        FindDistractPos.camID = 0;
     }
  
     public void Cam1()
     {
         DisableAllCam();
         cameraArray[0].SetActive(true);
+        FindDistractPos.camID = 1;
     }
     
     public void Cam2()
     {
         DisableAllCam();
         cameraArray[1].SetActive(true);
+        FindDistractPos.camID = 2;
     }
     public void Cam3()
     {
         DisableAllCam();
         cameraArray[2].SetActive(true);
+        FindDistractPos.camID = 3;
     }
     public void Cam4()
     {
         DisableAllCam();
         cameraArray[3].SetActive(true);
+        FindDistractPos.camID = 4;
+
     }
 }

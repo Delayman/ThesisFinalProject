@@ -25,9 +25,7 @@ public class SpawnPlayers : MonoBehaviour
         }
 
         if (PhotonNetwork.LocalPlayer.IsLocal)
-        {
             PhotonNetwork.Instantiate(_playerPrefabs.name, spawnPos, Quaternion.identity);
-        }
     }
 
     private void SetRoleID()

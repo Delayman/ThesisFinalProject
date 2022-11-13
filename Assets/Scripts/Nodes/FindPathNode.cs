@@ -9,7 +9,7 @@ public class FindPathNode : Node
     private readonly List<GameObject> tempPath= new List<GameObject>();
     private NavMeshAgent agent;
     private EnemyAI enemmy;
-    private bool isDetected;
+    private bool isDetected, isDistracted;
 
     public FindPathNode(List<GameObject> _path, NavMeshAgent _agent, EnemyAI _enemmy)
     {
@@ -23,13 +23,22 @@ public class FindPathNode : Node
     {
         FindPath();
         isDetected = EnemyAI.isDetectedPlayer;
+        isDistracted = EnemyAI.isDistractedbyPlayer;
         
-        return !isDetected ? NodeState.SUCCESS : NodeState.FAILURE;
+        Debug.Log($"Log : {isDistracted}");
+
+        if (isDetected)
+        {
+            Debug.Log("around here");
+            return NodeState.FAILURE;
+        }
+        
+        return NodeState.SUCCESS;
     }
     
     private void FindPath()
     {
-        enemmy.SetColor(Color.yellow);
+        enemmy.SetColor(Color.green);
         var _distance = Vector3.Distance(tempPath[0].transform.position, agent.transform.position);
         
         if (tempPath.Count > 0)
