@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 4421393261113564724}
   - component: {fileID: 8344752384610472106}
   - component: {fileID: 6740146939462136849}
+  - component: {fileID: 1561127632297386863}
+  - component: {fileID: 8515580375883461334}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -141,6 +143,34 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &1561127632297386863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421393261113564617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6d3d0b2c7e88da4099bcb2a68ce53ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionDistance: 10
+  interactionText: {fileID: 0}
+  cam: {fileID: 4421393261196023202}
+--- !u!114 &8515580375883461334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421393261113564617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d78bc1ac82c26740b0f76a73c279c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roleName: Watcher
 --- !u!1 &4421393261196023205
 GameObject:
   m_ObjectHideFlags: 0
