@@ -16,9 +16,9 @@ public class Checker : MonoBehaviour
         ctr = FindObjectOfType<PressAllPlateController>();
     }
 
-    private void OnCollisionEnter(Collision _col)
+    private void OnTriggerEnter(Collider _col)
     {
-        if (!_col.gameObject.CompareTag("Player")) return;
+        if (!_col.gameObject.CompareTag("ObjectiveObj")) return;
         
         isPressed = !isPressed;
         objMeshRenderer.material.color = isPressed ? Color.green : Color.red;
