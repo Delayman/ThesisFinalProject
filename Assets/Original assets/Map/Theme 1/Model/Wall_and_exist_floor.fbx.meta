@@ -32,11 +32,6 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Light_Mat
-    second: {fileID: 2100000, guid: 438eca736817f5945ae1f8ed1788c722, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Wall_Set_1_Mat
     second: {fileID: 2100000, guid: 13474927db5c6d640b26812840e37b9a, type: 2}
   - first:
