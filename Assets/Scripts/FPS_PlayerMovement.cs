@@ -147,12 +147,10 @@ public class FPS_PlayerMovement : MonoBehaviour
             if(ismove == true)
             {
             PlayerAnimationEvent.Invoke(1);
-            Debug.Log("Call Walk!!");
             }
             else if(ismove == false)
             {
             PlayerAnimationEvent.Invoke(0);
-            Debug.Log("Call Idle!!");
             }
             
         }
@@ -160,7 +158,6 @@ public class FPS_PlayerMovement : MonoBehaviour
         {
             isrun = true;
             PlayerAnimationEvent.Invoke(2);
-            Debug.Log("Call Run!!");
         }
     }
 
@@ -192,6 +189,5 @@ public class FPS_PlayerMovement : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerDefaultSpeed", playerMoveSpeed);
         PlayerPrefs.Save();
         float speed = PlayerPrefs.GetFloat("PlayerDefaultSpeed");
-        Debug.Log("Save speed : "+speed);
     }
 }
