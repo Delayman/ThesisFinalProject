@@ -15,6 +15,8 @@ public class ComputerPuzzleController : MonoBehaviour
     private List<bool> checklist;
 
     private bool isCompleted;
+    public GameObject NoComplete;
+    public GameObject HaveBeenComplete;
         
     private void Awake()
     {
@@ -27,7 +29,9 @@ public class ComputerPuzzleController : MonoBehaviour
     {
         correctObjList = FindObjectsOfType<CorrectOne>().ToList();
         wrongObjList = FindObjectsOfType<WrongOne>().ToList();
-        rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
+        //rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
+        NoComplete.SetActive(true);
+        HaveBeenComplete.SetActive(false);
     }
 
     public void CheckIsItCompleted()
@@ -49,6 +53,8 @@ public class ComputerPuzzleController : MonoBehaviour
         }
 
         if (!isCompleted) return;
-        rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
+        NoComplete.SetActive(false);
+        HaveBeenComplete.SetActive(true);
+        //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
     }
 }

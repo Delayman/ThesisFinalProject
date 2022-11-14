@@ -7,8 +7,8 @@ using UnityEngine.UIElements;
 public class ComputerPuzzle : Interactable
 {
     [Tooltip("Set the look of object when toggled button")] [SerializeField] 
-    private Mesh toggledMesh;
-    private Mesh oldMesh;
+    //private Mesh toggledMesh;
+    //private Mesh oldMesh;
 
     private ComputerPuzzleController ctr;
     private MeshFilter objMeshFilter;
@@ -21,12 +21,18 @@ public class ComputerPuzzle : Interactable
     private CorrectOne correctOne;
     private WrongOne wrongOne;
 
+    public GameObject ChangeScreen;
+    public GameObject DefultScreen;
+
+
     private void Start()
     {
         objMeshFilter = GetComponent<MeshFilter>();
-        oldMesh = GetComponent<MeshFilter>().mesh;
+    //    oldMesh = GetComponent<MeshFilter>().mesh;
         ctr = FindObjectOfType<ComputerPuzzleController>();
         
+
+
         if (GetComponent<CorrectOne>() != null)
         {
             correctOne = GetComponent<CorrectOne>();
@@ -52,7 +58,15 @@ public class ComputerPuzzle : Interactable
 
     private void ToggleSwitch()
     {
-        objMeshFilter.mesh = isOn ? toggledMesh : oldMesh;
+        //objMeshFilter.mesh = isOn ? toggledMesh : oldMesh;
+        if (isOn)
+        {
+            ChangeScreen.GetComponent<Renderer>().material.color = Color.white;
+        }
+        else
+        {
+            DefultScreen.GetComponent<Renderer>().material.color = Color.black;
+        }
 
         if (correctOne != null)
         {
