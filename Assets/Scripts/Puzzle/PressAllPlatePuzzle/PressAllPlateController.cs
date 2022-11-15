@@ -14,6 +14,8 @@ public class PressAllPlateController : MonoBehaviour
     private List<bool> checkList;
     
     private bool isCompleted;
+    public GameObject NoComplete;
+    public GameObject HaveBeenComplete;
 
     private void Awake()
     {
@@ -24,7 +26,9 @@ public class PressAllPlateController : MonoBehaviour
     private void Start()
     {
         activatedList = FindObjectsOfType<Checker>().ToList();
-        rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
+       // rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
+        NoComplete.SetActive(true);
+        HaveBeenComplete.SetActive(false);
     }
 
     public void CheckCompleted(Checker _checker)
@@ -44,7 +48,9 @@ public class PressAllPlateController : MonoBehaviour
         
         if (checkList.Count == activatedList.Count && isCompleted)
         {
-            rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
+            //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
+            NoComplete.SetActive(false);
+            HaveBeenComplete.SetActive(true);
         }
     }
 

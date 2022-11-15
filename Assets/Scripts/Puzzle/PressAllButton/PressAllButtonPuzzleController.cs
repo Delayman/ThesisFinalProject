@@ -13,6 +13,8 @@ public class PressAllButtonPuzzleController : MonoBehaviour
 
     private bool isCompleted;
 
+    public GameObject NoComplete;
+    public GameObject HaveBeenComplete;
     private void Awake()
     {
         reciverActivedList ??= new List<Receiver>();
@@ -22,7 +24,9 @@ public class PressAllButtonPuzzleController : MonoBehaviour
     {
         reciverActivedList = Resources.FindObjectsOfTypeAll<Receiver>().ToList();
         
-        rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
+       // rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
+        NoComplete.SetActive(true);
+        HaveBeenComplete.SetActive(false);
     }
 
     public void CheckCompleted()
@@ -39,7 +43,9 @@ public class PressAllButtonPuzzleController : MonoBehaviour
         }
         
         if (!isCompleted) return;
-        rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
+        // rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
+        NoComplete.SetActive(false);
+        HaveBeenComplete.SetActive(true);
     }
     
 }

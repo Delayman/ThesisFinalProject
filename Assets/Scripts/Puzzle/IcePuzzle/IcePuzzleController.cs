@@ -9,12 +9,16 @@ public class IcePuzzleController : MonoBehaviour
 
     private IcePuzzleGoal goal;
     private bool isCompleted;
-    
+
+    public GameObject NoComplete;
+    public GameObject HaveBeenComplete;
     private void Start()
     {
         goal = FindObjectOfType<IcePuzzleGoal>();
         
-        rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
+        //rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
+        NoComplete.SetActive(true);
+        HaveBeenComplete.SetActive(false);
     }
 
     public void CheckComplete()
@@ -22,7 +26,9 @@ public class IcePuzzleController : MonoBehaviour
         isCompleted = goal.isEnterGoal;
         
         if (!isCompleted) return;
-        rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
+        //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
+        NoComplete.SetActive(false);
+        HaveBeenComplete.SetActive(true);
     }
     
 }
