@@ -194,6 +194,6 @@ public class LobbyNetworkManager : MonoBehaviourPunCallbacks
         DontDestroyOnLoad(_tempObj);
 
         _tempObj.GetComponent<SavedRole>().SavedRoleID(roleDropDown.value);
-        PhotonNetwork.LoadLevel("Scenes/Lab_Map");
+        PhotonNetwork.LoadLevel("Scenes/Lab_Map2");
     }
 }

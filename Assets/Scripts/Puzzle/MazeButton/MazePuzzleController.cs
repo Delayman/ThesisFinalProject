@@ -1,0 +1,36 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class MazePuzzleController : MonoBehaviour
+{
+    [Tooltip("Set what to show when completed puzzle")]
+    [SerializeField] private GameObject rewardPrefab;
+    
+    private CompleteButton completeBtn;
+
+    private bool isCompleted;
+    public GameObject NoComplete;
+    public GameObject HaveBeenComplete;
+    
+    private void Start()
+    {
+        completeBtn = FindObjectOfType<CompleteButton>();
+        
+        rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
+        // NoComplete.SetActive(true);
+        // HaveBeenComplete.SetActive(false);
+    }
+
+    public void CheckCompleted()
+    {
+        if (completeBtn.isOn)
+            isCompleted = true;
+        
+        if (!isCompleted) return;
+        
+        rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
+        // NoComplete.SetActive(false);
+        // HaveBeenComplete.SetActive(true);
+    }
+}

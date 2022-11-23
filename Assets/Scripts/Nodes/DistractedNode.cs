@@ -40,7 +40,7 @@ public class DistractedMode : Node
         
         Debug.Log($"{_distance}");
         
-        if (_distance < 0.5f)
+        if (_distance < 5f)
         {
             isFinishedPath = true;
             EnemyAI.isDistractedbyPlayer = false;
