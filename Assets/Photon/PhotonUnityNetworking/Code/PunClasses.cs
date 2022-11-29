@@ -418,16 +418,6 @@ namespace Photon.Pun
         public virtual void OnErrorInfo(ErrorInfo errorInfo)
         {
         }
-
-        public virtual void OnConnectedToServer()
-        {
-            throw new NotImplementedException();
-        }
-
-        public virtual void OnJoinLobby()
-        {
-            throw new NotImplementedException();
-        }
     }
 
 

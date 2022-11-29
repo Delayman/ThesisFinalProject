@@ -7,6 +7,14 @@ public class CameraButtonController : MonoBehaviour
 {
     [SerializeField] private GameObject[] cameraArray;
 
+    private void Start()
+    {
+        foreach (var _camera in cameraArray)
+        {
+            _camera.SetActive(false);
+        }
+    }
+
     public void DisableAllCam()
     {
         foreach (var _camera in cameraArray)

@@ -13,12 +13,13 @@ public class CompleteButton : Interactable
     
     private void Awake()
     {
-        ctr = FindObjectOfType<MazePuzzleController>();
+        ctr = GameObject.FindObjectOfType<MazePuzzleController>();
     }
     
     public override string GetDescription()
     {
-        return !isOn ? OffText : OnText;
+        Debug.Log($"test");
+        return OffText;
     }
 
     public override void Interact()
@@ -30,7 +31,6 @@ public class CompleteButton : Interactable
 
     private void SetComplete()
     {
-        Debug.Log($"Test");
         ctr.CheckCompleted();
     }
 }

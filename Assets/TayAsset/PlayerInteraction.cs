@@ -1,32 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class PlayerInteraction : MonoBehaviour
 {
     public float interactionDistance;
 
-    public TMPro.TextMeshProUGUI interactionText;
+    public TextMeshProUGUI interactionText;
     // public GameObject interactionHoldGO; // the ui parent to disable when not interacting
     // public UnityEngine.UI.Image interactionHoldProgress; // the progress bar for hold interaction type
 
     public Camera cam;
 
+    private void Start()
+    {
+        interactionText = GameObject.FindGameObjectWithTag("InteractTextField").GetComponent<TextMeshProUGUI>();
+    }
+
     private void Update()
     {
         var ray = cam.ScreenPointToRay(new Vector3(Screen.width / 2f, Screen.height / 2f, 0f));
-        RaycastHit _hit;
 
         var successfulHit = false;
 
-        if (Physics.Raycast(ray, out _hit, interactionDistance))
+        if (Physics.Raycast(ray, out var _hit, interactionDistance))
         {
             var interactable = _hit.collider.GetComponent<Interactable>();
 
             if (interactable != null)
             {
-                HandleInteraction(interactable);
                 interactionText.text = interactable.GetDescription();
+                HandleInteraction(interactable);
                 successfulHit = true;
 
                // interactionHoldGO.SetActive(interactable.interactionType == Interactable.InteractionType.Hold);
@@ -41,10 +48,10 @@ public class PlayerInteraction : MonoBehaviour
         }
     }
 
-    void HandleInteraction(Interactable interactable)
+    private void HandleInteraction(Interactable interactable)
     {
-        KeyCode key = KeyCode.E;
-        
+        const KeyCode key = KeyCode.E;
+
         switch (interactable.interactionType)
         {
             case Interactable.InteractionType.Click:

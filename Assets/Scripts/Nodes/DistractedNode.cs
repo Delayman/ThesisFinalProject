@@ -29,7 +29,6 @@ public class DistractedMode : Node
             CheckFinish();
         }
         
-        Debug.Log($"Distracted Log : {isDistracted} && {!isFinishedPath}");
         return !isFinishedPath ? NodeState.SUCCESS : NodeState.FAILURE;
     }
 
@@ -37,8 +36,6 @@ public class DistractedMode : Node
     {
         var _distance = Vector3.Distance(distractTarget.position, agent.transform.position);
         enemmy.SetColor(Color.yellow);
-        
-        Debug.Log($"{_distance}");
         
         if (_distance < 5f)
         {

@@ -25,11 +25,10 @@ public class FindPathNode : Node
         isDetected = EnemyAI.isDetectedPlayer;
         isDistracted = EnemyAI.isDistractedbyPlayer;
         
-        Debug.Log($"Log : {isDistracted}");
+        // Debug.Log($"Log : {isDistracted}");
 
         if (isDetected)
         {
-            Debug.Log("around here");
             return NodeState.FAILURE;
         }
         

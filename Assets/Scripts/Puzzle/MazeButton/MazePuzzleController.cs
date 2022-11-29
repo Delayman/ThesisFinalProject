@@ -7,15 +7,15 @@ public class MazePuzzleController : MonoBehaviour
     [Tooltip("Set what to show when completed puzzle")]
     [SerializeField] private GameObject rewardPrefab;
     
-    private CompleteButton completeBtn;
+    private MazeButton completeBtn;
 
     private bool isCompleted;
-    public GameObject NoComplete;
-    public GameObject HaveBeenComplete;
+    // public GameObject NoComplete;
+    // public GameObject HaveBeenComplete;
     
     private void Start()
     {
-        completeBtn = FindObjectOfType<CompleteButton>();
+        completeBtn = FindObjectOfType<MazeButton>();
         
         rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
         // NoComplete.SetActive(true);
