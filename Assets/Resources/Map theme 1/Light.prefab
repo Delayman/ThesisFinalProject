@@ -49,7 +49,7 @@ Light:
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.5
@@ -138,17 +138,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -231,17 +231,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -358,17 +358,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -431,7 +431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561755138077791388}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5.6, y: 2.5, z: 5}
+  m_LocalPosition: {x: -5.6, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1561755138270381990}
@@ -450,18 +450,18 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.20021357, g: 0.22151344, b: 0.6981132, a: 1}
   m_Intensity: 10
-  m_Range: 12
+  m_Range: 10
   m_SpotAngle: 120
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 4
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -544,17 +544,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -637,17 +637,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -771,17 +771,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -864,17 +864,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -957,17 +957,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -1124,17 +1124,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -1197,7 +1197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561755138334406994}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5.7, y: 2.5, z: 5}
+  m_LocalPosition: {x: 5.7, y: 0, z: 5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1561755138270381990}
@@ -1216,18 +1216,18 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.20021357, g: 0.22151344, b: 0.6981132, a: 1}
   m_Intensity: 10
-  m_Range: 12
+  m_Range: 10
   m_SpotAngle: 120
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 4
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -1314,7 +1314,7 @@ Light:
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.5
@@ -1403,17 +1403,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -1476,7 +1476,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1561755138432967400}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -5.6, y: 2.5, z: -5}
+  m_LocalPosition: {x: -5.6, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1561755138270381990}
@@ -1495,18 +1495,18 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.20021357, g: 0.22151344, b: 0.6981132, a: 1}
   m_Intensity: 10
-  m_Range: 12
+  m_Range: 10
   m_SpotAngle: 120
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 4
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -1589,17 +1589,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -1760,17 +1760,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -1853,17 +1853,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -1946,17 +1946,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2039,17 +2039,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2132,17 +2132,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2259,17 +2259,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2352,17 +2352,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2445,17 +2445,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2538,17 +2538,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2635,7 +2635,7 @@ Light:
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.5
@@ -2724,17 +2724,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2817,17 +2817,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -2966,17 +2966,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -3059,17 +3059,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -3186,17 +3186,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -3279,17 +3279,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -3372,17 +3372,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -3465,17 +3465,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -3558,17 +3558,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -3651,17 +3651,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -3744,17 +3744,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -3841,13 +3841,13 @@ Light:
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 4
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -3930,17 +3930,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -4023,17 +4023,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -4120,7 +4120,7 @@ Light:
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 0.5
@@ -4209,17 +4209,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -4302,17 +4302,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -4463,17 +4463,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -4556,17 +4556,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -4649,17 +4649,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -4742,17 +4742,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -4869,17 +4869,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -4962,17 +4962,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -5059,13 +5059,13 @@ Light:
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 4
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -5148,17 +5148,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -5241,17 +5241,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -5334,17 +5334,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -5431,13 +5431,13 @@ Light:
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 4
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -5520,17 +5520,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -5613,17 +5613,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -5706,17 +5706,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -5799,17 +5799,17 @@ Light:
   m_Color: {r: 0.80452615, g: 0.8207547, b: 0.12698463, a: 1}
   m_Intensity: 10
   m_Range: 12
-  m_SpotAngle: 120
+  m_SpotAngle: 100
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 2.5
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -5872,7 +5872,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5115823268423425061}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 5.7, y: 2.5, z: -5}
+  m_LocalPosition: {x: 5.7, y: 0, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1561755138270381990}
@@ -5891,18 +5891,18 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.20021357, g: 0.22151344, b: 0.6981132, a: 1}
   m_Intensity: 10
-  m_Range: 12
+  m_Range: 10
   m_SpotAngle: 120
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.8
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 4
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -5989,13 +5989,13 @@ Light:
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.5
+    m_Strength: 1
     m_Bias: 0.05
     m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_NearPlane: 4
     m_CullingMatrixOverride:
       e00: 1
       e01: 0
@@ -6195,6 +6195,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.64110327
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (1)
@@ -6257,6 +6269,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (1)
@@ -6285,7 +6309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6317,6 +6341,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_SpotAngle
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
@@ -6455,6 +6507,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (8)
@@ -6529,6 +6593,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.31185475
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (9)
@@ -6590,6 +6666,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -6653,6 +6741,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (10)
@@ -6714,6 +6814,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -6777,6 +6889,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (11)
@@ -6838,6 +6962,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -6901,6 +7037,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (19)
@@ -6962,6 +7118,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -7173,6 +7341,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (2)
@@ -7234,6 +7414,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -7297,6 +7489,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (6)
@@ -7358,6 +7562,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -7433,6 +7649,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.64110327
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (3)
@@ -7494,6 +7722,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -7557,6 +7797,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (7)
@@ -7618,6 +7870,26 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 0.36
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -7681,6 +7953,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (2)
@@ -7741,6 +8025,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
@@ -7804,6 +8108,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -7941,6 +8257,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_SpotAngle
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (22)
@@ -8001,6 +8341,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
@@ -8065,6 +8429,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (4)
@@ -8126,6 +8510,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -8189,6 +8585,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (5)
@@ -8250,6 +8658,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -8313,6 +8733,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (12)
@@ -8374,6 +8806,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -8523,6 +8967,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.64110327
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (2)
@@ -8584,6 +9040,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -8658,6 +9126,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Color.r
       value: 0.64110327
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -8795,6 +9275,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (3)
@@ -8931,6 +9423,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NormalBias
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (14)
@@ -8992,6 +9508,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -9055,6 +9583,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0.38
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (17)
@@ -9116,6 +9660,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -9327,6 +9883,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
       value: Light Source (3)
@@ -9355,7 +9923,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9388,6 +9956,26 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_SpotAngle
+      value: 140
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Bias
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
@@ -9450,6 +10038,18 @@ PrefabInstance:
     - target: {fileID: 284217438626986612, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Lightmapping
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 284217438626986613, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
+      propertyPath: m_Shadows.m_NearPlane
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 284217438626986614, guid: 046a38fca51c0e24d8f779dadeb0f9b5, type: 3}
       propertyPath: m_Name
