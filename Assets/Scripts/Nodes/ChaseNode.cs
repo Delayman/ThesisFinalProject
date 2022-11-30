@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class ChaseNode : Node
 {
@@ -22,6 +23,8 @@ public class ChaseNode : Node
     {
         enemmy.SetColor(Color.red);
         
+        MonsterAnimationEvent.Invoke(3);
+
         var _distance = Vector3.Distance(target.position, agent.transform.position);
 
         if (_distance > 0.1f)
@@ -41,4 +44,10 @@ public class ChaseNode : Node
     //     Debug.Log($"Countdown before stop chase");
     //     agent.isStopped = true;
     // }
+
+     MonsterEvent MonsterAnimationEvent = new MonsterEvent();
+    public void monsteranimationevent(UnityAction<int> listener)
+    {
+        MonsterAnimationEvent.AddListener(listener);
+    }
 }

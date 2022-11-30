@@ -116,7 +116,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     public void playeranimationevent(UnityAction<int> listener)
     {
         PlayerAnimationEvent.AddListener(listener);
-        Debug.Log("Invoked!!");
+        //Debug.Log("Invoked!!");
     }
 
     void RunController()
@@ -131,11 +131,13 @@ public class FPS_PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift)&& PlayerCurrentStamina >= 1)
         {
             playerMoveSpeed = PlayerPrefs.GetFloat("PlayerDefaultSpeed") * 2;
+            //Debug.Log("Press shif!");
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift) || PlayerCurrentStamina <= 0)
         {
             playerMoveSpeed = PlayerPrefs.GetFloat("PlayerDefaultSpeed");
             isrun = false;
+            //Debug.Log("Unpress shif!");
         }
     }
 
