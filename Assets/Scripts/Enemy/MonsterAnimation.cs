@@ -11,6 +11,8 @@ public class MonsterAnimation : MonoBehaviour
     {
         MonsterAnimator = this.gameObject.GetComponent<Animator>();
         MonsterAnimated1();
+        MonsterAnimated2();
+        MonsterAnimated3();
     }
     void MonsterAnimated1()
     {
