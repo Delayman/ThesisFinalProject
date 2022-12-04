@@ -14,13 +14,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lab_Map2.unity
     guid: a036165177a44e94f8f49c90ae90f2ad
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lab_Map.unity
     guid: 1cbcca3d4e0599e4a8009a83c4f5c5c2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dream_scene.unity
     guid: 170d512da3428cc47b3339d06b4eeccf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Ai_test_scene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   m_configObjects: {}
