@@ -155,6 +155,7 @@ MonoBehaviour:
   playerLookSpeed: 5
   PlayerMaxStamina: 10
   PlayerCurrentStamina: 10
+  StaminaBar: {fileID: 0}
   camRotLimit: 85
   cam: {fileID: 4421393261196023202}
 --- !u!54 &4421393261113564725

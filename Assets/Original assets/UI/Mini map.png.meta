@@ -1,40 +1,7 @@
 fileFormatVersion: 2
 guid: 5d4293870a6cdc846a562e4ccfa5995f
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 5909012828253560350
-    second: Mini map
-  - first:
-      213: -7518830947220154374
-    second: Living room
-  - first:
-      213: 2026970066414724136
-    second: Controll Room
-  - first:
-      213: -6198541928028039159
-    second: Libary
-  - first:
-      213: -3680804250207551025
-    second: Menager room
-  - first:
-      213: 5966903308572047085
-    second: Laboratory
-  - first:
-      213: -7261425780712100265
-    second: Camera room
-  - first:
-      213: -1530236538020050443
-    second: Office room 1
-  - first:
-      213: -7858508503103764250
-    second: Office room 2
-  - first:
-      213: -2718666311226959759
-    second: Office room 3
-  - first:
-      213: 2838438094441206996
-    second: Office room 4
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -124,13 +91,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Mini map
+      name: Mini map_0
       rect:
         serializedVersion: 2
-        x: 54
-        y: 58
-        width: 1058
-        height: 958
+        x: 57
+        y: 59
+        width: 1049
+        height: 956
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,13 +112,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Living room
+      name: Living room text
       rect:
         serializedVersion: 2
-        x: 1191
-        y: 958
-        width: 270
-        height: 52
+        x: 1200
+        y: 953
+        width: 262
+        height: 54
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,55 +133,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Controll Room
+      name: Mini map_4
       rect:
         serializedVersion: 2
-        x: 1193
-        y: 891
-        width: 330
-        height: 52
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 824effa398e312c10800000000000000
-      internalID: 2026970066414724136
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Libary
-      rect:
-        serializedVersion: 2
-        x: 1193
-        y: 810
-        width: 156
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 908168e25fa5af9a0800000000000000
-      internalID: -6198541928028039159
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Menager room
-      rect:
-        serializedVersion: 2
-        x: 1191
-        y: 741
-        width: 340
-        height: 56
+        x: 1230
+        y: 969
+        width: 5
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,13 +154,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Laboratory
+      name: Controll room text
       rect:
         serializedVersion: 2
-        x: 1192
-        y: 661
-        width: 268
-        height: 60
+        x: 1200
+        y: 896
+        width: 312
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,8 +168,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de63a84f1f2bec250800000000000000
-      internalID: 5966903308572047085
+      spriteID: 27f6f4e935ac7cfa0800000000000000
+      internalID: -5780429136219639950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Libary text
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 812
+        width: 147
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d9b66d108f1e5b0800000000000000
+      internalID: -5340714996308664979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Mini map_28
+      rect:
+        serializedVersion: 2
+        x: 1230
+        y: 829
+        width: 5
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af4aca3b5e87dd610800000000000000
+      internalID: 1647605966644749562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Menager room
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 735
+        width: 329
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d71fadee9ea0c050800000000000000
+      internalID: 5818842716178421718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Laboratory
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 665
+        width: 259
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633172475c83fdfd0800000000000000
+      internalID: -2315069262736714954
       vertices: []
       indices: 
       edges: []
@@ -253,10 +262,10 @@ TextureImporter:
       name: Camera room
       rect:
         serializedVersion: 2
-        x: 1195
-        y: 602
-        width: 307
-        height: 51
+        x: 1200
+        y: 605
+        width: 301
+        height: 44
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -264,20 +273,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75eaac1a9bb3a3b90800000000000000
-      internalID: -7261425780712100265
+      spriteID: 313311c0780909210800000000000000
+      internalID: 1337727999026475795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Office room 1
+      name: Office 1
       rect:
         serializedVersion: 2
-        x: 1195
-        y: 541
-        width: 328
-        height: 48
+        x: 1200
+        y: 544
+        width: 323
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -285,20 +294,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f9cdf8e9f183cae0800000000000000
-      internalID: -1530236538020050443
+      spriteID: d59555e2cdfdb6740800000000000000
+      internalID: 5146453135964068189
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Office room 2
+      name: Office 2
       rect:
         serializedVersion: 2
-        x: 1196
-        y: 480
-        width: 333
-        height: 46
+        x: 1200
+        y: 482
+        width: 330
+        height: 43
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,20 +315,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e80d101728f0f290800000000000000
-      internalID: -7858508503103764250
+      spriteID: 844cbd33600f94500800000000000000
+      internalID: 381099552920028232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Office room 3
+      name: Mini map_79
       rect:
         serializedVersion: 2
-        x: 1194
+        x: 1293
+        y: 485
+        width: 5
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29b4bc576be80f810800000000000000
+      internalID: 1797093165632277394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Office 3
+      rect:
+        serializedVersion: 2
+        x: 1200
         y: 417
-        width: 337
-        height: 48
+        width: 327
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -327,8 +357,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 178de70e46b554ad0800000000000000
-      internalID: -2718666311226959759
+      spriteID: b66581719b4876480800000000000000
+      internalID: -8906003807610579349
       vertices: []
       indices: 
       edges: []
@@ -337,10 +367,10 @@ TextureImporter:
       name: Office room 4
       rect:
         serializedVersion: 2
-        x: 1196
-        y: 353
-        width: 334
-        height: 47
+        x: 1200
+        y: 355
+        width: 331
+        height: 45
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -348,8 +378,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d4da108868246720800000000000000
-      internalID: 2838438094441206996
+      spriteID: d0fca755c1cada2f0800000000000000
+      internalID: -959921907866874099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Camera button
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 214
+        width: 103
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 132327b3dfc5a98b0800000000000000
+      internalID: -5144697381623549391
       vertices: []
       indices: 
       edges: []
@@ -357,7 +408,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: f3b9e44406c056a4990dfaca58b00020
+    spriteID: 07d710d24d16e8441a19028d9b892924
     internalID: 0
     vertices: []
     indices: 

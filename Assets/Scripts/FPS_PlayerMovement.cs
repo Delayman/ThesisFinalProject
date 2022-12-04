@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class FPS_PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     private float playerLookSpeed = 5f;
     [SerializeField] float PlayerMaxStamina = 10f;
     [SerializeField] float PlayerCurrentStamina = 10f;
+    [SerializeField] Slider StaminaBar;
     bool isrun;
     bool ismove;
     private PhotonView _view;
@@ -50,6 +52,10 @@ public class FPS_PlayerMovement : MonoBehaviour
         }
 
         isrun = false;
+
+        StaminaBar.maxValue = PlayerMaxStamina;
+        StaminaBar.value = PlayerCurrentStamina;
+
     }
 
     private void FixedUpdate() 
@@ -107,6 +113,8 @@ public class FPS_PlayerMovement : MonoBehaviour
             }
 
             RunController();
+
+            StaminaBar.value = PlayerCurrentStamina;
 
         }
     
