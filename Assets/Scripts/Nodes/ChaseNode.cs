@@ -11,19 +11,21 @@ public class ChaseNode : Node
     private NavMeshAgent agent;
     private EnemyAI enemmy;
     private float chaseTimer;
+    private Animator MonsterAnimator;
 
-    public ChaseNode(Transform _target, NavMeshAgent _agent, EnemyAI _enemy)
+    public ChaseNode(Transform _target, NavMeshAgent _agent, EnemyAI _enemy, Animator _animator)
     {
         this.target = _target;
         this.agent = _agent;
         this.enemmy = _enemy;
         chaseTimer = 0f;
+        this.MonsterAnimator = _animator;
     }
     public override NodeState Evaluate()
     {
-        enemmy.SetColor(Color.red);
+        //enemmy.SetColor(Color.red);
         
-        MonsterAnimationEvent.Invoke(3);
+        // MonsterAnimationEvent.Invoke(3);
 
         var _distance = Vector3.Distance(target.position, agent.transform.position);
 
@@ -45,9 +47,14 @@ public class ChaseNode : Node
     //     agent.isStopped = true;
     // }
 
-     MonsterEvent MonsterAnimationEvent = new MonsterEvent();
-    public void monsteranimationevent(UnityAction<int> listener)
+    //  MonsterEvent MonsterAnimationEvent = new MonsterEvent();
+    // public void monsteranimationevent(UnityAction<int> listener)
+    // {
+    //     MonsterAnimationEvent.AddListener(listener);
+    // }
+
+    private void PlayAnimation()
     {
-        MonsterAnimationEvent.AddListener(listener);
+        MonsterAnimator.SetInteger("EMAnimationID",3);
     }
 }

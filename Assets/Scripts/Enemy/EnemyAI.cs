@@ -28,16 +28,20 @@ public class EnemyAI : MonoBehaviour
     public static Transform DistractPos;
 
     public static GameObject targetedPlayer;
+
+    private Animator _animator;
     
     #endregion
     
     private void Awake()
     {
-        material = GetComponentInChildren<MeshRenderer>().material;
+        //material = GetComponentInChildren<MeshRenderer>().material;
         pratolPaths = GameObject.FindGameObjectsWithTag("EnemyPath").ToList();
         
         if(!TryGetComponent<NavMeshAgent>(out var _agent)) return;
         if(!TryGetComponent<SphereCollider>(out var _sphere)) return;
+
+        _animator = GetComponentInChildren<Animator>();
         
         agent = _agent;
         sphereCollider = _sphere;
@@ -51,10 +55,10 @@ public class EnemyAI : MonoBehaviour
 
     private void ConstructBehaviourTree()
     {
-        var _chaseNode = new ChaseNode(playerTransform, agent, this);
-        var _findPathNode = new FindPathNode(pratolPaths, agent, this);
-        var _distractedMode = new DistractedMode(agent, this);
-        var _searchNode = new SearchNode(agent, this);
+        var _chaseNode = new ChaseNode(playerTransform, agent, this, _animator);
+        var _findPathNode = new FindPathNode(pratolPaths, agent, this, _animator);
+        var _distractedMode = new DistractedMode(agent, this, _animator);
+        var _searchNode = new SearchNode(agent, this, _animator);
 
         var _chaseSequnce = new Sequnce(new List<Node> {_chaseNode, _searchNode});
         var _pratol = new Sequnce(new List<Node> {_findPathNode, _distractedMode});
@@ -67,14 +71,14 @@ public class EnemyAI : MonoBehaviour
         topNode.Evaluate();
         if (topNode.NodeState == NodeState.FAILURE)
         {
-            SetColor(Color.cyan);
+            //SetColor(Color.cyan);
             agent.isStopped = true;
         }
     }
 
     public void SetColor(Color _color)
     {
-        material.color = _color;
+        //material.color = _color;
     }
 
     private void OnDrawGizmosSelected()

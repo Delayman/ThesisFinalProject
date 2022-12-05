@@ -11,13 +11,15 @@ public class FindPathNode : Node
     private NavMeshAgent agent;
     private EnemyAI enemmy;
     private bool isDetected, isDistracted;
+    private Animator MonsterAnimator;
 
-    public FindPathNode(List<GameObject> _path, NavMeshAgent _agent, EnemyAI _enemmy)
+    public FindPathNode(List<GameObject> _path, NavMeshAgent _agent, EnemyAI _enemmy, Animator _animator)
     {
         savedPath.AddRange(_path);
         tempPath.AddRange(_path);
         agent = _agent;
         enemmy = _enemmy;
+        MonsterAnimator = _animator;
     }
 
     public override NodeState Evaluate()
@@ -26,7 +28,8 @@ public class FindPathNode : Node
         isDetected = EnemyAI.isDetectedPlayer;
         isDistracted = EnemyAI.isDistractedbyPlayer;
         
-        MonsterAnimationEvent.Invoke(2);
+        // MonsterAnimationEvent.Invoke(2);
+        PlayAnimation();
 
         // Debug.Log($"Log : {isDistracted}");
 
@@ -40,7 +43,7 @@ public class FindPathNode : Node
     
     private void FindPath()
     {
-        enemmy.SetColor(Color.green);
+        //enemmy.SetColor(Color.green);
         var _distance = Vector3.Distance(tempPath[0].transform.position, agent.transform.position);
         
         if (tempPath.Count > 0)
@@ -50,7 +53,7 @@ public class FindPathNode : Node
             agent.SetDestination(tempPath[0].transform.position);
         }
 
-        if (_distance < 0.5f)
+        if (_distance < 1f)
         {
             Debug.Log($"Remove path");
 
@@ -65,9 +68,14 @@ public class FindPathNode : Node
         }
         
     }
-    MonsterEvent MonsterAnimationEvent = new MonsterEvent();
-    public void monsteranimationevent(UnityAction<int> listener)
+
+    private void PlayAnimation()
     {
-        MonsterAnimationEvent.AddListener(listener);
+        MonsterAnimator.SetInteger("EMAnimationID",2);
     }
+    // MonsterEvent MonsterAnimationEvent = new MonsterEvent();
+    // public void monsteranimationevent(UnityAction<int> listener)
+    // {
+    //     MonsterAnimationEvent.AddListener(listener);
+    // }
 }
