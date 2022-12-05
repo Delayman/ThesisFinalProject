@@ -24,7 +24,7 @@ public class ComputerPuzzle : Interactable
     public GameObject ChangeScreen;
     public GameObject DefultScreen;
 
-
+    public GameObject ScreenLight;
     private void Start()
     {
         objMeshFilter = GetComponent<MeshFilter>();
@@ -42,6 +42,7 @@ public class ComputerPuzzle : Interactable
         {
             wrongOne = GetComponent<WrongOne>();
         }
+        ScreenLight.SetActive(false);
     }
 
     public override string GetDescription()
@@ -61,11 +62,13 @@ public class ComputerPuzzle : Interactable
         //objMeshFilter.mesh = isOn ? toggledMesh : oldMesh;
         if (isOn)
         {
-            ChangeScreen.GetComponent<Renderer>().material.color = Color.white;
+            DefultScreen.GetComponent<Renderer>().material.color = Color.white;
+            ScreenLight.SetActive(true);
         }
         else
         {
             DefultScreen.GetComponent<Renderer>().material.color = Color.black;
+            ScreenLight.SetActive(false);
         }
 
         if (correctOne != null)

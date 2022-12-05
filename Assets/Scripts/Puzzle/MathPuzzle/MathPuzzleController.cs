@@ -22,14 +22,16 @@ public class MathPuzzleController : MonoBehaviour
     public GameObject NoComplete;
     public GameObject HaveBeenComplete;
 
-    public PlayableDirector cutseen1;
-    private List<DisablePlayerControl> DisAblePlayerlist;
+    public CutScenePlay cutplay;
+   
+    //public PlayableDirector cutseen1;
+    //private List<DisablePlayerControl> DisAblePlayerlist;
     private void Start()
     {
        // rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
         NoComplete.SetActive(true);
         HaveBeenComplete.SetActive(false);
-        DisAblePlayerlist = FindObjectsOfType<DisablePlayerControl>().ToList();
+        //DisAblePlayerlist = FindObjectsOfType<DisablePlayerControl>().ToList();
     }
     
     public void CheckAnswer()
@@ -46,11 +48,15 @@ public class MathPuzzleController : MonoBehaviour
         // rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
-        foreach (var player in DisAblePlayerlist)
-        {
-            player.isDisable = true;
-        }
-        cutseen1.Play();
+        cutplay.CutScene1();
+        CutScenePlay.PassPuzzle += 1;
+        cutplay.CutScene2();
+            
+        //foreach (var player in DisAblePlayerlist)
+        //{
+        //    player.isDisable = true;
+        //}
+        //cutseen1.Play();
 
     }
 

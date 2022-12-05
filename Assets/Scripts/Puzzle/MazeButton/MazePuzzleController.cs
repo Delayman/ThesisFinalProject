@@ -12,14 +12,16 @@ public class MazePuzzleController : MonoBehaviour
     private bool isCompleted;
     // public GameObject NoComplete;
     // public GameObject HaveBeenComplete;
-    
+    public GameObject NoComplete;
+    public GameObject HaveBeenComplete;
+    public CutScenePlay cutplay;
     private void Start()
     {
         completeBtn = FindObjectOfType<MazeButton>();
         
-        rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
-        // NoComplete.SetActive(true);
-        // HaveBeenComplete.SetActive(false);
+        //rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
+        NoComplete.SetActive(true);
+        HaveBeenComplete.SetActive(false);
     }
 
     public void CheckCompleted()
@@ -29,8 +31,10 @@ public class MazePuzzleController : MonoBehaviour
         
         if (!isCompleted) return;
         
-        rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
-        // NoComplete.SetActive(false);
-        // HaveBeenComplete.SetActive(true);
+       // rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
+        NoComplete.SetActive(false);
+        HaveBeenComplete.SetActive(true);
+        CutScenePlay.PassPuzzle += 1;
+        cutplay.CutScene2();
     }
 }

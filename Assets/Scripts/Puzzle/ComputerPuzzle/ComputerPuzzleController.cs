@@ -17,7 +17,8 @@ public class ComputerPuzzleController : MonoBehaviour
     private bool isCompleted;
     public GameObject NoComplete;
     public GameObject HaveBeenComplete;
-        
+
+    public CutScenePlay cutplay;
     private void Awake()
     {
         correctObjList ??= new List<CorrectOne>();
@@ -55,6 +56,8 @@ public class ComputerPuzzleController : MonoBehaviour
         if (!isCompleted) return;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
+        CutScenePlay.PassPuzzle += 1;
+        cutplay.CutScene2();
         //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
     }
 }
