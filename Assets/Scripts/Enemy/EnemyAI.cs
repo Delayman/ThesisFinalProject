@@ -27,7 +27,8 @@ public class EnemyAI : MonoBehaviour
     public static bool isDistractedbyPlayer;
     public static Transform DistractPos;
 
-
+    public static GameObject targetedPlayer;
+    
     #endregion
     
     private void Awake()
@@ -53,10 +54,10 @@ public class EnemyAI : MonoBehaviour
         var _chaseNode = new ChaseNode(playerTransform, agent, this);
         var _findPathNode = new FindPathNode(pratolPaths, agent, this);
         var _distractedMode = new DistractedMode(agent, this);
+        var _searchNode = new SearchNode(agent, this);
 
-        var _chaseSequnce = new Sequnce(new List<Node> {_chaseNode });
+        var _chaseSequnce = new Sequnce(new List<Node> {_chaseNode, _searchNode});
         var _pratol = new Sequnce(new List<Node> {_findPathNode, _distractedMode});
-        // var _distractSequnce = new Sequnce(new List<Node> { _distractedMode });
 
         topNode = new Selector(new List<Node> {_pratol, _chaseSequnce});
     }
@@ -89,6 +90,7 @@ public class EnemyAI : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             isDetectedPlayer = true;
+            targetedPlayer = other.gameObject;
             StopCoroutine(StopChaseTimer());
         }
     }

@@ -126,17 +126,21 @@ public class FPS_PlayerMovement : MonoBehaviour
         Staminacontroller();
     }
 
-    void PlayerSpeedSet()
+    private void PlayerSpeedSet()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift)&& PlayerCurrentStamina >= 1)
+        // Debug.Log($"Input : {Input.GetKeyDown(KeyCode.LeftShift)}");
+        // Debug.Log($"Input : {Input.GetKeyUp(KeyCode.LeftShift)}");
+
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && PlayerCurrentStamina >= 1)
         {
             playerMoveSpeed = PlayerPrefs.GetFloat("PlayerDefaultSpeed") * 2;
         }
-        else if (Input.GetKeyUp(KeyCode.LeftShift) || PlayerCurrentStamina <= 0)
-        {
-            playerMoveSpeed = PlayerPrefs.GetFloat("PlayerDefaultSpeed");
-            isrun = false;
-        }
+
+        if (!Input.GetKeyUp(KeyCode.LeftShift) && !(PlayerCurrentStamina < 0)) return;
+        
+        playerMoveSpeed = PlayerPrefs.GetFloat("PlayerDefaultSpeed");
+        isrun = false;
     }
 
     void PlayerSpeedCheck()
@@ -146,11 +150,11 @@ public class FPS_PlayerMovement : MonoBehaviour
             isrun = false;
             if(ismove == true)
             {
-            PlayerAnimationEvent.Invoke(1);
+                PlayerAnimationEvent.Invoke(1);
             }
             else if(ismove == false)
             {
-            PlayerAnimationEvent.Invoke(0);
+                PlayerAnimationEvent.Invoke(0);
             }
             
         }

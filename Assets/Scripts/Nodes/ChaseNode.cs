@@ -11,6 +11,10 @@ public class ChaseNode : Node
     private EnemyAI enemmy;
     private float chaseTimer;
 
+    private GameObject targetPlayer;
+    private PlayerStatus playerStatus;
+
+
     public ChaseNode(Transform _target, NavMeshAgent _agent, EnemyAI _enemy)
     {
         this.target = _target;
@@ -22,16 +26,27 @@ public class ChaseNode : Node
     {
         enemmy.SetColor(Color.red);
         
-        var _distance = Vector3.Distance(target.position, agent.transform.position);
+        // var _distance = Vector3.Distance(target.position, agent.transform.position);
 
-        if (_distance > 0.1f)
+        targetPlayer = EnemyAI.targetedPlayer;
+        
+        playerStatus = targetPlayer.GetComponent<PlayerStatus>();
+
+        // if (_distance > 0.1f)
+        // {
+        //     agent.isStopped = false;
+        //     agent.SetDestination(target.position);
+        //     return NodeState.RUNNING;
+        // }
+
+        if (targetPlayer != null)
         {
             agent.isStopped = false;
-            agent.SetDestination(target.position);
+            agent.SetDestination(targetPlayer.transform.position);
             return NodeState.RUNNING;
         }
 
-        return chaseTimer <= 0 ? NodeState.SUCCESS : NodeState.FAILURE;
+        return NodeState.SUCCESS;
     }
 
     // private void ChasingTime()

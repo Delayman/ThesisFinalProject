@@ -16,9 +16,11 @@ GameObject:
   - component: {fileID: 6740146939462136849}
   - component: {fileID: 1561127632297386863}
   - component: {fileID: 8515580375883461334}
+  - component: {fileID: 8519752107377085136}
   - component: {fileID: 6991111101775833978}
   - component: {fileID: 5989340832122243722}
   - component: {fileID: 5496313424302957435}
+  - component: {fileID: 2617429568559215801}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -174,6 +176,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roleName: Watcher
+--- !u!114 &8519752107377085136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421393261113564617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f885a55d6cc364045a9319b1aadf153c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDisable: 0
 --- !u!114 &6991111101775833978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +315,18 @@ MonoBehaviour:
     Max: 1000
     SpeedUpPerc: 5
   restartOnDeviceChange: 1
+--- !u!114 &2617429568559215801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421393261113564617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c978b4d6dbef3c49a0589c521b31940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4421393261196023205
 GameObject:
   m_ObjectHideFlags: 0
