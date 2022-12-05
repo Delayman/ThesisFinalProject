@@ -12,7 +12,8 @@ public class Activator : Interactable
     private const string ActivatedText = "This button is already actived";
 
     private bool isOn;
-
+    public CutScenePlay cutplay;
+    public GameObject buttonlight;
     private void Awake()
     {
         receivers ??= new List<Receiver>();
@@ -21,6 +22,7 @@ public class Activator : Interactable
     private void Start()
     {
         receivers = Resources.FindObjectsOfTypeAll<Receiver>().ToList();
+        buttonlight.SetActive(false);
     }
 
     public override string GetDescription()
@@ -40,5 +42,8 @@ public class Activator : Interactable
         {
             _receiver.gameObject.SetActive(true);
         }
+        buttonlight.SetActive(true);
+
+        cutplay.CutScene3();
     }
 }

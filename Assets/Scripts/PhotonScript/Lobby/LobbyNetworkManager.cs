@@ -25,6 +25,9 @@ public class LobbyNetworkManager : MonoBehaviourPunCallbacks
     [SerializeField] private TextMeshProUGUI roomText;
     [SerializeField] private TMP_Dropdown roleDropDown;
 
+    [SerializeField] private GameObject Lobby_UI;
+    [SerializeField] private GameObject Room_UI;
+
     private List<RoomItemUI> roomList = new List<RoomItemUI>();
     private List<RoomItemUI> playerList = new List<RoomItemUI>();
 
@@ -33,6 +36,8 @@ public class LobbyNetworkManager : MonoBehaviourPunCallbacks
     {
         Init();
         Connect();
+        Lobby_UI.SetActive(true);
+        Room_UI.SetActive(false);
     }
 
     #region PhotonCallbacks
@@ -79,6 +84,9 @@ public class LobbyNetworkManager : MonoBehaviourPunCallbacks
         leaveRoomBtn.interactable = true;
         startGameBtn.gameObject.SetActive(true);
         
+        Lobby_UI.SetActive(false);
+        Room_UI.SetActive(true);
+
         UpdatePlayerList();
     }
 
@@ -94,6 +102,9 @@ public class LobbyNetworkManager : MonoBehaviourPunCallbacks
         leaveRoomBtn.interactable = false;
         startGameBtn.gameObject.SetActive(false);
         
+        Lobby_UI.SetActive(true);
+        Room_UI.SetActive(false);
+
         UpdatePlayerList();
     }
 

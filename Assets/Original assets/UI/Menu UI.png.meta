@@ -4,64 +4,73 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: 5294205806154801797
-    second: Main menuy BG
+    second: BG
   - first:
       213: 1954422994154923260
     second: Button BG 1
   - first:
+      213: -3888989354995066415
+    second: Start game text
+  - first:
+      213: 6980772330766568350
+    second: Room name text
+  - first:
       213: -6603421612789886670
     second: Button BG 2
+  - first:
+      213: -7741447697140138273
+    second: Option text
+  - first:
+      213: 6459548662689580879
+    second: Password text
   - first:
       213: 5245781485799896840
     second: Text BG
   - first:
+      213: -7733301164066735174
+    second: Exit text
+  - first:
       213: -1240195979897039653
-    second: Stamina gauge BG
+    second: Stamina bar
   - first:
       213: -4280471069506553658
-    second: Arrow head
+    second: Arrow Head
   - first:
-      213: -1618320053122590442
-    second: Stamina gauge icon
+      213: 8971005846450418460
+    second: Creat room text
   - first:
       213: -6342291883416788471
-    second: Gaar icon
+    second: Stamina icon
   - first:
       213: -3548126098133131597
+    second: Gear icon
+  - first:
+      213: 5334940918751108889
     second: Leave icon
   - first:
-      213: -4684281723108257761
+      213: -1959981476297211503
     second: Cursor point
   - first:
-      213: -3888989354995066415
-    second: Text frame
+      213: -6118843195982595782
+    second: Joint text
   - first:
-      213: 1390141204988205751
-    second: Start Text
+      213: -1018065991504745380
+    second: Button frame
   - first:
-      213: -4112073824126602702
-    second: Option Text
+      213: 115198037563657840
+    second: Start text
   - first:
-      213: 5297424726807087638
-    second: Exit Text
+      213: -6110208534008762899
+    second: Leave text
   - first:
-      213: 5732990421584426837
-    second: Creat room Text
+      213: -8460851324045824586
+    second: Role text
   - first:
-      213: -4159028865980905183
-    second: Joint room Text
+      213: 6911175071726089251
+    second: Back text
   - first:
-      213: -4871683939057319150
-    second: Leave Text
-  - first:
-      213: 6980772330766568350
-    second: Back Text
-  - first:
-      213: -7535601133928458402
-    second: Room name Text
-  - first:
-      213: 5547153589769143107
-    second: Password Text
+      213: -1231723649723841076
+    second: Lure text
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -151,7 +160,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Main menuy BG
+      name: BG
       rect:
         serializedVersion: 2
         x: 22
@@ -193,6 +202,48 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
+      name: Start game text
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 367
+        width: 166
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d95e3059c8870ac0800000000000000
+      internalID: -3888989354995066415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Room name text
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 374
+        width: 158
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9b8739f27fa0e060800000000000000
+      internalID: 6980772330766568350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
       name: Button BG 2
       rect:
         serializedVersion: 2
@@ -209,6 +260,48 @@ TextureImporter:
       bones: []
       spriteID: 2319583970feb54a0800000000000000
       internalID: -6603421612789886670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Option text
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 315
+        width: 93
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fde32bcd55ad09490800000000000000
+      internalID: -7741447697140138273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Password text
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 325
+        width: 129
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4746f8d84de4a950800000000000000
+      internalID: 6459548662689580879
       vertices: []
       indices: 
       edges: []
@@ -235,10 +328,31 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stamina gauge BG
+      name: Exit text
       rect:
         serializedVersion: 2
-        x: 530
+        x: 297
+        y: 267
+        width: 58
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbffa6609bcda490800000000000000
+      internalID: -7733301164066735174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stamina bar
+      rect:
+        serializedVersion: 2
+        x: 528
         y: 246
         width: 409
         height: 54
@@ -256,13 +370,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrow head
+      name: Arrow Head
       rect:
         serializedVersion: 2
-        x: 55
-        y: 175
-        width: 118
-        height: 58
+        x: 47
+        y: 167
+        width: 127
+        height: 76
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,13 +391,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stamina gauge icon
+      name: Creat room text
       rect:
         serializedVersion: 2
-        x: 527
-        y: 174
-        width: 55
-        height: 55
+        x: 296
+        y: 210
+        width: 180
+        height: 29
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -291,20 +405,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6199cb46c729a89e0800000000000000
-      internalID: -1618320053122590442
+      spriteID: c1331a3794a6f7c70800000000000000
+      internalID: 8971005846450418460
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Gaar icon
+      name: Stamina icon
       rect:
         serializedVersion: 2
-        x: 602
-        y: 178
-        width: 52
-        height: 52
+        x: 528
+        y: 175
+        width: 53
+        height: 53
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,13 +433,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Leave icon
+      name: Gear icon
       rect:
         serializedVersion: 2
-        x: 678
-        y: 163
-        width: 63
-        height: 70
+        x: 602
+        y: 178
+        width: 52
+        height: 52
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,6 +449,27 @@ TextureImporter:
       bones: []
       spriteID: 3be5b7ecc1682cec0800000000000000
       internalID: -3548126098133131597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leave icon
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 163
+        width: 62
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f1bd7ff74890a40800000000000000
+      internalID: 5334940918751108889
       vertices: []
       indices: 
       edges: []
@@ -354,167 +489,125 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f10174a57961efeb0800000000000000
-      internalID: -4684281723108257761
+      spriteID: 19185f25b3fbcc4e0800000000000000
+      internalID: -1959981476297211503
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Text frame
-      rect:
-        serializedVersion: 2
-        x: 51
-        y: 103
-        width: 187
-        height: 50
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1d95e3059c8870ac0800000000000000
-      internalID: -3888989354995066415
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Start Text
-      rect:
-        serializedVersion: 2
-        x: 296
-        y: 368
-        width: 166
-        height: 31
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7ba94f68f06ca4310800000000000000
-      internalID: 1390141204988205751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Option Text
-      rect:
-        serializedVersion: 2
-        x: 296
-        y: 315
-        width: 94
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23270c6c4aafee6c0800000000000000
-      internalID: -4112073824126602702
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Exit Text
-      rect:
-        serializedVersion: 2
-        x: 296
-        y: 267
-        width: 60
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 61a05b9d8bb348940800000000000000
-      internalID: 5297424726807087638
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Creat room Text
-      rect:
-        serializedVersion: 2
-        x: 295
-        y: 213
-        width: 164
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 557b14be96caf8f40800000000000000
-      internalID: 5732990421584426837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Joint room Text
-      rect:
-        serializedVersion: 2
-        x: 296
-        y: 152
-        width: 156
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 129cc9828492846c0800000000000000
-      internalID: -4159028865980905183
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Leave Text
-      rect:
-        serializedVersion: 2
-        x: 296
-        y: 96
-        width: 81
-        height: 27
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 213438ac44d446cb0800000000000000
-      internalID: -4871683939057319150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Back Text
+      name: Joint text
       rect:
         serializedVersion: 2
         x: 297
+        y: 153
+        width: 73
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3934234880851ba0800000000000000
+      internalID: -6118843195982595782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Button frame
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 105
+        width: 187
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5c247aef5a1fd1f0800000000000000
+      internalID: -1018065991504745380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Start text
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 120
+        width: 80
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07ecdcb3104499100800000000000000
+      internalID: 115198037563657840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Leave text
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 96
+        width: 81
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dede8da26bd243ba0800000000000000
+      internalID: -6110208534008762899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Role text
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 78
+        width: 59
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bdeadc5c84059a80800000000000000
+      internalID: -8460851324045824586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Back text
+      rect:
+        serializedVersion: 2
+        x: 298
         y: 41
-        width: 67
-        height: 26
+        width: 66
+        height: 25
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -522,19 +615,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9b8739f27fa0e060800000000000000
-      internalID: 6980772330766568350
+      spriteID: 324b4ca5c1d69ef50800000000000000
+      internalID: 6911175071726089251
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Room name Text
+      name: Lure text
       rect:
         serializedVersion: 2
-        x: 532
-        y: 375
-        width: 182
+        x: 529
+        y: 32
+        width: 63
         height: 26
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -543,29 +636,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e57d92ba1ba2c6790800000000000000
-      internalID: -7535601133928458402
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Password Text
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 325
-        width: 152
-        height: 26
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34309b0ccc27bfc40800000000000000
-      internalID: 5547153589769143107
+      spriteID: cc543c4ddd908eee0800000000000000
+      internalID: -1231723649723841076
       vertices: []
       indices: 
       edges: []
@@ -573,7 +645,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: dcc3db28ec025f944a4b14f2aa809842
+    spriteID: a9de7488f532e1c4cb8b98d8aee25219
     internalID: 0
     vertices: []
     indices: 

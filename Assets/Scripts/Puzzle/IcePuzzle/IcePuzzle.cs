@@ -9,7 +9,7 @@ public class IcePuzzle : Interactable
     [Tooltip("Set which object that want to be move")]
     public GameObject movingObj;
     [Tooltip("Set how fast the object will move")]
-    [SerializeField] [Range(1000f, 10000f)] private float force;
+    [SerializeField] [Range(10000f, 10000000f)] private float force;
     
     private GameObject directionButtons;
     private Rigidbody movingObjRb;

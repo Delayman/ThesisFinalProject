@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class FPS_PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     private float playerLookSpeed = 5f;
     [SerializeField] float PlayerMaxStamina = 10f;
     [SerializeField] float PlayerCurrentStamina = 10f;
+    [SerializeField] Slider StaminaBar;
     bool isrun;
     bool ismove;
     private PhotonView _view;
@@ -50,6 +52,10 @@ public class FPS_PlayerMovement : MonoBehaviour
         }
 
         isrun = false;
+
+        StaminaBar.maxValue = PlayerMaxStamina;
+        StaminaBar.value = PlayerCurrentStamina;
+
     }
 
     private void FixedUpdate() 
@@ -108,6 +114,8 @@ public class FPS_PlayerMovement : MonoBehaviour
 
             RunController();
 
+            StaminaBar.value = PlayerCurrentStamina;
+
         }
     
     }
@@ -116,7 +124,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     public void playeranimationevent(UnityAction<int> listener)
     {
         PlayerAnimationEvent.AddListener(listener);
-        Debug.Log("Invoked!!");
+        //Debug.Log("Invoked!!");
     }
 
     void RunController()
@@ -126,21 +134,19 @@ public class FPS_PlayerMovement : MonoBehaviour
         Staminacontroller();
     }
 
-    private void PlayerSpeedSet()
+    void PlayerSpeedSet()
     {
-        // Debug.Log($"Input : {Input.GetKeyDown(KeyCode.LeftShift)}");
-        // Debug.Log($"Input : {Input.GetKeyUp(KeyCode.LeftShift)}");
-
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && PlayerCurrentStamina >= 1)
+        if (Input.GetKeyDown(KeyCode.LeftShift)&& PlayerCurrentStamina >= 1)
         {
             playerMoveSpeed = PlayerPrefs.GetFloat("PlayerDefaultSpeed") * 2;
+            //Debug.Log("Press shif!");
         }
-
-        if (!Input.GetKeyUp(KeyCode.LeftShift) && !(PlayerCurrentStamina < 0)) return;
-        
-        playerMoveSpeed = PlayerPrefs.GetFloat("PlayerDefaultSpeed");
-        isrun = false;
+        else if (Input.GetKeyUp(KeyCode.LeftShift) || PlayerCurrentStamina <= 0)
+        {
+            playerMoveSpeed = PlayerPrefs.GetFloat("PlayerDefaultSpeed");
+            isrun = false;
+            //Debug.Log("Unpress shif!");
+        }
     }
 
     void PlayerSpeedCheck()
@@ -150,11 +156,11 @@ public class FPS_PlayerMovement : MonoBehaviour
             isrun = false;
             if(ismove == true)
             {
-                PlayerAnimationEvent.Invoke(1);
+            PlayerAnimationEvent.Invoke(1);
             }
             else if(ismove == false)
             {
-                PlayerAnimationEvent.Invoke(0);
+            PlayerAnimationEvent.Invoke(0);
             }
             
         }

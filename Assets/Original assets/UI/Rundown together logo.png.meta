@@ -1,10 +1,7 @@
 fileFormatVersion: 2
 guid: 9f9fd8fc8c89bc14d87dc0f2c00f58fd
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -3285031700847013930
-    second: Rundown together logo_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -97,10 +94,10 @@ TextureImporter:
       name: Rundown together logo_0
       rect:
         serializedVersion: 2
-        x: 237
-        y: 74
-        width: 1564
-        height: 774
+        x: 50
+        y: 236
+        width: 1857
+        height: 509
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -117,7 +114,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 45562fb49356744489eca05502a9d405
+    spriteID: 311172108c682e44dbb621cdb6fbb02d
     internalID: 0
     vertices: []
     indices: 

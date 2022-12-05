@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class DistractedMode : Node
 {
@@ -21,6 +22,8 @@ public class DistractedMode : Node
     {
         isDistracted = EnemyAI.isDistractedbyPlayer;
         isFinishedPath = false;
+
+        MonsterAnimationEvent.Invoke(2);
 
         if (isDistracted && !isFinishedPath)
         {
@@ -42,5 +45,11 @@ public class DistractedMode : Node
             isFinishedPath = true;
             EnemyAI.isDistractedbyPlayer = false;
         }
+    }
+
+    MonsterEvent MonsterAnimationEvent = new MonsterEvent();
+    public void monsteranimationevent(UnityAction<int> listener)
+    {
+        MonsterAnimationEvent.AddListener(listener);
     }
 }

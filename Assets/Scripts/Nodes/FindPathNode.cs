@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class FindPathNode : Node
 {
@@ -25,6 +26,8 @@ public class FindPathNode : Node
         isDetected = EnemyAI.isDetectedPlayer;
         isDistracted = EnemyAI.isDistractedbyPlayer;
         
+        MonsterAnimationEvent.Invoke(2);
+
         // Debug.Log($"Log : {isDistracted}");
 
         if (isDetected)
@@ -61,5 +64,10 @@ public class FindPathNode : Node
             tempPath.AddRange(savedPath);
         }
         
+    }
+    MonsterEvent MonsterAnimationEvent = new MonsterEvent();
+    public void monsteranimationevent(UnityAction<int> listener)
+    {
+        MonsterAnimationEvent.AddListener(listener);
     }
 }

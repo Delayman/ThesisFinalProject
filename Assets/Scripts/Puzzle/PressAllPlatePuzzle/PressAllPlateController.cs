@@ -17,6 +17,7 @@ public class PressAllPlateController : MonoBehaviour
     public GameObject NoComplete;
     public GameObject HaveBeenComplete;
 
+    public CutScenePlay cutplay;
     private void Awake()
     {
         activatedList ??= new List<Checker>();
@@ -51,6 +52,8 @@ public class PressAllPlateController : MonoBehaviour
             //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
             NoComplete.SetActive(false);
             HaveBeenComplete.SetActive(true);
+            CutScenePlay.PassPuzzle += 1;
+            cutplay.CutScene2();
         }
     }
 

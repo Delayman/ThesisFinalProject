@@ -12,6 +12,7 @@ public class IcePuzzleController : MonoBehaviour
 
     public GameObject NoComplete;
     public GameObject HaveBeenComplete;
+    public CutScenePlay cutplay;
     private void Start()
     {
         goal = FindObjectOfType<IcePuzzleGoal>();
@@ -19,6 +20,8 @@ public class IcePuzzleController : MonoBehaviour
         //rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
         NoComplete.SetActive(true);
         HaveBeenComplete.SetActive(false);
+        CutScenePlay.PassPuzzle += 1;
+        cutplay.CutScene2();
     }
 
     public void CheckComplete()

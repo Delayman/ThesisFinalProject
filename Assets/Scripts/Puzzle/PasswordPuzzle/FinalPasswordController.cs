@@ -14,8 +14,13 @@ public class FinalPasswordController : MonoBehaviour
     public string inputPassword;
 
     private FinalPasswordPuzzle finalBtn;
-    
+
+    public GameObject NoComplete;
+    public GameObject HaveBeenComplete;
+
     private bool isCompleted;
+
+    public int maxtext;
 
     private void Awake()
     {
@@ -25,18 +30,32 @@ public class FinalPasswordController : MonoBehaviour
     private void Start()
     {
         finalBtn = FindObjectOfType<FinalPasswordPuzzle>();
-        
-        rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
+        NoComplete.SetActive(true);
+        HaveBeenComplete.SetActive(false);
+
+        // rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
     }
 
     public void CheckCompleted()
     {
-        passwordInputField.text = inputPassword;
-            
-        if (correctPassword == inputPassword) isCompleted = true;
-            
-        if (!isCompleted) return;
-        
-        rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
+        if (passwordInputField.text.Length < 6)
+        {
+            passwordInputField.text = inputPassword;
+
+            if (correctPassword == inputPassword) isCompleted = true;
+
+            if (!isCompleted) return;
+
+            NoComplete.SetActive(false);
+            HaveBeenComplete.SetActive(true);
+            passwordInputField.text = "PASS";
+        }
+        if (passwordInputField.text.Length > 5)
+        {
+            inputPassword = "";
+            passwordInputField.text = inputPassword;
+        }
+     
+        //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
     }
 }
