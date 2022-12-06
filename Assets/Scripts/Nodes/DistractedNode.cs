@@ -11,19 +11,20 @@ public class DistractedMode : Node
     private EnemyAI enemmy;
     private bool isDistracted;
     private bool isFinishedPath;
+    private Animator MonsterAnimator;
     
-    public DistractedMode(NavMeshAgent _agent, EnemyAI _enemy)
+    public DistractedMode(NavMeshAgent _agent, EnemyAI _enemy, Animator _animator)
     {
         agent = _agent;
         enemmy = _enemy;
+        this.MonsterAnimator = _animator;
     }
 
     public override NodeState Evaluate()
     {
+
         isDistracted = EnemyAI.isDistractedbyPlayer;
         isFinishedPath = false;
-
-        MonsterAnimationEvent.Invoke(2);
 
         if (isDistracted && !isFinishedPath)
         {
@@ -31,6 +32,8 @@ public class DistractedMode : Node
             agent.SetDestination(distractTarget.position);
             CheckFinish();
         }
+
+        PlayAnimation();
         
         return !isFinishedPath ? NodeState.SUCCESS : NodeState.FAILURE;
     }
@@ -38,7 +41,7 @@ public class DistractedMode : Node
     private void CheckFinish()
     {
         var _distance = Vector3.Distance(distractTarget.position, agent.transform.position);
-        // enemmy.SetColor(Color.yellow);
+        //enemmy.SetColor(Color.yellow);
         
         if (_distance < 5f)
         {
@@ -47,9 +50,14 @@ public class DistractedMode : Node
         }
     }
 
-    MonsterEvent MonsterAnimationEvent = new MonsterEvent();
-    public void monsteranimationevent(UnityAction<int> listener)
+    private void PlayAnimation()
     {
-        MonsterAnimationEvent.AddListener(listener);
+        MonsterAnimator.SetInteger("EMAnimationID",2);
     }
+
+    // MonsterEvent MonsterAnimationEvent = new MonsterEvent();
+    // public void monsteranimationevent(UnityAction<int> listener)
+    // {
+    //     MonsterAnimationEvent.AddListener(listener);
+    // }
 }

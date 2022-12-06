@@ -11,18 +11,20 @@ public class SearchNode : Node
     private PlayerStatus playerStatus;
     
     private GameObject targetPlayer;
-    private Animator animator;
-    public SearchNode(NavMeshAgent _agent, EnemyAI _enemy, Animator _animator)
+    private Animator MonsterAnimator;
+    
+    public SearchNode(NavMeshAgent _agent, EnemyAI _enemy, Animator _Animator)
     {
         this.agent = _agent;
         this.enemy = _enemy;
-        this.animator = _animator;
+        this.MonsterAnimator = _Animator;
     }
 
     public override NodeState Evaluate()
     {
         //Orange
-        // enemy.SetColor(new Color(255, 162, 30, 1));
+        //enemy.SetColor(new Color(255, 162, 30, 1));
+        PlayAnimation();
         
         targetPlayer = EnemyAI.targetedPlayer;
 
@@ -30,10 +32,15 @@ public class SearchNode : Node
 
         if (playerStatus.isHidden)
         {
-            EnemyAI.isDetectedPlayer = false;
+            EnemyAI.isDetectedPlayer = false; 
         }
 
         // return NodeState.SUCCESS;
         return !EnemyAI.isDetectedPlayer ? NodeState.FAILURE : NodeState.SUCCESS;
+    }
+
+    private void PlayAnimation()
+    {
+        MonsterAnimator.SetInteger("EMAnimationID",2);
     }
 }
