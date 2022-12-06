@@ -40,7 +40,7 @@ public class FindPathNode : Node
     
     private void FindPath()
     {
-        enemmy.SetColor(Color.green);
+        // enemmy.SetColor(Color.green);
         var _distance = Vector3.Distance(tempPath[0].transform.position, agent.transform.position);
         
         if (tempPath.Count > 0)
@@ -50,7 +50,7 @@ public class FindPathNode : Node
             agent.SetDestination(tempPath[0].transform.position);
         }
 
-        if (_distance < 0.5f)
+        if (_distance < 0.8f)
         {
             Debug.Log($"Remove path");
 

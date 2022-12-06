@@ -38,7 +38,7 @@ public class DistractedMode : Node
     private void CheckFinish()
     {
         var _distance = Vector3.Distance(distractTarget.position, agent.transform.position);
-        enemmy.SetColor(Color.yellow);
+        // enemmy.SetColor(Color.yellow);
         
         if (_distance < 5f)
         {

@@ -28,16 +28,20 @@ public class EnemyAI : MonoBehaviour
     public static Transform DistractPos;
 
     public static GameObject targetedPlayer;
+
+    private Animator animator;
     
     #endregion
     
     private void Awake()
     {
-        material = GetComponentInChildren<MeshRenderer>().material;
+        // material = GetComponentInChildren<MeshRenderer>().material;
         pratolPaths = GameObject.FindGameObjectsWithTag("EnemyPath").ToList();
         
         if(!TryGetComponent<NavMeshAgent>(out var _agent)) return;
         if(!TryGetComponent<SphereCollider>(out var _sphere)) return;
+
+        animator = GetComponentInChildren<Animator>();
         
         agent = _agent;
         sphereCollider = _sphere;
@@ -54,7 +58,7 @@ public class EnemyAI : MonoBehaviour
         var _chaseNode = new ChaseNode(playerTransform, agent, this);
         var _findPathNode = new FindPathNode(pratolPaths, agent, this);
         var _distractedMode = new DistractedMode(agent, this);
-        var _searchNode = new SearchNode(agent, this);
+        var _searchNode = new SearchNode(agent, this, animator);
 
         var _chaseSequnce = new Sequnce(new List<Node> {_chaseNode, _searchNode});
         var _pratol = new Sequnce(new List<Node> {_findPathNode, _distractedMode});

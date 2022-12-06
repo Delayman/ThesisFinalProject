@@ -21,7 +21,7 @@ public class ChaseNode : Node
     }
     public override NodeState Evaluate()
     {
-        enemmy.SetColor(Color.red);
+        // enemmy.SetColor(Color.red);
         
         MonsterAnimationEvent.Invoke(3);
 

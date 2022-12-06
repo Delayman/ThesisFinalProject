@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
@@ -18,6 +19,11 @@ public class Timer : MonoBehaviour
     {
         if(!isTimeOut && !isResetting) 
             CountDown();
+
+        if (isTimeOut)
+        {
+            BrokeSystem();
+        }
     }
 
     private void CountDown()
@@ -31,5 +37,21 @@ public class Timer : MonoBehaviour
     public void AddTime(float _time)
     {
         timer = _time;
+    }
+
+    private void BrokeSystem()
+    {
+        switch (this.name.First().ToString())
+        {
+            case "C" : 
+                //Broke cam
+                break;
+            case "V" : 
+                //Broke vent
+                break;
+            case "S" : 
+                //Broke sound
+                break;
+        }
     }
 }

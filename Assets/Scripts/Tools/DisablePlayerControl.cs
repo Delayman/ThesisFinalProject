@@ -9,7 +9,7 @@ public class DisablePlayerControl : MonoBehaviour
 
     private FPS_PlayerMovement fps;
     private PlayerInteraction interaction;
-    private GameObject disableUI;
+    private GameObject DisUI;
 
     private void Update()
     {
@@ -19,20 +19,21 @@ public class DisablePlayerControl : MonoBehaviour
         {
             fps = GetComponent<FPS_PlayerMovement>();
             interaction = GetComponent<PlayerInteraction>();
-            disableUI = GameObject.FindWithTag("MainUI");
+            DisUI = GameObject.FindWithTag("MainUI");
         }
         
         if (isDisable)
         {
             fps.enabled = false;
             interaction.enabled = false;
-            disableUI.SetActive(false);
+            DisUI.SetActive(false);
         }
         else
         {
             fps.enabled = true;
             interaction.enabled = true;
-            disableUI.SetActive(true);
+            DisUI.SetActive(true);
+
         }
     }
 }
