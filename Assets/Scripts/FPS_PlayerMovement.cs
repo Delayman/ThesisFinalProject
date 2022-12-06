@@ -44,6 +44,8 @@ public class FPS_PlayerMovement : MonoBehaviour
             //Lock(cursor at middle screen) and Remove Cursor
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+
+            StaminaBar = GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<Slider>();
         }
 
         if (!_view.IsMine)
@@ -55,7 +57,9 @@ public class FPS_PlayerMovement : MonoBehaviour
 
         StaminaBar.maxValue = PlayerMaxStamina;
         StaminaBar.value = PlayerCurrentStamina;
-
+        
+        // var audioSource = GetComponent<AudioSource>();
+        // audioSource.enabled = false;
     }
 
     private void FixedUpdate() 
@@ -108,16 +112,32 @@ public class FPS_PlayerMovement : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
+                // Cursor.lockState = CursorLockMode.None;
+                // Cursor.visible = true;
             }
 
+            PushToTalk();
             RunController();
 
             StaminaBar.value = PlayerCurrentStamina;
 
         }
     
+    }
+
+    private void PushToTalk()
+    {
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            var audioSource = GetComponent<AudioSource>();
+            audioSource.enabled = true;
+        }
+        
+        if (Input.GetKeyUp(KeyCode.V))
+        {
+            var audioSource = GetComponent<AudioSource>();
+            audioSource.enabled = false;
+        }
     }
 
     PlayerEvent PlayerAnimationEvent = new PlayerEvent();

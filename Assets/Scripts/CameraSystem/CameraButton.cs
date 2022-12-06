@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CameraButton : Interactable
@@ -10,7 +11,11 @@ public class CameraButton : Interactable
     private const string OffText = "[E] to watch the camera.";
     private const string OnText = "";
 
-    private bool isOn;
+    public bool isOn;
+    
+    private List<PlayerInteraction> playerList;
+
+    private DisablePlayerControl targetPlayer;
 
     private void Awake()
     {
@@ -26,21 +31,45 @@ public class CameraButton : Interactable
 
     public override string GetDescription()
     {
-        return isOn ? OffText : OnText;
+        return isOn ? OnText : OffText;
     }
 
     public override void Interact()
     {
         isOn = !isOn;
-
+        if (targetPlayer == null)
+        {
+            GetPlayer();
+        }
+        
         ToggleCam();
     }
 
-    private void ToggleCam()
+    private void GetPlayer()
+    {
+        playerList = FindObjectsOfType<PlayerInteraction>().ToList();
+
+        foreach (var player in playerList)
+        {
+            var distance = Vector3.Distance(player.transform.position,this.transform.position);
+
+            if (distance < 10f)
+            {
+                targetPlayer = player.gameObject.GetComponent<DisablePlayerControl>();
+            }
+        }
+    }
+
+    public void ToggleCam()
     {
         if (isOn)
+        {
             camUi.StartCamUI();
+            targetPlayer.isDisableControlAndCam = true;
+        }
         else
-            camUi.HideCamUI();
+        {
+            targetPlayer.isDisableControlAndCam = false;
+        }
     }
 }

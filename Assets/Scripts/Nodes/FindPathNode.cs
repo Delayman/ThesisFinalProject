@@ -48,21 +48,21 @@ public class FindPathNode : Node
         
         if (tempPath.Count > 0)
         {
-            Debug.Log($"Set Path");
+            // Debug.Log($"Set Path");
             agent.isStopped = false;
             agent.SetDestination(tempPath[0].transform.position);
         }
 
         if (_distance < 1f)
         {
-            Debug.Log($"Remove path");
+            // Debug.Log($"Remove path");
 
             tempPath.Remove(tempPath[0]);
         }
 
         if (_distance < 1f && tempPath.Count == 1)
         {
-            Debug.Log($"Add path for loop");
+            // Debug.Log($"Add path for loop");
 
             tempPath.AddRange(savedPath);
         }

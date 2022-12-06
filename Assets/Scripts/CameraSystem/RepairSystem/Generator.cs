@@ -9,8 +9,7 @@ public class Generator : Interactable
     private const string clickText = "[E] to add power";
 
     private bool isHeld;
-
-
+    
     private void Start()
     {
         
@@ -28,15 +27,17 @@ public class Generator : Interactable
 
     private void AddPower()
     {
-        throw new System.NotImplementedException();
+        var generatorTimer = GetComponent<GeneratorTimer>();
+
+        generatorTimer.AddTime(powerToAdd);
     }
 
-    private IEnumerator HoldToAddPower()
-    {
-        while (isHeld)
-        {
-            AddPower();
-            yield return new WaitForSeconds(delay);
-        }
-    }
+    // private IEnumerator HoldToAddPower()
+    // {
+    //     while (isHeld)
+    //     {
+    //         AddPower();
+    //         yield return new WaitForSeconds(delay);
+    //     }
+    // }
 }

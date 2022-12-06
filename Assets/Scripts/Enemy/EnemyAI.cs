@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Serialization;
@@ -12,9 +13,9 @@ public class EnemyAI : MonoBehaviour
     
     [FormerlySerializedAs("_pratolPaths")] [SerializeField] private List<GameObject> pratolPaths = new List<GameObject>();
     
-    [SerializeField] private float chasingRange = 3f;
+    // [SerializeField] private float chasingRange = 3f;
 
-    [SerializeField] private Transform playerTransform;
+    // [SerializeField] private Transform playerTransform;
     
 
     private Material material;
@@ -55,7 +56,7 @@ public class EnemyAI : MonoBehaviour
 
     private void ConstructBehaviourTree()
     {
-        var _chaseNode = new ChaseNode(playerTransform, agent, this, _animator);
+        var _chaseNode = new ChaseNode(agent, this, _animator);
         var _findPathNode = new FindPathNode(pratolPaths, agent, this, _animator);
         var _distractedMode = new DistractedMode(agent, this, _animator);
         var _searchNode = new SearchNode(agent, this, _animator);
@@ -95,6 +96,8 @@ public class EnemyAI : MonoBehaviour
         {
             isDetectedPlayer = true;
             targetedPlayer = other.gameObject;
+            // Debug.Log($"player : {targetedPlayer.name}");
+
             StopCoroutine(StopChaseTimer());
         }
     }
@@ -105,6 +108,15 @@ public class EnemyAI : MonoBehaviour
         {
             StartCoroutine(StopChaseTimer());
         }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            PhotonNetwork.LoadLevel("Scenes/Result");
+        }
+        
     }
 
     private IEnumerator StopChaseTimer()

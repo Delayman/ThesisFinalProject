@@ -5,10 +5,16 @@ using UnityEngine;
 public class ScoreSender : MonoBehaviour
 {
     public static int scoreToBeSend;
-    
-    public void SavedScore(int _roleID)
+    public static float timeToBeSend;
+
+    public void SavedScore(int _savedScore)
     {
-        scoreToBeSend = _roleID;
+        scoreToBeSend = _savedScore;
+    }
+    
+    public void SavedTime(float _savedTime)
+    {
+        timeToBeSend = _savedTime;
     }
     
 }

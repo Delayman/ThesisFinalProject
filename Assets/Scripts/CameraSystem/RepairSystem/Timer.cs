@@ -8,21 +8,44 @@ public class Timer : MonoBehaviour
     [SerializeField] private float timer = 10f;
     public bool isTimeOut;
     public bool isResetting;
+
+    private SystemBrokeDownController ctr;
     
     private void Start()
     {
         isTimeOut = false;
         isResetting = false;
+
+        ctr = FindObjectOfType<SystemBrokeDownController>();
     }
 
     private void Update()
     {
-        if(!isTimeOut && !isResetting) 
+        if (!isTimeOut && !isResetting)
+        {
+            CheckSystem();
             CountDown();
+        }
 
         if (isTimeOut)
         {
             BrokeSystem();
+        }
+    }
+
+    private void CheckSystem()
+    {
+        switch (this.name.First().ToString())
+        {
+            case "C" : 
+                ctr.RepairCam();
+                break;
+            case "S" : 
+                ctr.RepairSound();
+                break;
+            case "V" : 
+                ctr.RepairVent();
+                break;
         }
     }
 
@@ -44,13 +67,13 @@ public class Timer : MonoBehaviour
         switch (this.name.First().ToString())
         {
             case "C" : 
-                //Broke cam
-                break;
-            case "V" : 
-                //Broke vent
+                ctr.BrokeCam();
                 break;
             case "S" : 
-                //Broke sound
+                ctr.BrokeSound();
+                break;
+            case "V" : 
+                ctr.BrokeVent();
                 break;
         }
     }

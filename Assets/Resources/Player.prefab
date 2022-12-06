@@ -118,7 +118,7 @@ GameObject:
   - component: {fileID: 2937873146202804029}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,6 +209,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 6740146939462136849}
+  - {fileID: 2160766690179086274}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -411,7 +412,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6da6a9860e5d1b2488c2f4d5d22fef54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDisable: 0
+  isDisableControlAndCam: 0
+  isDisableUI: 0
+  isDisableInteraction: 0
 --- !u!114 &2937873146202804029
 MonoBehaviour:
   m_ObjectHideFlags: 0

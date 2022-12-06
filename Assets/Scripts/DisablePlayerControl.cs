@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class DisablePlayerControl : MonoBehaviour
 {
-    public bool isDisable;
+    [FormerlySerializedAs("isDisable")] public bool isDisableControlAndCam;
+    public bool isDisableUI;
+    public bool isDisableInteraction;
 
     private FPS_PlayerMovement fps;
     private PlayerInteraction interaction;
@@ -22,18 +25,10 @@ public class DisablePlayerControl : MonoBehaviour
             DisUI = GameObject.FindWithTag("MainUI");
         }
         
-        if (isDisable)
-        {
-            fps.enabled = false;
-            interaction.enabled = false;
-            DisUI.SetActive(false);
-        }
-        else
-        {
-            fps.enabled = true;
-            interaction.enabled = true;
-            DisUI.SetActive(true);
+        fps.enabled = !isDisableControlAndCam;
+        
+        interaction.enabled = !isDisableInteraction;
 
-        }
+        DisUI.SetActive(!isDisableUI);
     }
 }

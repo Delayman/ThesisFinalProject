@@ -18,11 +18,11 @@ public class SpawnPlayers : MonoBehaviour
             
         switch (id)
         {
-            case 0 : spawnPos = spawner[0].transform.position; break;
-            case 1 : spawnPos = spawner[1].transform.position; break;
-            case 2 : spawnPos = spawner[2].transform.position; break;
-            default: Debug.Log("Role out of bound"); break;
-        }
+            case 0 : spawnPos = spawner[0].transform.localPosition; break;
+            case 1 : spawnPos = spawner[1].transform.localPosition; break;
+            case 2 : spawnPos = spawner[2].transform.localPosition; break;
+            // default: Debug.Log("Role out of bound"); break;
+            }
 
         if (PhotonNetwork.LocalPlayer.IsLocal)
             PhotonNetwork.Instantiate(_playerPrefabs.name, spawnPos, Quaternion.identity);

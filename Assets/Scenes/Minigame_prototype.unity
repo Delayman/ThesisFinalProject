@@ -381,7 +381,7 @@ GameObject:
   - component: {fileID: 48946358}
   - component: {fileID: 48946357}
   m_Layer: 0
-  m_Name: Cube (2)
+  m_Name: Generator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -399,6 +399,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95c8fbe443f11e7448b40367544e1fb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentPower: 100
+  maxPower: 100
+  drainSpeed: 1
+  isOutOfPower: 0
 --- !u!114 &48946358
 MonoBehaviour:
   m_ObjectHideFlags: 0

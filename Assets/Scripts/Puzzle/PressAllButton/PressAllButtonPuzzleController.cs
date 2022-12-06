@@ -53,6 +53,8 @@ public class PressAllButtonPuzzleController : MonoBehaviour
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
         FinalPuzzleActive.SetActive(true);
+        var counter = GetComponentInParent<Counter>();
+        counter.AddScore();
         cutplay.CutScene4();
         FinalHint.SetActive(true);
         

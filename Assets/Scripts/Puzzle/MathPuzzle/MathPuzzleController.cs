@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.Playables;
 using System.Linq;
+using Photon.Pun;
 
 
 public class MathPuzzleController : MonoBehaviour
@@ -48,10 +49,15 @@ public class MathPuzzleController : MonoBehaviour
         // rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
-        cutplay.CutScene1();
-        CutScenePlay.PassPuzzle += 1;
-        cutplay.CutScene2();
-            
+        
+        
+        var counter = GetComponentInParent<Counter>();
+        counter.AddScore();
+
+        PlayCutscene();
+
+        this.GetComponent<PhotonView>().RPC("PlayCutscene", RpcTarget.All);
+
         //foreach (var player in DisAblePlayerlist)
         //{
         //    player.isDisable = true;
@@ -59,5 +65,12 @@ public class MathPuzzleController : MonoBehaviour
         //cutseen1.Play();
 
     }
-
+    
+    [PunRPC]
+    void PlayCutscene()
+    {
+        cutplay.CutScene1();
+        CutScenePlay.PassPuzzle += 1;
+        cutplay.CutScene2();
+    }
 }
