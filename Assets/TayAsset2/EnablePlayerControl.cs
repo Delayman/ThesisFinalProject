@@ -15,7 +15,9 @@ public class EnablePlayerControl : MonoBehaviour
     {
         foreach (var player in DisAblePlayerlist)
         {
-            player.isDisable = false;
+            player.isDisableControlAndCam = false;
+            player.isDisableUI = false;
+            player.isDisableInteraction = false;
         }
         
     }
