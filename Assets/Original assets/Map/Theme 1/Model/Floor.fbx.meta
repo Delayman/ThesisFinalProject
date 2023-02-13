@@ -7,8 +7,33 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Floor_Mat
-    second: {fileID: 2100000, guid: a3b14813412f6494a94aa1ac7327621c, type: 2}
+      name: Floor_1
+    second: {fileID: 2100000, guid: 605b768f4c0627f478e4ea406f23dfe4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_2
+    second: {fileID: 2100000, guid: 6e87157c23ef0a540a246cddb31a8d4d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_3
+    second: {fileID: 2100000, guid: 3ae7f7f1be02e0f4c8204d31ad65ba3d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_4
+    second: {fileID: 2100000, guid: a7a2989986e03fc45a9feff126dc156b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_5
+    second: {fileID: 2100000, guid: a090007b9c377c140976315f230789ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Floor_6
+    second: {fileID: 2100000, guid: d2dc2b9975b83ec4a9e98f6faf53a92a, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -50,7 +75,7 @@ ModelImporter:
     importLights: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
