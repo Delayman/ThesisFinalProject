@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using TMPro;
 
@@ -31,12 +32,15 @@ public class MultiplyButton : Interactable
 
     public override void Interact()
     {
-        isOn = true;
-        GetTextBox();
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("GetTextBoxMul", RpcTarget.All);
     }
 
-    private void GetTextBox()
+    [PunRPC]
+    private void GetTextBoxMul()
     {
+        isOn = true;
+
         resultText.UpdateText(state);
         resultText.MultiplyState(multiplyNum);
         resultText.ChangeStateToAll(multiplyNum);

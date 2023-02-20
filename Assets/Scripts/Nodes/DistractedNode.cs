@@ -22,7 +22,6 @@ public class DistractedMode : Node
 
     public override NodeState Evaluate()
     {
-
         isDistracted = EnemyAI.isDistractedbyPlayer;
         isFinishedPath = false;
 

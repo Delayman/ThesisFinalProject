@@ -7,8 +7,7 @@ public abstract class Interactable : MonoBehaviour
     public enum InteractionType
     {
         Click,
-        Hold,
-        
+        Hold
     }
 
     float holdTime;

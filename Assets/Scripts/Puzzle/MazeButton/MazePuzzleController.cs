@@ -34,6 +34,8 @@ public class MazePuzzleController : MonoBehaviour
        // rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
+        var counter = GetComponentInParent<Counter>();
+        counter.AddScore();
         CutScenePlay.PassPuzzle += 1;
         cutplay.CutScene2();
     }

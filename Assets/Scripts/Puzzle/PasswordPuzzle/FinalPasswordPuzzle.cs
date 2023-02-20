@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class FinalPasswordPuzzle : Interactable
@@ -21,7 +22,8 @@ public class FinalPasswordPuzzle : Interactable
 
     public override void Interact()
     {
-        AddPasswordDigit();
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("AddPasswordDigit", RpcTarget.All);
     }
 
     private void AddPasswordDigit()

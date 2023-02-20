@@ -10,6 +10,7 @@ TagManager:
   - ObjectiveObj
   - InteractTextField
   - MainUI
+  - StaminaBar
   layers:
   - Default
   - TransparentFX

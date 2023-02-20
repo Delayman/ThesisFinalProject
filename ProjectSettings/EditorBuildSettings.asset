@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/TayAsset2/JumpScare.unity
+    guid: 1f3dbf2d7dfe3cc40bb8d53d78f67d5b
+  - enabled: 1
+    path: Assets/TayAsset2/TestJumpMusicScene.unity
+    guid: edaf65882bb95a247a9b9e5cece30dfd
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: b5aab99ee737e1e4d902969f5225e797
   - enabled: 1
@@ -14,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lab_Map2.unity
     guid: a036165177a44e94f8f49c90ae90f2ad
+  - enabled: 1
+    path: Assets/Scenes/Result.unity
+    guid: 2a8625f1e178bbf47bcfa33aab282bc0
   - enabled: 0
     path: Assets/Scenes/Lab_Map.unity
     guid: 1cbcca3d4e0599e4a8009a83c4f5c5c2

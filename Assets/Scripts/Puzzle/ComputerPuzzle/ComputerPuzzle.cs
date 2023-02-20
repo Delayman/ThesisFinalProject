@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
@@ -31,8 +32,6 @@ public class ComputerPuzzle : Interactable
     //    oldMesh = GetComponent<MeshFilter>().mesh;
         ctr = FindObjectOfType<ComputerPuzzleController>();
         
-
-
         if (GetComponent<CorrectOne>() != null)
         {
             correctOne = GetComponent<CorrectOne>();
@@ -52,13 +51,15 @@ public class ComputerPuzzle : Interactable
 
     public override void Interact()
     {
-        isOn = !isOn;
-
-        ToggleSwitch();
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("ToggleComSwitch", RpcTarget.All);
     }
 
-    private void ToggleSwitch()
+    [PunRPC]
+    private void ToggleComSwitch()
     {
+        isOn = !isOn;
+        
         //objMeshFilter.mesh = isOn ? toggledMesh : oldMesh;
         if (isOn)
         {

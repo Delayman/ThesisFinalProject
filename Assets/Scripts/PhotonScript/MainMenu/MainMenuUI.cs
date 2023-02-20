@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenuUI : MonoBehaviour
 {
+    public GameObject OptionCanvas;
     public void OnStartGamePressed()
     {
         SceneManager.LoadScene("Scenes/Lobby");
@@ -12,6 +13,11 @@ public class MainMenuUI : MonoBehaviour
     public void OnQuitPressed()
     {
         Application.Quit();
+    }
+
+    public void OnOptionPressed()
+    {
+        OptionCanvas.SetActive(true);
     }
     
 }

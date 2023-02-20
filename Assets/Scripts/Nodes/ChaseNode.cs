@@ -7,17 +7,18 @@ using UnityEngine.Events;
 
 public class ChaseNode : Node
 {
-    private Transform target;
     private NavMeshAgent agent;
-    private EnemyAI enemmy;
+    private EnemyAI enemy;
     private float chaseTimer;
     private Animator MonsterAnimator;
+    
+    private GameObject targetPlayer;
+    private PlayerStatus playerStatus;
 
-    public ChaseNode(Transform _target, NavMeshAgent _agent, EnemyAI _enemy, Animator _animator)
+    public ChaseNode(NavMeshAgent _agent, EnemyAI _enemy, Animator _animator)
     {
-        this.target = _target;
         this.agent = _agent;
-        this.enemmy = _enemy;
+        this.enemy = _enemy;
         chaseTimer = 0f;
         this.MonsterAnimator = _animator;
     }
@@ -27,16 +28,27 @@ public class ChaseNode : Node
         
         // MonsterAnimationEvent.Invoke(3);
 
-        var _distance = Vector3.Distance(target.position, agent.transform.position);
-
-        if (_distance > 0.1f)
+        // var _distance = Vector3.Distance(target.position, agent.transform.position);
+        //
+        // if (_distance > 0.1f)
+        // {
+        //     agent.isStopped = false;
+        //     agent.SetDestination(target.position);
+        //     return NodeState.RUNNING;
+        // }
+        
+        targetPlayer = EnemyAI.targetedPlayer;
+        
+        if (targetPlayer != null)
         {
+            playerStatus = targetPlayer.GetComponent<PlayerStatus>();
+
             agent.isStopped = false;
-            agent.SetDestination(target.position);
+            agent.SetDestination(targetPlayer.transform.position);
             return NodeState.RUNNING;
         }
 
-        return chaseTimer <= 0 ? NodeState.SUCCESS : NodeState.FAILURE;
+        return NodeState.SUCCESS;
     }
 
     // private void ChasingTime()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class MazeButton : Interactable
@@ -23,13 +24,15 @@ public class MazeButton : Interactable
 
     public override void Interact()
     {
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("SetMazeComplete", RpcTarget.All);
+    }
+    
+    [PunRPC]
+    private void SetMazeComplete()
+    {
         isOn = true;
 
-        SetComplete();
-    }
-
-    private void SetComplete()
-    {
         ctr.CheckCompleted();
     }
 }

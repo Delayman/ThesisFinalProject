@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Photon.Pun;
 using UnityEngine;
 
 public class IcePuzzle : Interactable
@@ -31,9 +32,11 @@ public class IcePuzzle : Interactable
 
     public override void Interact()
     {
-        CheckDirectionButton();
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("CheckDirectionButton", RpcTarget.All);
     }
 
+    [PunRPC]
     private void CheckDirectionButton()
     {
         switch (directionButtons.name.Last().ToString())

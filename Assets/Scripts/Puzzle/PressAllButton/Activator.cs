@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Photon.Pun;
 using UnityEngine;
 
 public class Activator : Interactable
@@ -32,12 +33,15 @@ public class Activator : Interactable
 
     public override void Interact()
     {
-        isOn = true;
-        ToggleSwitch();
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("ToggleActivatorSwitch", RpcTarget.All);
     }
-
-    private void ToggleSwitch()
+    
+    [PunRPC]
+    private void ToggleActivatorSwitch()
     {
+        isOn = true;
+
         foreach (var _receiver in receivers)
         {
             _receiver.gameObject.SetActive(true);

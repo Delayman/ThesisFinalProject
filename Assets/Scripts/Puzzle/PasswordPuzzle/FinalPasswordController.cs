@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using TMPro;
 using UnityEngine;
 
@@ -48,7 +49,11 @@ public class FinalPasswordController : MonoBehaviour
 
             NoComplete.SetActive(false);
             HaveBeenComplete.SetActive(true);
+            var counter = GetComponentInParent<Counter>();
+            counter.AddScore();
             passwordInputField.text = "PASS";
+            
+            PhotonNetwork.LoadLevel("Scenes/Result");
         }
         if (passwordInputField.text.Length > 5)
         {

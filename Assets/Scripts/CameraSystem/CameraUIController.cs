@@ -10,6 +10,7 @@ public class CameraUIController : MonoBehaviour
     [SerializeField] private string role = "Watcher";
 
     private CameraButtonController camBtnCtr;
+    private CameraButton camExitBtn;
     private List<RoleSetting> roleSettings;
 
     private GameObject watcher;
@@ -20,17 +21,21 @@ public class CameraUIController : MonoBehaviour
     {
         roleSettings = FindObjectsOfType<RoleSetting>().ToList();
         camBtnCtr = FindObjectOfType<CameraButtonController>();
+        camExitBtn = FindObjectOfType<CameraButton>();
 
         camUI.SetActive(false);
     }
 
     public void HideCamUI()
     {
-        audio.enabled = true;
+        // audio.enabled = true;
         
         LockCursor();
         camBtnCtr.DisableAllCam(); 
         camUI.SetActive(false);
+
+        camExitBtn.isOn = false;
+        camExitBtn.ToggleCam();
     }
     
     public void StartCamUI()
@@ -41,31 +46,31 @@ public class CameraUIController : MonoBehaviour
         camUI.SetActive(true);
     }
 
-    private bool FindWatcher()
-    {
-        foreach (var _role in roleSettings)
-        {
-            if (_role.roleName == role)
-            {
-                watcher = _role.gameObject;
-                return true;
-            }
-        }
-
-        return false;
-    }
+    // private bool FindWatcher()
+    // {
+    //     foreach (var _role in roleSettings)
+    //     {
+    //         if (_role.roleName == role)
+    //         {
+    //             watcher = _role.gameObject;
+    //             return true;
+    //         }
+    //     }
+    //
+    //     return false;
+    // }
 
     private void DisableAudioWhenStartCam()
     {
-        var isfound = FindWatcher();
+        // var isfound = FindWatcher();
 
-        if (isfound)
-        {
-            audio = watcher.GetComponentInChildren(typeof(AudioListener)) as AudioListener;
-            audio.enabled = false;
-        }
-        else
-            Debug.Log($"Player with <color=red>WATCHER role</color> was NOT FOUND");
+        // if (isfound)
+        // {
+        //     audio = watcher.GetComponentInChildren(typeof(AudioListener)) as AudioListener;
+        //     audio.enabled = false;
+        // }
+        // else
+        //     Debug.Log($"Player with <color=red>WATCHER role</color> was NOT FOUND");
         
     }
 

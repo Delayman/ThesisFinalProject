@@ -1,11 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using System.Linq;
+using Photon.Pun;
 
 public class CutScenePlay : MonoBehaviour
 {
+    [SerializeField] private EnemyAI enemyPrefab;
+    [SerializeField] private GameObject spawnPos;
+    
     public PlayableDirector cutseen1;
     public PlayableDirector cutseen2;
     public PlayableDirector cutseen3;
@@ -13,7 +18,7 @@ public class CutScenePlay : MonoBehaviour
 
     public static int PassPuzzle;
     private List<DisablePlayerControl> DisAblePlayerlist;
-    // Start is called before the first frame update
+
     void Start()
     {
         DisAblePlayerlist = FindObjectsOfType<DisablePlayerControl>().ToList();
@@ -24,10 +29,21 @@ public class CutScenePlay : MonoBehaviour
     {
         foreach (var player in DisAblePlayerlist)
         {
-            player.isDisable = true;
+            player.isDisableControlAndCam = true;
+            player.isDisableUI = true;
+            player.isDisableInteraction = true;
         }
         cutseen1.Play();
+        // cutseen1.stopped += SpawnEnemy;
     }
+
+    // private void SpawnEnemy(PlayableDirector aDirector)
+    // {
+    //     if (cutseen1 == aDirector)
+    //     {
+    //         PhotonNetwork.Instantiate(enemyPrefab.name, spawnPos.transform.position, Quaternion.identity);
+    //     }
+    // }
 
     public void CutScene2()
     {
@@ -35,7 +51,9 @@ public class CutScenePlay : MonoBehaviour
         {
             foreach (var player in DisAblePlayerlist)
             {
-                player.isDisable = true;
+                player.isDisableControlAndCam = true;
+                player.isDisableUI = true;
+                player.isDisableInteraction = true;
             }
             cutseen2.Play();
         }
@@ -45,16 +63,31 @@ public class CutScenePlay : MonoBehaviour
     {
         foreach (var player in DisAblePlayerlist)
         {
-            player.isDisable = true;
+            player.isDisableControlAndCam = true;
+            player.isDisableUI = true;
+            player.isDisableInteraction = true;
         }
         cutseen3.Play();
     }
+    
     public void CutScene4()
     {
         foreach (var player in DisAblePlayerlist)
         {
-            player.isDisable = true;
+            player.isDisableControlAndCam = true;
+            player.isDisableUI = true;
+            player.isDisableInteraction = true;
         }
         cutseen4.Play();
     }
+    
+    // private void OnDisable()
+    // {
+    //     cutseen1.stopped -= SpawnEnemy;
+    // }
+    //
+    // private void OnDestroy()
+    // {
+    //     cutseen1.stopped -= SpawnEnemy;
+    // }
 }
