@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class Receiver : Interactable
@@ -28,6 +29,13 @@ public class Receiver : Interactable
     }
 
     public override void Interact()
+    {
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("ToggleReceiverSwitch", RpcTarget.All);
+    }
+    
+    [PunRPC]
+    private void ToggleReceiverSwitch()
     {
         isOn = true;
         ctr.CheckCompleted();

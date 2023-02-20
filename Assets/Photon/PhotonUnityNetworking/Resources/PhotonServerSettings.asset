@@ -43,6 +43,17 @@ MonoBehaviour:
   - Fire
   - RespawnSpaceship
   - PlayCutscene
+  - AddPowerToAllClient
+  - CheckDirectionButton
+  - GetTextBox
+  - ResetPos
+  - ToggleSwitch
+  - GetTextBoxDiv
+  - GetTextBoxMul
+  - SetMazeComplete
+  - ToggleActivatorSwitch
+  - ToggleComSwitch
+  - ToggleReceiverSwitch
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

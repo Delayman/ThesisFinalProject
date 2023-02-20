@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 using TMPro;
 
@@ -31,12 +32,15 @@ public class DivideButton : Interactable
 
     public override void Interact()
     {
-        isOn = true;
-        GetTextBox();
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("GetTextBoxDiv", RpcTarget.All);
     }
-
-    private void GetTextBox()
+    
+    [PunRPC]
+    private void GetTextBoxDiv()
     {
+        isOn = true;
+        
         resultText.UpdateText(state);
         resultText.DivideState(divideNum);
         resultText.ChangeStateToAll(divideNum);
