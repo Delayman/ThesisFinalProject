@@ -2568,7 +2568,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1155150988}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 148897428}
@@ -2727,6 +2727,10 @@ MonoBehaviour:
   SfxMixer: {fileID: 24100000, guid: 9522510f0e9494c4a844b5fa35245832, type: 2}
   musicSlider: {fileID: 1851697052}
   SfxSlider: {fileID: 916778103}
+  FullScreentoggle: {fileID: 0}
+  resolutionDropDown: {fileID: 0}
+  CurrentReFreshRate: 0
+  CurrentResolutionIndex: 0
 --- !u!114 &1350666888
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,14 +8,15 @@ using UnityEngine.UI;
 public class FPS_PlayerMovement : MonoBehaviour
 {
     [SerializeField]
-    private float playerMoveSpeed = 5f;
+    private float playerMoveSpeed;
+    [SerializeField] float playerWalkSpeed = 5f;
+    [SerializeField] float playerRunSpeed = 10f;
     [SerializeField]
     private float playerLookSpeed = 5f;
     [SerializeField] float PlayerMaxStamina = 10f;
     [SerializeField] float PlayerCurrentStamina = 10f;
     [SerializeField] Slider StaminaBar;
     bool isrun;
-    bool ismove;
     private PhotonView _view;
 
     //Y axis limit cam rotation stuff
@@ -29,9 +30,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     private Camera cam;
     void Awake()
     {
-        SaveSpeed();
         isrun = false;
-        ismove = false;
     }
     private void Start()
     {
@@ -79,13 +78,14 @@ public class FPS_PlayerMovement : MonoBehaviour
             //Apply moving speed
             if(velocity != Vector3.zero)
             {
+                PlayerSpeedSet();
                 rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
-                ismove = true;
             }
             else
             {
-                ismove = false;
+                PlayerAnimationEvent.Invoke(0);
             }
+            Staminacontroller();
 
             //Getting Input from mouse to move screen
             float horizontalRot = Input.GetAxisRaw("Mouse X");
@@ -117,7 +117,6 @@ public class FPS_PlayerMovement : MonoBehaviour
             }
 
             PushToTalk();
-            RunController();
 
             StaminaBar.value = PlayerCurrentStamina;
 
@@ -147,49 +146,27 @@ public class FPS_PlayerMovement : MonoBehaviour
         //Debug.Log("Invoked!!");
     }
 
-    void RunController()
-    {
-        PlayerSpeedSet();
-        PlayerSpeedCheck();
-        Staminacontroller();
-    }
-
     void PlayerSpeedSet()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift)&& PlayerCurrentStamina >= 1)
+        if (Input.GetKey(KeyCode.LeftShift)&& PlayerCurrentStamina >= 1)
         {
-            playerMoveSpeed = PlayerPrefs.GetFloat("PlayerDefaultSpeed") * 2;
-            //Debug.Log("Press shif!");
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftShift) || PlayerCurrentStamina <= 0)
-        {
-            playerMoveSpeed = PlayerPrefs.GetFloat("PlayerDefaultSpeed");
-            isrun = false;
-            //Debug.Log("Unpress shif!");
-        }
-    }
-
-    void PlayerSpeedCheck()
-    {
-        if (playerMoveSpeed == PlayerPrefs.GetFloat("PlayerDefaultSpeed"))
-        {
-            isrun = false;
-            if(ismove == true)
-            {
-            PlayerAnimationEvent.Invoke(1);
-            }
-            else if(ismove == false)
-            {
-            PlayerAnimationEvent.Invoke(0);
-            }
-            
-        }
-        if (playerMoveSpeed > PlayerPrefs.GetFloat("PlayerDefaultSpeed"))
-        {
+            playerMoveSpeed = playerRunSpeed;
             isrun = true;
             PlayerAnimationEvent.Invoke(2);
         }
+        else if (Input.GetKey(KeyCode.LeftShift) && PlayerCurrentStamina <= 0)
+        {
+            playerMoveSpeed = playerWalkSpeed;
+            isrun = false;
+            PlayerAnimationEvent.Invoke(1);
+        }
+        else
+        {
+            playerMoveSpeed = playerWalkSpeed;
+            PlayerAnimationEvent.Invoke(1);
+        }
     }
+
 
     void Staminacontroller()
     {
@@ -213,11 +190,5 @@ public class FPS_PlayerMovement : MonoBehaviour
         {
             PlayerCurrentStamina = PlayerMaxStamina;
         }
-    }
-    void SaveSpeed()
-    {
-        PlayerPrefs.SetFloat("PlayerDefaultSpeed", playerMoveSpeed);
-        PlayerPrefs.Save();
-        float speed = PlayerPrefs.GetFloat("PlayerDefaultSpeed");
     }
 }

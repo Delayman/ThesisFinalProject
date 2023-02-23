@@ -184,6 +184,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMoveSpeed: 5
+  playerWalkSpeed: 5
+  playerRunSpeed: 10
   playerLookSpeed: 5
   PlayerMaxStamina: 10
   PlayerCurrentStamina: 10
