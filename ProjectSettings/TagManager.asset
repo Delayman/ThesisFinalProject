@@ -11,6 +11,7 @@ TagManager:
   - InteractTextField
   - MainUI
   - StaminaBar
+  - PlayerUI
   layers:
   - Default
   - TransparentFX
