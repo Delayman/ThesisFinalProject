@@ -163,6 +163,7 @@ public class FPS_PlayerMovement : MonoBehaviour
         else
         {
             playerMoveSpeed = playerWalkSpeed;
+            isrun = false;
             PlayerAnimationEvent.Invoke(1);
         }
     }
@@ -170,11 +171,11 @@ public class FPS_PlayerMovement : MonoBehaviour
 
     void Staminacontroller()
     {
-        if (isrun == true)
+        if (isrun)
         {
             PlayerCurrentStamina -= 2f * Time.deltaTime;
         }
-        else if (isrun == false)
+        else
         {
             StaminaRegeneration();
         }
