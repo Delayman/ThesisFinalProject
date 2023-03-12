@@ -49,10 +49,10 @@ public class MathPuzzleController : MonoBehaviour
         // rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
-        
-        
-        var counter = GetComponentInParent<Counter>();
-        counter.AddScore();
+
+
+        //var counter = GetComponentInParent<Counter>();
+        //counter.AddScore();
 
         PlayCutscene();
 
