@@ -51,9 +51,10 @@ public class HidingScript : Interactable
         {
             distance = Vector3.Distance(player.transform.position,hidingSpot.transform.position);
 
-            if (distance < hidingRadius)
+            if (distance < hidingRadius && player.GetComponent<PlayerStatus>().requestHiding == true)
             {
                 targetPlayer = player.gameObject;
+                player.GetComponent<PlayerStatus>().requestHiding = false;
             }
         }
     }
@@ -64,7 +65,7 @@ public class HidingScript : Interactable
 
         targetPlayer.transform.position = this.transform.position + hidingOffSet;
         targetPlayer.transform.eulerAngles = this.transform.eulerAngles + hidingRotationOffSet;
-        targetPlayer.gameObject.GetComponent<FPS_PlayerMovement>().enabled = false;
+        // targetPlayer.gameObject.GetComponent<FPS_PlayerMovement>().enabled = false;
         targetPlayer.gameObject.GetComponent<PlayerStatus>().isHidden = true;
         
         //Lock camera NEEDED!!!!!

@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6d3d0b2c7e88da4099bcb2a68ce53ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionDistance: 10
+  interactionDistance: 5
   interactionText: {fileID: 0}
   cam: {fileID: 4421393261196023202}
 --- !u!114 &8515580375883461334
@@ -446,6 +446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHidden: 0
+  requestHiding: 0
 --- !u!1 &4421393261196023205
 GameObject:
   m_ObjectHideFlags: 0

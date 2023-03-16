@@ -86,6 +86,13 @@ public class LobbyNetworkManager : MonoBehaviourPunCallbacks
         
         Lobby_UI.SetActive(false);
         Room_UI.SetActive(true);
+        
+        var _tempObj = new GameObject();
+        _tempObj.AddComponent<SavedRole>();
+        _tempObj.name = "Saved role ID";
+        DontDestroyOnLoad(_tempObj);
+
+        _tempObj.GetComponent<SavedRole>().SavedRoleID(roleDropDown.value);
 
         UpdatePlayerList();
     }
@@ -199,12 +206,14 @@ public class LobbyNetworkManager : MonoBehaviourPunCallbacks
     
     public void OnPressedStartGame()
     {
-        var _tempObj = new GameObject();
-        _tempObj.AddComponent<SavedRole>();
-        _tempObj.name = "Saved role ID";
-        DontDestroyOnLoad(_tempObj);
-
-        _tempObj.GetComponent<SavedRole>().SavedRoleID(roleDropDown.value);
         PhotonNetwork.LoadLevel("Scenes/Lab_Map2");
+    }
+
+    public void OnchangeValue()
+    {
+        var _tempObj = GameObject.Find("Saved role ID");
+        
+        Debug.Log($"Slider : {_tempObj}");
+        _tempObj.GetComponent<SavedRole>().SavedRoleID(roleDropDown.value);
     }
 }

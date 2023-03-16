@@ -9,5 +9,7 @@ public class SavedRole : MonoBehaviour
     public void SavedRoleID(int _roleID)
     {
         savedRoleID = _roleID;
+        
+        Debug.Log($"Value : {savedRoleID}");
     }
 }

@@ -17,7 +17,6 @@ public class FPS_PlayerMovement : MonoBehaviour
     [SerializeField] float PlayerCurrentStamina = 10f;
     [SerializeField] Slider StaminaBar;
     bool isrun;
-    bool isrunable;
     private PhotonView _view;
 
     //Y axis limit cam rotation stuff
@@ -32,7 +31,6 @@ public class FPS_PlayerMovement : MonoBehaviour
     void Awake()
     {
         isrun = false;
-        isrunable = true;
     }
     private void Start()
     {
@@ -145,11 +143,12 @@ public class FPS_PlayerMovement : MonoBehaviour
     public void playeranimationevent(UnityAction<int> listener)
     {
         PlayerAnimationEvent.AddListener(listener);
+        //Debug.Log("Invoked!!");
     }
 
     void PlayerSpeedSet()
     {
-        if (Input.GetKey(KeyCode.LeftShift)&& PlayerCurrentStamina > 0 && isrunable)
+        if (Input.GetKey(KeyCode.LeftShift)&& PlayerCurrentStamina >= 1)
         {
             playerMoveSpeed = playerRunSpeed;
             isrun = true;
@@ -164,7 +163,6 @@ public class FPS_PlayerMovement : MonoBehaviour
         else
         {
             playerMoveSpeed = playerWalkSpeed;
-            isrun = false;
             PlayerAnimationEvent.Invoke(1);
         }
     }
@@ -172,12 +170,11 @@ public class FPS_PlayerMovement : MonoBehaviour
 
     void Staminacontroller()
     {
-        if (isrun)
+        if (isrun == true)
         {
             PlayerCurrentStamina -= 2f * Time.deltaTime;
-            StaminaCheck();
         }
-        else
+        else if (isrun == false)
         {
             StaminaRegeneration();
         }
@@ -193,20 +190,5 @@ public class FPS_PlayerMovement : MonoBehaviour
         {
             PlayerCurrentStamina = PlayerMaxStamina;
         }
-    }
-
-    void StaminaCheck()
-    {
-        if (PlayerCurrentStamina <= 0)
-        {
-            isrunable = false;
-            StartCoroutine(ResetIsrunable());
-        }
-    }
-
-    IEnumerator ResetIsrunable()
-    {
-        yield return new WaitForSeconds(3f);
-        isrunable = true;
     }
 }
