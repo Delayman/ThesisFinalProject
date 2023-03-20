@@ -2385,11 +2385,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046488472181656403, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5046488472181656403, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5046488472181656403, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_LocalScale.z
@@ -2475,6 +2475,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 69399883}
+    - target: {fileID: 8928636625999037825, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_Value
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928636625999037825, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8928636627305089596, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -11024,11 +11032,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5046488472181656403, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5046488472181656403, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5046488472181656403, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_LocalScale.z
@@ -11114,6 +11122,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 69399883}
+    - target: {fileID: 8928636625999037825, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_Value
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928636625999037825, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8928636627305089596, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
@@ -21398,6 +21414,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RunnerUI
       objectReference: {fileID: 0}
+    - target: {fileID: 393121574318850615, guid: 0c159cebfa201be48a0ae1e22ad8b296, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1280
+      objectReference: {fileID: 0}
+    - target: {fileID: 393121574318850615, guid: 0c159cebfa201be48a0ae1e22ad8b296, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 720
+      objectReference: {fileID: 0}
     - target: {fileID: 393121575120254280, guid: 0c159cebfa201be48a0ae1e22ad8b296, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -21414,6 +21438,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 69399883}
+    - target: {fileID: 2756479029655897245, guid: 0c159cebfa201be48a0ae1e22ad8b296, type: 3}
+      propertyPath: m_Value
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756479029655897245, guid: 0c159cebfa201be48a0ae1e22ad8b296, type: 3}
+      propertyPath: m_MaxValue
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2756479029655897245, guid: 0c159cebfa201be48a0ae1e22ad8b296, type: 3}
+      propertyPath: m_Colors.m_ColorMultiplier
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2756479030022425376, guid: 0c159cebfa201be48a0ae1e22ad8b296, type: 3}
       propertyPath: m_AnchorMax.x
       value: 1
