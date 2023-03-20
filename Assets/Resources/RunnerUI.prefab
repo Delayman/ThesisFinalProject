@@ -144,6 +144,14 @@ PrefabInstance:
       value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5046488472181656403, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046488472181656403, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5046488472181656403, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -194,6 +202,14 @@ PrefabInstance:
     - target: {fileID: 6918210432059957106, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_Name
       value: PlayerUITemplate
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928636627305089596, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928636627305089596, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
