@@ -31,8 +31,9 @@ public class DistractedMode : Node
             agent.SetDestination(distractTarget.position);
             CheckFinish();
         }
-
-        PlayAnimation();
+        
+        // TO DO Fix animation
+        // PlayAnimation();
         
         return !isFinishedPath ? NodeState.SUCCESS : NodeState.FAILURE;
     }
@@ -40,7 +41,6 @@ public class DistractedMode : Node
     private void CheckFinish()
     {
         var _distance = Vector3.Distance(distractTarget.position, agent.transform.position);
-        //enemmy.SetColor(Color.yellow);
         
         if (_distance < 5f)
         {
@@ -53,10 +53,4 @@ public class DistractedMode : Node
     {
         MonsterAnimator.SetInteger("EMAnimationID",2);
     }
-
-    // MonsterEvent MonsterAnimationEvent = new MonsterEvent();
-    // public void monsteranimationevent(UnityAction<int> listener)
-    // {
-    //     MonsterAnimationEvent.AddListener(listener);
-    // }
 }
