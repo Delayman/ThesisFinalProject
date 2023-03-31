@@ -27,14 +27,13 @@ public class DistractedMode : Node
 
         if (isDistracted && !isFinishedPath)
         {
+            PlayAnimation();
+
             distractTarget = EnemyAI.DistractPos;
             agent.SetDestination(distractTarget.position);
             CheckFinish();
         }
-        
-        // TO DO Fix animation
-        // PlayAnimation();
-        
+
         return !isFinishedPath ? NodeState.SUCCESS : NodeState.FAILURE;
     }
 

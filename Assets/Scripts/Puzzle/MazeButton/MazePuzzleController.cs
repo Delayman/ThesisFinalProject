@@ -15,6 +15,9 @@ public class MazePuzzleController : MonoBehaviour
     public GameObject NoComplete;
     public GameObject HaveBeenComplete;
     public CutScenePlay cutplay;
+    
+    private TimerManager timer;
+
     private void Start()
     {
         completeBtn = FindObjectOfType<MazeButton>();
@@ -22,6 +25,8 @@ public class MazePuzzleController : MonoBehaviour
         //rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
         NoComplete.SetActive(true);
         HaveBeenComplete.SetActive(false);
+        timer = FindObjectOfType<TimerManager>();
+
     }
 
     public void CheckCompleted()
@@ -38,5 +43,7 @@ public class MazePuzzleController : MonoBehaviour
         counter.AddScore();
         CutScenePlay.PassPuzzle += 1;
         cutplay.CutScene2();
+        timer.TriggerCompleteTimerSix();
+
     }
 }

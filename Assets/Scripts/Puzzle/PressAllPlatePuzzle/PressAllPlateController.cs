@@ -16,6 +16,8 @@ public class PressAllPlateController : MonoBehaviour
     private bool isCompleted;
     public GameObject NoComplete;
     public GameObject HaveBeenComplete;
+    
+    private TimerManager timer;
 
     public CutScenePlay cutplay;
     private void Awake()
@@ -30,6 +32,8 @@ public class PressAllPlateController : MonoBehaviour
        // rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
         NoComplete.SetActive(true);
         HaveBeenComplete.SetActive(false);
+        timer = FindObjectOfType<TimerManager>();
+        timer.TriggerCompleteTimerTwo();
     }
 
     public void CheckCompleted(Checker _checker)

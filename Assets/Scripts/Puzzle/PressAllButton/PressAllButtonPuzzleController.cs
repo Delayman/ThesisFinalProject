@@ -18,6 +18,9 @@ public class PressAllButtonPuzzleController : MonoBehaviour
     public CutScenePlay cutplay;
     public GameObject FinalPuzzleActive;
     public GameObject FinalHint;
+    
+    private TimerManager timer;
+
     private void Awake()
     {
         reciverActivedList ??= new List<Receiver>();
@@ -32,6 +35,7 @@ public class PressAllButtonPuzzleController : MonoBehaviour
         HaveBeenComplete.SetActive(false);
         FinalPuzzleActive.SetActive(false);
         FinalHint.SetActive(false);
+        timer = FindObjectOfType<TimerManager>();
 
     }
 
@@ -57,7 +61,8 @@ public class PressAllButtonPuzzleController : MonoBehaviour
         counter.AddScore();
         cutplay.CutScene4();
         FinalHint.SetActive(true);
-        
+        timer.TriggerCompleteTimerThree();
+
     }
 
 }

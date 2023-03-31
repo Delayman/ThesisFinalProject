@@ -13,6 +13,9 @@ public class IcePuzzleController : MonoBehaviour
     public GameObject NoComplete;
     public GameObject HaveBeenComplete;
     public CutScenePlay cutplay;
+    
+    private TimerManager timer;
+
     private void Start()
     {
         goal = FindObjectOfType<IcePuzzleGoal>();
@@ -22,6 +25,8 @@ public class IcePuzzleController : MonoBehaviour
         HaveBeenComplete.SetActive(false);
         CutScenePlay.PassPuzzle += 1;
         cutplay.CutScene2();
+        timer = FindObjectOfType<TimerManager>();
+
     }
 
     public void CheckComplete()
@@ -34,6 +39,8 @@ public class IcePuzzleController : MonoBehaviour
         HaveBeenComplete.SetActive(true);
         var counter = GetComponentInParent<Counter>();
         counter.AddScore();
+        timer.TriggerCompleteTimerFive();
+
     }
     
 }

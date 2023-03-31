@@ -44,6 +44,6 @@ public class SearchNode : Node
     private void PlayAnimation()
     {
         Debug.Log($"Search");
-        MonsterAnimator.SetInteger("EMAnimationID",4);
+        MonsterAnimator.SetInteger("EMAnimationID",1);
     }
 }
