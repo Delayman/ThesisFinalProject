@@ -12,6 +12,7 @@ TagManager:
   - MainUI
   - StaminaBar
   - PlayerUI
+  - HidingLocker
   layers:
   - Default
   - TransparentFX

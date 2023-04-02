@@ -24,19 +24,6 @@ public class ChaseNode : Node
     }
     public override NodeState Evaluate()
     {
-        //enemmy.SetColor(Color.red);
-        
-        // MonsterAnimationEvent.Invoke(3);
-
-        // var _distance = Vector3.Distance(target.position, agent.transform.position);
-        //
-        // if (_distance > 0.1f)
-        // {
-        //     agent.isStopped = false;
-        //     agent.SetDestination(target.position);
-        //     return NodeState.RUNNING;
-        // }
-        
         targetPlayer = EnemyAI.targetedPlayer;
         
         if (targetPlayer != null)
@@ -44,26 +31,15 @@ public class ChaseNode : Node
             playerStatus = targetPlayer.GetComponent<PlayerStatus>();
 
             agent.isStopped = false;
+            agent.speed = 10f;
+            agent.angularSpeed = 180f;
             agent.SetDestination(targetPlayer.transform.position);
+            PlayAnimation();
             return NodeState.RUNNING;
         }
 
         return NodeState.SUCCESS;
     }
-
-    // private void ChasingTime()
-    // {
-    //     agent.isStopped = false;
-    //     agent.SetDestination(target.position);
-    //     Debug.Log($"Countdown before stop chase");
-    //     agent.isStopped = true;
-    // }
-
-    //  MonsterEvent MonsterAnimationEvent = new MonsterEvent();
-    // public void monsteranimationevent(UnityAction<int> listener)
-    // {
-    //     MonsterAnimationEvent.AddListener(listener);
-    // }
 
     private void PlayAnimation()
     {

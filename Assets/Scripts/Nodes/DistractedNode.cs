@@ -27,20 +27,19 @@ public class DistractedMode : Node
 
         if (isDistracted && !isFinishedPath)
         {
+            PlayAnimation();
+
             distractTarget = EnemyAI.DistractPos;
             agent.SetDestination(distractTarget.position);
             CheckFinish();
         }
 
-        PlayAnimation();
-        
         return !isFinishedPath ? NodeState.SUCCESS : NodeState.FAILURE;
     }
 
     private void CheckFinish()
     {
         var _distance = Vector3.Distance(distractTarget.position, agent.transform.position);
-        //enemmy.SetColor(Color.yellow);
         
         if (_distance < 5f)
         {
@@ -53,10 +52,4 @@ public class DistractedMode : Node
     {
         MonsterAnimator.SetInteger("EMAnimationID",2);
     }
-
-    // MonsterEvent MonsterAnimationEvent = new MonsterEvent();
-    // public void monsteranimationevent(UnityAction<int> listener)
-    // {
-    //     MonsterAnimationEvent.AddListener(listener);
-    // }
 }
