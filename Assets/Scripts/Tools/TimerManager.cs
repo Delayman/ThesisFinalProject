@@ -7,8 +7,10 @@ public class TimerManager : MonoBehaviour
 {
     private ScoreManager scoreManager;
     private float pTimer1,pTimer2,pTimer3,pTimer4,pTimer5,pTimer6;
-    [SerializeField] private float finpTimer1,finpTimer2,finpTimer3,finpTimer4,finpTimer5,finpTimer6;
-    
+    public float finpTimer1,finpTimer2,finpTimer3,finpTimer4,finpTimer5,finpTimer6;
+
+    public List<float> pTimerToBeSend;
+
     private bool isTrigTimer1,isTrigTimer2,isTrigTimer3,isTrigTimer4,isTrigTimer5,isTrigTimer6;
 
     private void Awake()
@@ -82,34 +84,33 @@ public class TimerManager : MonoBehaviour
 
     public void TriggerCompleteTimerOne()
     { 
-        finpTimer1 = ScoreManager.totalTime - pTimer1;
+        finpTimer1 = Mathf.Round(ScoreManager.totalTime - pTimer1);
     }
     
     public void TriggerCompleteTimerTwo()
     {
-        finpTimer2 = ScoreManager.totalTime- pTimer2;
+        finpTimer2 = Mathf.Round(ScoreManager.totalTime- pTimer2);
     }
     
     public void TriggerCompleteTimerThree()
     {
-        finpTimer3 = ScoreManager.totalTime- pTimer3;
+        finpTimer3 = Mathf.Round(ScoreManager.totalTime- pTimer3);
     }
     
     public void TriggerCompleteTimerFour()
     {
-        finpTimer4 = ScoreManager.totalTime- pTimer4;
+        finpTimer4 = Mathf.Round(ScoreManager.totalTime- pTimer4);
     }
     
     public void TriggerCompleteTimerFive()
     {
-        finpTimer5 = ScoreManager.totalTime- pTimer5;
+        finpTimer5 = Mathf.Round(ScoreManager.totalTime- pTimer5);
     }
 
     public void TriggerCompleteTimerSix()
     {
-        finpTimer6 = ScoreManager.totalTime- pTimer6;
+        finpTimer6 = Mathf.Round(ScoreManager.totalTime- pTimer6);
     }
 
     #endregion
-    
 }
