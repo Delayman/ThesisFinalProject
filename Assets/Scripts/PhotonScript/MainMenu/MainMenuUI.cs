@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 public class MainMenuUI : MonoBehaviour
 {
     public GameObject OptionCanvas;
-    public void OnStartGamePressed()
+    public GameObject TutorialCanvas;
+    public void OnStartGameAndNoPressed()
     {
         SceneManager.LoadScene("Scenes/Lobby");
+    }
+    public void OnStartGameAndYesPressed()
+    {
+        SceneManager.LoadScene("Scenes/Tutorial_Scene");
     }
 
     public void OnQuitPressed()
@@ -18,6 +23,10 @@ public class MainMenuUI : MonoBehaviour
     public void OnOptionPressed()
     {
         OptionCanvas.SetActive(true);
+    }
+    public void OnStartGamePress()
+    {
+        TutorialCanvas.SetActive(true);
     }
     
 }
