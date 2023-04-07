@@ -13,6 +13,8 @@ public class SettingMenu : MonoBehaviour
     public Slider musicSlider;
     public Slider SfxSlider;
     public Toggle FullScreentoggle;
+    public Slider AmbiSlider;
+    public AudioMixer AmbiMixer;
     //public TMP_Dropdown ResolutionDropDown;
     //Resolution[] resolutions;
 
@@ -27,6 +29,7 @@ public class SettingMenu : MonoBehaviour
     {
         SetMusicSilderValue();
         SetSfxSilderValue();
+        SetAmbiSilderValue();
         SetFullScreenToggle();
     }
     public void Start()
@@ -47,6 +50,12 @@ public class SettingMenu : MonoBehaviour
         SfxMixer.GetFloat("SFXMaster", out SfxMixerValue);
         SfxSlider.value = SfxMixerValue;
     }
+    public void SetAmbiSilderValue()
+    {
+        float AmbiMixerValue;
+        AmbiMixer.GetFloat("AmbiMaster", out AmbiMixerValue);
+        AmbiSlider.value = AmbiMixerValue;
+    }
     public void SetFullScreenToggle()
     {
         FullScreentoggle.isOn = Screen.fullScreen;
@@ -58,6 +67,10 @@ public class SettingMenu : MonoBehaviour
     public void SetSfxVolume(float volume)
     {
         SfxMixer.SetFloat("SFXMaster", volume);
+    }
+    public void SetAmbiVolume(float volume)
+    {
+        AmbiMixer.SetFloat("AmbiMaster", volume);
     }
     public void SetFullScreen(bool Isfullscreen)
     {
