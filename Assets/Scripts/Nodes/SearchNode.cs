@@ -22,10 +22,6 @@ public class SearchNode : Node
 
     public override NodeState Evaluate()
     {
-        //Orange
-        //enemy.SetColor(new Color(255, 162, 30, 1));
-        PlayAnimation();
-        
         targetPlayer = EnemyAI.targetedPlayer;
 
         playerStatus = targetPlayer.GetComponent<PlayerStatus>();
@@ -33,14 +29,21 @@ public class SearchNode : Node
         if (playerStatus.isHidden)
         {
             EnemyAI.isDetectedPlayer = false; 
+            PlayAnimation();
+            agent.isStopped = true;
+
+            EnemyAI.isSearchingPlayer = true;
+            EnemyAI.isTriggerSearchTime = true;
         }
 
-        // return NodeState.SUCCESS;
-        return !EnemyAI.isDetectedPlayer ? NodeState.FAILURE : NodeState.SUCCESS;
+        return NodeState.RUNNING;
+
+        // return EnemyAI.isSearchingPlayer ? NodeState.RUNNING : NodeState.SUCCESS;
     }
 
     private void PlayAnimation()
     {
-        MonsterAnimator.SetInteger("EMAnimationID",2);
+        Debug.Log($"Search");
+        MonsterAnimator.SetInteger("EMAnimationID",1);
     }
 }

@@ -16,7 +16,7 @@ public class EnemyAI : MonoBehaviour
     // [SerializeField] private float chasingRange = 3f;
 
     // [SerializeField] private Transform playerTransform;
-    
+    public float searchingTime = 10f;
 
     private Material material;
     private NavMeshAgent agent;
@@ -25,9 +25,11 @@ public class EnemyAI : MonoBehaviour
     private SphereCollider sphereCollider;
     
     public static bool isDetectedPlayer;
+    public static bool isSearchingPlayer;
     public static bool isDistractedbyPlayer;
+    public static bool isTriggerSearchTime = true;
+    
     public static Transform DistractPos;
-
     public static GameObject targetedPlayer;
 
     private Animator _animator;
@@ -72,14 +74,14 @@ public class EnemyAI : MonoBehaviour
         topNode.Evaluate();
         if (topNode.NodeState == NodeState.FAILURE)
         {
-            //SetColor(Color.cyan);
             agent.isStopped = true;
         }
-    }
 
-    public void SetColor(Color _color)
-    {
-        //material.color = _color;
+        if (isSearchingPlayer && isTriggerSearchTime)
+        {
+            TriggerSearchTimer();
+            isTriggerSearchTime = false;
+        }
     }
 
     private void OnDrawGizmosSelected()
@@ -119,9 +121,22 @@ public class EnemyAI : MonoBehaviour
         
     }
 
+    private void TriggerSearchTimer()
+    {
+        StartCoroutine(SearchTimer());
+    }
+
     private IEnumerator StopChaseTimer()
     {
         yield return new WaitForSeconds(10f);
         isDetectedPlayer = false;
+    }
+    
+    private IEnumerator SearchTimer()
+    {
+        Debug.Log($"Trigger Timer");
+
+        yield return new WaitForSeconds(searchingTime);
+        isSearchingPlayer = false;
     }
 }

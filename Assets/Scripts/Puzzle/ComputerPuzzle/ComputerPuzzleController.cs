@@ -17,6 +17,8 @@ public class ComputerPuzzleController : MonoBehaviour
     private bool isCompleted;
     public GameObject NoComplete;
     public GameObject HaveBeenComplete;
+    
+    private TimerManager timer;
 
     public CutScenePlay cutplay;
     private void Awake()
@@ -33,6 +35,7 @@ public class ComputerPuzzleController : MonoBehaviour
         //rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
         NoComplete.SetActive(true);
         HaveBeenComplete.SetActive(false);
+        timer = FindObjectOfType<TimerManager>();
     }
 
     public void CheckIsItCompleted()
@@ -61,6 +64,7 @@ public class ComputerPuzzleController : MonoBehaviour
         counter.AddScore();
         CutScenePlay.PassPuzzle += 1;
         cutplay.CutScene2();
+        timer.TriggerCompleteTimerOne();
         //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
     }
 }

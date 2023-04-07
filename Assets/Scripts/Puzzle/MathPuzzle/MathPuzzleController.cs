@@ -24,7 +24,9 @@ public class MathPuzzleController : MonoBehaviour
     public GameObject HaveBeenComplete;
 
     public CutScenePlay cutplay;
-   
+    
+    private TimerManager timer;
+
     //public PlayableDirector cutseen1;
     //private List<DisablePlayerControl> DisAblePlayerlist;
     private void Start()
@@ -32,6 +34,8 @@ public class MathPuzzleController : MonoBehaviour
        // rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
         NoComplete.SetActive(true);
         HaveBeenComplete.SetActive(false);
+        timer = FindObjectOfType<TimerManager>();
+
         //DisAblePlayerlist = FindObjectsOfType<DisablePlayerControl>().ToList();
     }
     
@@ -49,10 +53,10 @@ public class MathPuzzleController : MonoBehaviour
         // rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
+        timer.TriggerCompleteTimerFour();
         
-        
-        var counter = GetComponentInParent<Counter>();
-        counter.AddScore();
+        //var counter = GetComponentInParent<Counter>();
+        //counter.AddScore();
 
         PlayCutscene();
 

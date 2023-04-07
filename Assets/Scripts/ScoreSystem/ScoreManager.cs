@@ -6,7 +6,7 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     public int totalScore = 0;
-    public float totalTime = 0;
+    public static float totalTime = 0;
 
     private void FixedUpdate()
     {

@@ -10,7 +10,7 @@ public class FindPathNode : Node
     private readonly List<GameObject> tempPath= new List<GameObject>();
     private NavMeshAgent agent;
     private EnemyAI enemmy;
-    private bool isDetected, isDistracted;
+    private bool isDetected, isDistracted, isSearching;
     private Animator MonsterAnimator;
 
     public FindPathNode(List<GameObject> _path, NavMeshAgent _agent, EnemyAI _enemmy, Animator _animator)
@@ -24,18 +24,29 @@ public class FindPathNode : Node
 
     public override NodeState Evaluate()
     {
-        FindPath();
         isDetected = EnemyAI.isDetectedPlayer;
         isDistracted = EnemyAI.isDistractedbyPlayer;
-        
-        // MonsterAnimationEvent.Invoke(2);
-        PlayAnimation();
+        isSearching = EnemyAI.isSearchingPlayer;
 
-        // Debug.Log($"Log : {isDistracted}");
-
-        if (isDetected)
+        if (!isSearching)
         {
-            return NodeState.FAILURE;
+            FindPath();
+            
+            if (isDetected && !isSearching)
+            {
+                PlayAnimation(3);
+                return NodeState.FAILURE;
+            }
+            
+            if(!isDetected)
+            {
+                PlayAnimation(2);
+            }
+
+            if (isSearching)
+            {
+                PlayAnimation(4);
+            }
         }
         
         return NodeState.SUCCESS;
@@ -43,8 +54,9 @@ public class FindPathNode : Node
     
     private void FindPath()
     {
-        //enemmy.SetColor(Color.green);
         var _distance = Vector3.Distance(tempPath[0].transform.position, agent.transform.position);
+        agent.speed = 3.5f;
+        agent.angularSpeed = 120f;
         // Debug.Log($"Distance left : {_distance}");
         
         if (tempPath.Count > 0)
@@ -67,16 +79,11 @@ public class FindPathNode : Node
 
             tempPath.AddRange(savedPath);
         }
-        
     }
 
-    private void PlayAnimation()
+    private void PlayAnimation(int _value)
     {
-        MonsterAnimator.SetInteger("EMAnimationID",2);
+        Debug.Log($"Find Path");
+        MonsterAnimator.SetInteger("EMAnimationID",_value);
     }
-    // MonsterEvent MonsterAnimationEvent = new MonsterEvent();
-    // public void monsteranimationevent(UnityAction<int> listener)
-    // {
-    //     MonsterAnimationEvent.AddListener(listener);
-    // }
 }
