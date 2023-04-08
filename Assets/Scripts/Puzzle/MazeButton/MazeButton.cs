@@ -11,7 +11,9 @@ public class MazeButton : Interactable
     private const string OnText = "";
 
     public bool isOn;
-    
+    public AudioSource ButtonOBJ;
+
+
     private void Awake()
     {
         ctr = FindObjectOfType<MazePuzzleController>();
@@ -26,8 +28,13 @@ public class MazeButton : Interactable
     {
         var PV = GetComponent<PhotonView>();
         PV.RPC("SetMazeComplete", RpcTarget.All);
+        ButtonSound();
     }
-    
+    public void ButtonSound()
+    {
+        ButtonOBJ.Play();
+    }
+
     [PunRPC]
     private void SetMazeComplete()
     {

@@ -7,6 +7,7 @@ public class DoorTutorial : Interactable
     public GameObject cuttutor;
     public bool isOn;
     //public static bool Blue;
+    public AudioSource ButtonDoorSound;
     private void Start()
     {
         cuttutor.SetActive(false);
@@ -20,6 +21,11 @@ public class DoorTutorial : Interactable
     public override void Interact()
     {
         isOn = !isOn;
+        Soundplay();
         cuttutor.SetActive(true);
+    }
+    public void Soundplay()
+    {
+        ButtonDoorSound.Play();
     }
 }

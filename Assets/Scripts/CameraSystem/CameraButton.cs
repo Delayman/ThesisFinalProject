@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 public class CameraButton : Interactable
@@ -16,6 +17,9 @@ public class CameraButton : Interactable
     private List<PlayerInteraction> playerList;
 
     private DisablePlayerControl targetPlayer;
+
+    public GameObject ESC;
+    public AudioSource ButtonOBJ;
 
     private void Awake()
     {
@@ -43,6 +47,11 @@ public class CameraButton : Interactable
         }
         
         ToggleCam();
+        ButtonSound();
+    }
+    public void ButtonSound()
+    {
+        ButtonOBJ.Play();
     }
 
     private void GetPlayer()
@@ -64,12 +73,23 @@ public class CameraButton : Interactable
     {
         if (isOn)
         {
+            ESC.SetActive(false);
             camUi.StartCamUI();
             targetPlayer.isDisableControlAndCam = true;
+            
+            
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible= true;
+           
         }
         else
         {
+            ESC.SetActive(true);
             targetPlayer.isDisableControlAndCam = false;
+           
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible= false;
+            
         }
     }
 }

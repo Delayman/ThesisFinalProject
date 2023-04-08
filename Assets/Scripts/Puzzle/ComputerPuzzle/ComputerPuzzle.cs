@@ -26,6 +26,8 @@ public class ComputerPuzzle : Interactable
     public GameObject DefultScreen;
 
     public GameObject ScreenLight;
+
+    public AudioSource ButtonOBJ;
     private void Start()
     {
         objMeshFilter = GetComponent<MeshFilter>();
@@ -52,7 +54,12 @@ public class ComputerPuzzle : Interactable
     public override void Interact()
     {
         var PV = GetComponent<PhotonView>();
-        PV.RPC("ToggleComSwitch", RpcTarget.All);
+        PV.RPC("ToggleComSwitch", RpcTarget.All); 
+        ButtonSound();
+    }
+    public void ButtonSound()
+    {
+        ButtonOBJ.Play();
     }
 
     [PunRPC]

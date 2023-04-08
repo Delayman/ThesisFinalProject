@@ -15,6 +15,8 @@ public class Activator : Interactable
     private bool isOn;
     public CutScenePlay cutplay;
     public GameObject buttonlight;
+
+    public AudioSource ButtonOBJ;
     private void Awake()
     {
         receivers ??= new List<Receiver>();
@@ -35,8 +37,13 @@ public class Activator : Interactable
     {
         var PV = GetComponent<PhotonView>();
         PV.RPC("ToggleActivatorSwitch", RpcTarget.All);
+        ButtonSound();
     }
-    
+    public void ButtonSound()
+    {
+        ButtonOBJ.Play();
+    }
+
     [PunRPC]
     private void ToggleActivatorSwitch()
     {

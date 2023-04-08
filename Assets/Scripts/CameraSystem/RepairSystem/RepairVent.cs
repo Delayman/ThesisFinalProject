@@ -14,6 +14,7 @@ public class RepairVent : Interactable
     
     private bool isOn;
 
+    public AudioSource Sound;
     private void Awake()
     {
         if (textBox == null) Debug.Log($"<color=red>Timer </color> was NOT FOUND");;
@@ -42,6 +43,7 @@ public class RepairVent : Interactable
         textBox.isResetting = true;
         ctr.DisableAllButton();
         Invoke(nameof(Cooldown), repairTime);
+        Sound.Play();
     }
 
     private void Cooldown()

@@ -7,6 +7,7 @@ public class LightSwitch : Interactable
     public GameObject CheckPuzzle;
     public Light m_Light; // im using m_Light name since 'light' is already a variable used by unity
     public bool isOn;
+    public AudioSource buttonsound;
     //public static bool Blue;
     private void Start()
     {
@@ -16,6 +17,7 @@ public class LightSwitch : Interactable
     void UpdateLight()
     {
         m_Light.enabled = isOn;
+        buttonsound.Play();
         CheckPuzzle.SetActive(isOn);
     }
 
@@ -29,6 +31,7 @@ public class LightSwitch : Interactable
     {
         isOn = !isOn;
         UpdateLight();
+        
         // scritp.num = num*1
       /*  if (a.transform.name == "")
         {

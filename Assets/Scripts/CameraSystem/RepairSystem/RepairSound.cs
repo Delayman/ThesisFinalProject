@@ -13,6 +13,7 @@ public class RepairSound : Interactable
     private const string ActiveText = "[E] to repair the sound.";
     
     private bool isOn;
+    public AudioSource Sound;
 
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class RepairSound : Interactable
         textBox.isResetting = true;
         ctr.DisableAllButton();
         Invoke(nameof(Cooldown), repairTime);
+        Sound.Play();
     }
 
     private void Cooldown()

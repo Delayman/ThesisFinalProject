@@ -10,6 +10,8 @@ public class FinalPasswordPuzzle : Interactable
     
     private const string OffText = "[E] to enter password.";
 
+    public AudioSource ButtonOBJ;
+
     private void Awake()
     {
         ctr = GameObject.FindObjectOfType<FinalPasswordController>();
@@ -24,6 +26,11 @@ public class FinalPasswordPuzzle : Interactable
     {
         var PV = GetComponent<PhotonView>();
         PV.RPC("AddPasswordDigit", RpcTarget.All);
+        ButtonSound();
+    }
+    public void ButtonSound()
+    {
+        ButtonOBJ.Play();
     }
 
     private void AddPasswordDigit()

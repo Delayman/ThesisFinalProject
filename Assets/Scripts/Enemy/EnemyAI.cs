@@ -33,6 +33,11 @@ public class EnemyAI : MonoBehaviour
     public static GameObject targetedPlayer;
 
     private Animator _animator;
+
+    public AudioSource foot;
+    public AudioSource footrun;
+    public AudioSource DangerMusic;
+    public AudioSource Detected;
     
     #endregion
     
@@ -58,10 +63,10 @@ public class EnemyAI : MonoBehaviour
 
     private void ConstructBehaviourTree()
     {
-        var _chaseNode = new ChaseNode(agent, this, _animator);
-        var _findPathNode = new FindPathNode(pratolPaths, agent, this, _animator);
-        var _distractedMode = new DistractedMode(agent, this, _animator);
-        var _searchNode = new SearchNode(agent, this, _animator);
+        var _chaseNode = new ChaseNode(agent, this, _animator, foot, footrun, DangerMusic, Detected);
+        var _findPathNode = new FindPathNode(pratolPaths, agent, this, _animator , foot , footrun , DangerMusic , Detected);
+        var _distractedMode = new DistractedMode(agent, this, _animator, foot, footrun, DangerMusic, Detected);
+        var _searchNode = new SearchNode(agent, this, _animator, foot, footrun, DangerMusic, Detected);
 
         var _chaseSequnce = new Sequnce(new List<Node> {_chaseNode, _searchNode});
         var _pratol = new Sequnce(new List<Node> {_findPathNode, _distractedMode});

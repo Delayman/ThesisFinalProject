@@ -19,6 +19,7 @@ public class HidingScript : Interactable
     private Collider colToChange;
     
     public bool isOccupy;
+    public AudioSource HideSound;
         
     private void Start()
     {
@@ -64,11 +65,14 @@ public class HidingScript : Interactable
         colToChange.isTrigger = true;
 
         targetPlayer.transform.position = this.transform.position + hidingOffSet;
+        
         targetPlayer.transform.eulerAngles = this.transform.eulerAngles + hidingRotationOffSet;
         // targetPlayer.gameObject.GetComponent<FPS_PlayerMovement>().enabled = false;
         targetPlayer.gameObject.GetComponent<PlayerStatus>().isHidden = true;
-        
+
         //Lock camera NEEDED!!!!!
+
+        HideSound.Play();
     }
 
     public void GetPlayerOut()

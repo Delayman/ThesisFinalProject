@@ -7,7 +7,7 @@ public class Generator : Interactable
     [SerializeField] private float delay = 0.5f;
     [SerializeField] private float powerToAdd = 10;
     private const string clickText = "[E] to add power";
-
+    public AudioSource GeneraterSound;
     private bool isHeld;
     
     private void Start()
@@ -30,6 +30,8 @@ public class Generator : Interactable
         var generatorTimer = GetComponent<GeneratorTimer>();
 
         generatorTimer.AddTime(powerToAdd);
+
+        GeneraterSound.Play();
     }
 
     // private IEnumerator HoldToAddPower()

@@ -17,6 +17,7 @@ public class MultiplyButton : Interactable
     private bool isOn;
 
     private ResultText resultText;
+    public AudioSource ButtonOBJ;
 
     private void Start()
     {
@@ -34,6 +35,11 @@ public class MultiplyButton : Interactable
     {
         var PV = GetComponent<PhotonView>();
         PV.RPC("GetTextBoxMul", RpcTarget.All);
+        ButtonSound();
+    }
+    public void ButtonSound()
+    {
+        ButtonOBJ.Play();
     }
 
     [PunRPC]
