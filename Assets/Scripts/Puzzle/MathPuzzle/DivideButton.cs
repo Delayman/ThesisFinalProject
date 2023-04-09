@@ -18,6 +18,7 @@ public class DivideButton : Interactable
 
     private ResultText resultText;
 
+    public AudioSource ButtonOBJ;
     private void Start()
     {
         resultText = FindObjectOfType<ResultText>();
@@ -34,8 +35,13 @@ public class DivideButton : Interactable
     {
         var PV = GetComponent<PhotonView>();
         PV.RPC("GetTextBoxDiv", RpcTarget.All);
+        ButtonSound();
     }
-    
+    public void ButtonSound()
+    {
+        ButtonOBJ.Play();
+    }
+
     [PunRPC]
     private void GetTextBoxDiv()
     {

@@ -15,6 +15,8 @@ public class Receiver : Interactable
 
     public bool isOn;
 
+    public AudioSource ButtonOBJ;
+
     private void Start()
     {
         receiver = gameObject;
@@ -32,8 +34,13 @@ public class Receiver : Interactable
     {
         var PV = GetComponent<PhotonView>();
         PV.RPC("ToggleReceiverSwitch", RpcTarget.All);
+        ButtonSound();
     }
-    
+    public void ButtonSound()
+    {
+        ButtonOBJ.Play();
+    }
+
     [PunRPC]
     private void ToggleReceiverSwitch()
     {

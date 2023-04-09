@@ -17,6 +17,7 @@ public class PlatePuzzleControl : Interactable
     
     private const string feedbackText = "[E] to <color=red>push</color> the button.";
 
+    public AudioSource ButtonOBJ;
     private void Start()
     {
         directionButtons = gameObject;
@@ -32,6 +33,11 @@ public class PlatePuzzleControl : Interactable
     {
         var PV = GetComponent<PhotonView>();
         PV.RPC("CheckDirectionButton", RpcTarget.All);
+        ButtonSound();
+    }
+    public void ButtonSound()
+    {
+        ButtonOBJ.Play();
     }
 
     [PunRPC]

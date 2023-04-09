@@ -7,6 +7,8 @@ public class ExitfromHiding : Interactable
     private const string OnText = "[E] to get out.";
     private HidingScript hoster;
 
+    public AudioSource HideSound;
+
     private void Start()
     {
         hoster = GetComponentInParent<HidingScript>();
@@ -25,5 +27,6 @@ public class ExitfromHiding : Interactable
     private void GetOut()
     {
         hoster.GetPlayerOut();
+        HideSound.Play();
     }
 }

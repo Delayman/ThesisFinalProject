@@ -14,6 +14,7 @@ public class RepairAll : Interactable
     
     private bool isOn;
 
+    public AudioSource Sound;
     private void Awake()
     {
         if (textBoxList == null) Debug.Log($"<color=red>Timer </color> was NOT FOUND");;
@@ -46,6 +47,7 @@ public class RepairAll : Interactable
         
         ctr.DisableAllButton();
         Invoke(nameof(Cooldown), repairTime);
+        Sound.Play();
     }
 
     private void Cooldown()

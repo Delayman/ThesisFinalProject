@@ -12,14 +12,22 @@ public class FindPathNode : Node
     private EnemyAI enemmy;
     private bool isDetected, isDistracted, isSearching;
     private Animator MonsterAnimator;
+    private AudioSource foot;
+    private AudioSource footrun;
+    private AudioSource DangerMusic;
+    private AudioSource Detected;
 
-    public FindPathNode(List<GameObject> _path, NavMeshAgent _agent, EnemyAI _enemmy, Animator _animator)
+    public FindPathNode(List<GameObject> _path, NavMeshAgent _agent, EnemyAI _enemmy, Animator _animator,AudioSource _foot , AudioSource _footrun , AudioSource _DangerMusic ,AudioSource _Detected)
     {
         savedPath.AddRange(_path);
         tempPath.AddRange(_path);
         agent = _agent;
         enemmy = _enemmy;
         MonsterAnimator = _animator;
+        foot = _foot;
+        footrun = _footrun;
+        DangerMusic = _DangerMusic;
+        Detected = _Detected;
     }
 
     public override NodeState Evaluate()
@@ -31,21 +39,32 @@ public class FindPathNode : Node
         if (!isSearching)
         {
             FindPath();
-            
             if (isDetected && !isSearching)
             {
                 PlayAnimation(3);
+                foot.enabled = false;
+                footrun.enabled = true;
+                DangerMusic.enabled = true;
+                Detected.Play();
                 return NodeState.FAILURE;
             }
             
             if(!isDetected)
             {
                 PlayAnimation(2);
+                foot.enabled = true;
+                footrun.enabled = false;
+                DangerMusic.enabled = false;
+                Detected.Stop();
             }
 
             if (isSearching)
             {
-                PlayAnimation(4);
+                PlayAnimation(1); 
+                foot.enabled = false;
+                footrun.enabled = false;
+                DangerMusic.enabled = false;
+                Detected.Stop();
             }
         }
         
@@ -85,5 +104,6 @@ public class FindPathNode : Node
     {
         Debug.Log($"Find Path");
         MonsterAnimator.SetInteger("EMAnimationID",_value);
+        
     }
 }

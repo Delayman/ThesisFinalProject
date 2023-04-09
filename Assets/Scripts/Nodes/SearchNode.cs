@@ -12,12 +12,20 @@ public class SearchNode : Node
     
     private GameObject targetPlayer;
     private Animator MonsterAnimator;
-    
-    public SearchNode(NavMeshAgent _agent, EnemyAI _enemy, Animator _Animator)
+    private AudioSource foot;
+    private AudioSource footrun;
+    private AudioSource DangerMusic;
+    private AudioSource Detected;
+
+    public SearchNode(NavMeshAgent _agent, EnemyAI _enemy, Animator _Animator, AudioSource _foot, AudioSource _footrun, AudioSource _DangerMusic, AudioSource _Detected)
     {
         this.agent = _agent;
         this.enemy = _enemy;
         this.MonsterAnimator = _Animator;
+        foot = _foot;
+        footrun = _footrun;
+        DangerMusic = _DangerMusic;
+        Detected = _Detected;
     }
 
     public override NodeState Evaluate()
@@ -43,7 +51,11 @@ public class SearchNode : Node
 
     private void PlayAnimation()
     {
-        Debug.Log($"Search");
+        //Debug.Log($"Search");
         MonsterAnimator.SetInteger("EMAnimationID",1);
+        //foot.enabled = false;
+        //footrun.enabled = false;
+        //DangerMusic.enabled = false;
+        //Detected.Stop();
     }
 }

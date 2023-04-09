@@ -15,7 +15,9 @@ public class IcePuzzle : Interactable
     private GameObject directionButtons;
     private Rigidbody movingObjRb;
     private IcePuzzleGoal goal;
-    
+
+    public AudioSource ButtonOBJ;
+
     private const string feedbackText = "[E] to <color=red>push</color> the button.";
 
     private void Start()
@@ -33,7 +35,12 @@ public class IcePuzzle : Interactable
     public override void Interact()
     {
         var PV = GetComponent<PhotonView>();
-        PV.RPC("CheckDirectionButton", RpcTarget.All);
+        PV.RPC("CheckDirectionButton", RpcTarget.All); 
+        ButtonSound();
+    }
+    public void ButtonSound()
+    {
+        ButtonOBJ.Play();
     }
 
     [PunRPC]

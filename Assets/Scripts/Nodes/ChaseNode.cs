@@ -14,13 +14,21 @@ public class ChaseNode : Node
     
     private GameObject targetPlayer;
     private PlayerStatus playerStatus;
+    private AudioSource foot;
+    private AudioSource footrun;
+    private AudioSource DangerMusic;
+    private AudioSource Detected;
 
-    public ChaseNode(NavMeshAgent _agent, EnemyAI _enemy, Animator _animator)
+    public ChaseNode(NavMeshAgent _agent, EnemyAI _enemy, Animator _animator, AudioSource _foot, AudioSource _footrun, AudioSource _DangerMusic, AudioSource _Detected)
     {
         this.agent = _agent;
         this.enemy = _enemy;
         chaseTimer = 0f;
         this.MonsterAnimator = _animator;
+        foot = _foot;
+        footrun = _footrun;
+        DangerMusic = _DangerMusic;
+        Detected = _Detected;
     }
     public override NodeState Evaluate()
     {
@@ -43,6 +51,11 @@ public class ChaseNode : Node
 
     private void PlayAnimation()
     {
+        Debug.Log("Chase Path");
         MonsterAnimator.SetInteger("EMAnimationID",3);
+        //foot.enabled = false;
+        //footrun.enabled = true;
+        //DangerMusic.enabled = true;
+        //Detected.Play();
     }
 }
