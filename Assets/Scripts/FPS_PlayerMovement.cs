@@ -16,7 +16,12 @@ public class FPS_PlayerMovement : MonoBehaviour
     [SerializeField] float PlayerMaxStamina = 10f;
     [SerializeField] float PlayerCurrentStamina = 10f;
     [SerializeField] Slider StaminaBar;
+
+    [SerializeField] AudioSource foot1;
+    [SerializeField] AudioSource foot2;
+
     bool isrun;
+    bool isrunable;
     private PhotonView _view;
 
     //Y axis limit cam rotation stuff
@@ -31,6 +36,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     void Awake()
     {
         isrun = false;
+        isrunable = true;
     }
     private void Start()
     {
@@ -84,6 +90,8 @@ public class FPS_PlayerMovement : MonoBehaviour
             else
             {
                 PlayerAnimationEvent.Invoke(0);
+                foot1.enabled = false;
+                foot2.enabled = false;
             }
             Staminacontroller();
 
@@ -148,22 +156,37 @@ public class FPS_PlayerMovement : MonoBehaviour
 
     void PlayerSpeedSet()
     {
-        if (Input.GetKey(KeyCode.LeftShift)&& PlayerCurrentStamina >= 1)
+        if(isrunable)
         {
-            playerMoveSpeed = playerRunSpeed;
-            isrun = true;
-            PlayerAnimationEvent.Invoke(2);
-        }
-        else if (Input.GetKey(KeyCode.LeftShift) && PlayerCurrentStamina <= 0)
-        {
-            playerMoveSpeed = playerWalkSpeed;
-            isrun = false;
-            PlayerAnimationEvent.Invoke(1);
-        }
-        else
-        {
-            playerMoveSpeed = playerWalkSpeed;
-            PlayerAnimationEvent.Invoke(1);
+            if (Input.GetKey(KeyCode.LeftShift)&& PlayerCurrentStamina >= 0)
+            {
+                playerMoveSpeed = playerRunSpeed;
+                isrun = true;
+                PlayerAnimationEvent.Invoke(2);
+                foot1.enabled = false;
+                foot2.enabled = true;
+                Debug.Log("Run!");
+            }
+            else if ((Input.GetKey(KeyCode.LeftShift) && PlayerCurrentStamina < 0))
+            {
+                playerMoveSpeed = playerWalkSpeed;
+                isrun = false;
+                isrunable = false;
+                PlayerAnimationEvent.Invoke(1);
+                StartCoroutine(runablecooldown());
+                foot1.enabled = true;
+                foot2.enabled = false;
+                Debug.Log("Out of stamina!");
+            }
+            else if (!Input.GetKey(KeyCode.LeftShift))
+            {
+                playerMoveSpeed = playerWalkSpeed;
+                isrun = false;
+                PlayerAnimationEvent.Invoke(1);
+                foot1.enabled = true;
+                foot2.enabled = false;
+                Debug.Log("Walk!");
+            }
         }
     }
 
@@ -190,5 +213,11 @@ public class FPS_PlayerMovement : MonoBehaviour
         {
             PlayerCurrentStamina = PlayerMaxStamina;
         }
+    }
+
+    IEnumerator runablecooldown()
+    {
+        yield return new WaitForSeconds(2.0f);
+        isrunable = true;
     }
 }

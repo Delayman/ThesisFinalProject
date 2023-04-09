@@ -146,7 +146,6 @@ GameObject:
   - component: {fileID: 5989340832122243722}
   - component: {fileID: 5496313424302957435}
   - component: {fileID: 2937873146202804029}
-  - component: {fileID: 5003364501993021112}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -193,6 +192,8 @@ MonoBehaviour:
   PlayerMaxStamina: 10
   PlayerCurrentStamina: 10
   StaminaBar: {fileID: 0}
+  foot1: {fileID: 2960981735873898993}
+  foot2: {fileID: 466906556571134267}
   camRotLimit: 85
   cam: {fileID: 4421393261196023202}
 --- !u!54 &4421393261113564725
@@ -450,20 +451,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHidden: 0
   requestHiding: 0
---- !u!114 &5003364501993021112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4421393261113564617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02e2ea787c9022642a782d414f455aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foot1: {fileID: 2960981735873898993}
-  foot2: {fileID: 466906556571134267}
 --- !u!1 &4421393261196023205
 GameObject:
   m_ObjectHideFlags: 0
