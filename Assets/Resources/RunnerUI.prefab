@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUITemplate
       objectReference: {fileID: 0}
+    - target: {fileID: 8928636625999037827, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_TagString
+      value: StaminaBar
+      objectReference: {fileID: 0}
     - target: {fileID: 8928636627305089596, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

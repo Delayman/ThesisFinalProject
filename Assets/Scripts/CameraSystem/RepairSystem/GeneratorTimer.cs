@@ -41,6 +41,7 @@ public class GeneratorTimer : MonoBehaviour
             currentPower = maxPower;
         }
         
+        if(powerTutorialTxt == null) return;
         powerTutorialTxt.text = Mathf.Round(currentPower) + " %";
     }
 
