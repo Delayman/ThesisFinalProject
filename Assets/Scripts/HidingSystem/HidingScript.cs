@@ -69,6 +69,9 @@ public class HidingScript : Interactable
         targetPlayer.transform.eulerAngles = this.transform.eulerAngles + hidingRotationOffSet;
         // targetPlayer.gameObject.GetComponent<FPS_PlayerMovement>().enabled = false;
         targetPlayer.gameObject.GetComponent<PlayerStatus>().isHidden = true;
+        
+        var disableTargetPlayer = targetPlayer.gameObject.GetComponent<DisablePlayerControl>();
+        disableTargetPlayer.isDisableControlAndCam = true;
 
         //Lock camera NEEDED!!!!!
 
@@ -81,6 +84,10 @@ public class HidingScript : Interactable
         colToChange.isTrigger = false;
         targetPlayer.transform.position = this.transform.position + getOutOffSet;
         targetPlayer.gameObject.GetComponent<FPS_PlayerMovement>().enabled = true;
+        
+        var disableTargetPlayer = targetPlayer.gameObject.GetComponent<DisablePlayerControl>();
+        disableTargetPlayer.isDisableControlAndCam = false;
+        
         targetPlayer.gameObject.GetComponent<PlayerStatus>().isHidden = false;
 
     }

@@ -39,7 +39,7 @@ public class ChaseNode : Node
             playerStatus = targetPlayer.GetComponent<PlayerStatus>();
 
             agent.isStopped = false;
-            agent.speed = 10f;
+            agent.speed = 7.5f;
             agent.angularSpeed = 180f;
             agent.SetDestination(targetPlayer.transform.position);
             PlayAnimation();
