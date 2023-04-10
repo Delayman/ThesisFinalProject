@@ -17,7 +17,7 @@ public class MazePuzzleController : MonoBehaviour
     public CutScenePlay cutplay;
     
     private TimerManager timer;
-
+    public AudioSource Winsound;
     private void Start()
     {
         completeBtn = FindObjectOfType<MazeButton>();
@@ -39,6 +39,7 @@ public class MazePuzzleController : MonoBehaviour
        // rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
+        Winsound.Play();    
         var counter = GetComponentInParent<Counter>();
         counter.AddScore();
         CutScenePlay.PassPuzzle += 1;

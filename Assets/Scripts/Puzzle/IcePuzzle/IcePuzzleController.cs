@@ -15,7 +15,7 @@ public class IcePuzzleController : MonoBehaviour
     public CutScenePlay cutplay;
     
     private TimerManager timer;
-
+    public AudioSource Winsound;
     private void Start()
     {
         goal = FindObjectOfType<IcePuzzleGoal>();
@@ -37,6 +37,7 @@ public class IcePuzzleController : MonoBehaviour
         //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
+        Winsound.Play();
         var counter = GetComponentInParent<Counter>();
         counter.AddScore();
         timer.TriggerCompleteTimerFive();

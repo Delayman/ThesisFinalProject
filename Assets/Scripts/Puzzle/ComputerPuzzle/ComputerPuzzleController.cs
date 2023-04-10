@@ -21,6 +21,7 @@ public class ComputerPuzzleController : MonoBehaviour
     private TimerManager timer;
 
     public CutScenePlay cutplay;
+    public AudioSource Winsound;
     private void Awake()
     {
         correctObjList ??= new List<CorrectOne>();
@@ -60,6 +61,7 @@ public class ComputerPuzzleController : MonoBehaviour
         
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
+        Winsound.Play();
         var counter = GetComponentInParent<Counter>();
         counter.AddScore();
         CutScenePlay.PassPuzzle += 1;

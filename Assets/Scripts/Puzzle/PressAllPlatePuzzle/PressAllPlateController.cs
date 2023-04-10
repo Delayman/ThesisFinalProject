@@ -20,6 +20,7 @@ public class PressAllPlateController : MonoBehaviour
     private TimerManager timer;
 
     public CutScenePlay cutplay;
+    public AudioSource Winsound;
     private void Awake()
     {
         activatedList ??= new List<Checker>();
@@ -56,6 +57,7 @@ public class PressAllPlateController : MonoBehaviour
             //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
             NoComplete.SetActive(false);
             HaveBeenComplete.SetActive(true);
+            Winsound.Play();
             var counter = GetComponentInParent<Counter>();
             counter.AddScore();
             CutScenePlay.PassPuzzle += 1;

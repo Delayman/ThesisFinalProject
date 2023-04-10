@@ -20,7 +20,7 @@ public class PressAllButtonPuzzleController : MonoBehaviour
     public GameObject FinalHint;
     
     private TimerManager timer;
-
+    public AudioSource Winsound;
     private void Awake()
     {
         reciverActivedList ??= new List<Receiver>();
@@ -57,6 +57,7 @@ public class PressAllButtonPuzzleController : MonoBehaviour
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
         FinalPuzzleActive.SetActive(true);
+        Winsound.Play();
         var counter = GetComponentInParent<Counter>();
         counter.AddScore();
         cutplay.CutScene4();

@@ -27,6 +27,7 @@ public class MathPuzzleController : MonoBehaviour
     
     private TimerManager timer;
 
+    public AudioSource Winsound;
     //public PlayableDirector cutseen1;
     //private List<DisablePlayerControl> DisAblePlayerlist;
     private void Start()
@@ -54,7 +55,7 @@ public class MathPuzzleController : MonoBehaviour
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
         timer.TriggerCompleteTimerFour();
-        
+        Winsound.Play();
         //var counter = GetComponentInParent<Counter>();
         //counter.AddScore();
 
