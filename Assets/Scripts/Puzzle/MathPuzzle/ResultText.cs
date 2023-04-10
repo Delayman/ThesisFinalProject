@@ -101,6 +101,9 @@ public class ResultText : MonoBehaviour
         placeholder[1].text = "00";
         placeholder[2].text = "00";
         placeholder[3].text = "00";
+
+        multiplyButton[0].gameObject.SetActive(true);
+        divideButtons[0].gameObject.SetActive(true);
     }
 
     private void DisableAllBtn()

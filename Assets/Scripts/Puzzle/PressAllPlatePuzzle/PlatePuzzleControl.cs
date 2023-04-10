@@ -48,19 +48,19 @@ public class PlatePuzzleControl : Interactable
         {
             case "N" :
                 var forward = transform.forward;
-                movingObjRb.MovePosition(movingObjRb.position + forward * speed);
+                movingObjRb.AddForce(movingObjRb.position + forward * speed);
                 break;
             case "S" :
                 var back = transform.forward;
-                movingObjRb.MovePosition(movingObjRb.position + -back * speed);
+                movingObjRb.AddForce(movingObjRb.position + -back * speed);
                 break;
             case "W" :
                 var right = transform.right;
-                movingObjRb.MovePosition(movingObjRb.position + -right * speed);
+                movingObjRb.AddForce(movingObjRb.position + -right * speed);
                 break;
             case "E" :
                 var left = transform.right;
-                movingObjRb.MovePosition(movingObjRb.position + left * speed);
+                movingObjRb.AddForce(movingObjRb.position + left * speed);
                 break;
         }
     }
