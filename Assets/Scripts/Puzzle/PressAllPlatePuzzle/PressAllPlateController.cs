@@ -14,6 +14,8 @@ public class PressAllPlateController : MonoBehaviour
     private List<bool> checkList;
     
     private bool isCompleted;
+    private bool isDisableAfterCompleted;
+
     public GameObject NoComplete;
     public GameObject HaveBeenComplete;
     
@@ -54,6 +56,7 @@ public class PressAllPlateController : MonoBehaviour
         
         if (checkList.Count == activatedList.Count && isCompleted)
         {
+            if (isDisableAfterCompleted) return;
             //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
             NoComplete.SetActive(false);
             HaveBeenComplete.SetActive(true);
@@ -62,6 +65,7 @@ public class PressAllPlateController : MonoBehaviour
             counter.AddScore();
             CutScenePlay.PassPuzzle += 1;
             cutplay.CutScene2();
+            isDisableAfterCompleted = true;
         }
     }
 

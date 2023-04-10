@@ -21,6 +21,7 @@ public class PlatePuzzleControl : Interactable
     private void Start()
     {
         directionButtons = gameObject;
+        movingObj = GameObject.FindWithTag("ObjectiveObj");
         movingObjRb = movingObj.GetComponent<Rigidbody>();
     }
 

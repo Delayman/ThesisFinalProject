@@ -12,6 +12,7 @@ public class PressAllButtonPuzzleController : MonoBehaviour
     private List<Receiver> reciverActivedList;
 
     private bool isCompleted;
+    private bool isDisableAfterCompleted;
 
     public GameObject NoComplete;
     public GameObject HaveBeenComplete;
@@ -52,7 +53,8 @@ public class PressAllButtonPuzzleController : MonoBehaviour
             if(_correctObj.isOn) isCompleted = true;
         }
         
-        if (!isCompleted) return;
+        if (!isCompleted || isDisableAfterCompleted) return;
+
         // rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
@@ -64,6 +66,7 @@ public class PressAllButtonPuzzleController : MonoBehaviour
         FinalHint.SetActive(true);
         timer.TriggerCompleteTimerThree();
 
+        isDisableAfterCompleted = true;
     }
 
 }

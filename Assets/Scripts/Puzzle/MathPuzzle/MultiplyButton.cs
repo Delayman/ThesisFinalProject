@@ -50,5 +50,6 @@ public class MultiplyButton : Interactable
         resultText.UpdateText(state);
         resultText.MultiplyState(multiplyNum);
         resultText.ChangeStateToAll(multiplyNum);
+        
     }
 }

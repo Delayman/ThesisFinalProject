@@ -20,6 +20,8 @@ public class MathPuzzleController : MonoBehaviour
     
     private float tempNum;
     private bool isCompleted;
+    private bool isDisableAfterCompleted;
+
     public GameObject NoComplete;
     public GameObject HaveBeenComplete;
 
@@ -28,29 +30,54 @@ public class MathPuzzleController : MonoBehaviour
     private TimerManager timer;
 
     public AudioSource Winsound;
+    
+    public List<DivideButton> divBtnList;
+    public List<MultiplyButton> mulBtnList;
+
+    private ResultText resultTxt;
     //public PlayableDirector cutseen1;
     //private List<DisablePlayerControl> DisAblePlayerlist;
     private void Start()
     {
-       // rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
         NoComplete.SetActive(true);
         HaveBeenComplete.SetActive(false);
         timer = FindObjectOfType<TimerManager>();
-
-        //DisAblePlayerlist = FindObjectsOfType<DisablePlayerControl>().ToList();
+        resultTxt = FindObjectOfType<ResultText>();
     }
     
     public void CheckAnswer()
     {
         tempNum = float.Parse(answerBox.text);
 
-        if (tempNum == answer) isCompleted = true;
+        if (tempNum != answer)
+        {
+            if (divBtnList[0].state == 3)
+            {
+                foreach (var divBtn in divBtnList)
+                {
+                    divBtn.state = 1;
+                    divBtn.divideNum = 0;
+                }
+                
+                foreach (var mulBtn in mulBtnList)
+                {
+                    mulBtn.state = 1;
+                    mulBtn.multiplyNum = 0;
+                }
+                
+                resultTxt.ResetValue();
+            }
+        }
+
+        if (tempNum == answer) 
+            isCompleted = true;
+        
         CheckCompleted();
     }
 
     private void CheckCompleted()
     {
-        if (!isCompleted) return;
+        if (!isCompleted || isDisableAfterCompleted) return;
         // rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
@@ -63,12 +90,7 @@ public class MathPuzzleController : MonoBehaviour
 
         this.GetComponent<PhotonView>().RPC("PlayCutscene", RpcTarget.All);
 
-        //foreach (var player in DisAblePlayerlist)
-        //{
-        //    player.isDisable = true;
-        //}
-        //cutseen1.Play();
-
+        isDisableAfterCompleted = true;
     }
     
     [PunRPC]

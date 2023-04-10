@@ -9,6 +9,7 @@ public class IcePuzzleController : MonoBehaviour
 
     private IcePuzzleGoal goal;
     private bool isCompleted;
+    private bool isDisableAfterCompleted;
 
     public GameObject NoComplete;
     public GameObject HaveBeenComplete;
@@ -33,7 +34,8 @@ public class IcePuzzleController : MonoBehaviour
     {
         isCompleted = goal.isEnterGoal;
         
-        if (!isCompleted) return;
+        if (!isCompleted || isDisableAfterCompleted) return;
+
         //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
@@ -41,6 +43,7 @@ public class IcePuzzleController : MonoBehaviour
         var counter = GetComponentInParent<Counter>();
         counter.AddScore();
         timer.TriggerCompleteTimerFive();
+        isDisableAfterCompleted = true;
 
     }
     

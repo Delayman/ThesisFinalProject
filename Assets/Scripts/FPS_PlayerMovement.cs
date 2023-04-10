@@ -185,7 +185,7 @@ public class FPS_PlayerMovement : MonoBehaviour
                 PlayerAnimationEvent.Invoke(1);
                 foot1.enabled = true;
                 foot2.enabled = false;
-                Debug.Log("Walk!");
+                // Debug.Log("Walk!");
             }
         }
     }

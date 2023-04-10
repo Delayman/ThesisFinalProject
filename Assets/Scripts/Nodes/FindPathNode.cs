@@ -102,7 +102,7 @@ public class FindPathNode : Node
 
     private void PlayAnimation(int _value)
     {
-        Debug.Log($"Find Path");
+        // Debug.Log($"Find Path");
         MonsterAnimator.SetInteger("EMAnimationID",_value);
         
     }

@@ -29,7 +29,11 @@ public class PlayerInteraction : MonoBehaviour
         if (Physics.Raycast(ray, out var _hit, interactionDistance))
         {
             var interactable = _hit.collider.GetComponent<Interactable>();
-
+            var objCheck = _hit.collider.gameObject;
+            
+            Debug.Log($"Looking at {objCheck.gameObject.name}");
+            Debug.Log($"Interact at {interactable.gameObject.name}");
+            
             if (interactable != null)
             {
                 interactionText.text = interactable.GetDescription();
