@@ -51,18 +51,18 @@ public class MathPuzzleController : MonoBehaviour
 
         if (tempNum != answer)
         {
-            if (divBtnList[0].state == 3)
+            if (divBtnList[0].state == 4)
             {
                 foreach (var divBtn in divBtnList)
                 {
                     divBtn.state = 1;
-                    divBtn.divideNum = 0;
+                    divBtn.divideNum = 2;
                 }
                 
                 foreach (var mulBtn in mulBtnList)
                 {
                     mulBtn.state = 1;
-                    mulBtn.multiplyNum = 0;
+                    mulBtn.multiplyNum = 2;
                 }
                 
                 resultTxt.ResetValue();

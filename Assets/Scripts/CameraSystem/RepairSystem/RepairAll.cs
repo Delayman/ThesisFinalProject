@@ -54,7 +54,7 @@ public class RepairAll : Interactable
     {
         foreach (var textBox in textBoxList)
         {
-            textBox.AddTime(addedTime);
+            textBox.AddTime(textBox.timer);
             textBox.isResetting = false;
             textBox.isTimeOut = false;
         }

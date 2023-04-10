@@ -14,8 +14,8 @@ public class ResultText : MonoBehaviour
     private TextMeshProUGUI currentText;
     private MathPuzzleController mathPuzzleController;
 
-    private List<MultiplyButton> multiplyButton;
-    private List<DivideButton> divideButtons;
+    public List<MultiplyButton> multiplyButton;
+    public List<DivideButton> divideButtons;
 
     private float num;
 
@@ -27,9 +27,13 @@ public class ResultText : MonoBehaviour
 
     private void Start()
     {
-        multiplyButton = FindObjectsOfType<MultiplyButton>().ToList();
-        divideButtons = FindObjectsOfType<DivideButton>().ToList();
+        // multiplyButton = FindObjectsOfType<MultiplyButton>().ToList();
+        // divideButtons = FindObjectsOfType<DivideButton>().ToList();
         mathPuzzleController = FindObjectOfType<MathPuzzleController>();
+        
+        DisableAllBtn();
+        multiplyButton[0].gameObject.SetActive(true);
+        divideButtons[0].gameObject.SetActive(true);
         
         num = 10;
     }
@@ -41,20 +45,20 @@ public class ResultText : MonoBehaviour
             case 1 :
                 currentText = placeholder[1];
                 DisableAllBtn();
-                multiplyButton[0].gameObject.SetActive(true);
-                divideButtons[0].gameObject.SetActive(true);
+                multiplyButton[1].gameObject.SetActive(true);
+                divideButtons[1].gameObject.SetActive(true);
                 break;
             case 2 :
                 currentText = placeholder[2];
                 DisableAllBtn();
-                multiplyButton[1].gameObject.SetActive(true);
-                divideButtons[1].gameObject.SetActive(true);
+                multiplyButton[2].gameObject.SetActive(true);
+                divideButtons[2].gameObject.SetActive(true);
                 break;
             case 3 :
                 currentText = placeholder[3];
                 DisableAllBtn();
-                multiplyButton[2].gameObject.SetActive(true);
-                divideButtons[2].gameObject.SetActive(true);
+                // multiplyButton[2].gameObject.SetActive(true);
+                // divideButtons[2].gameObject.SetActive(true);
                 break;
         }
     }
@@ -103,12 +107,12 @@ public class ResultText : MonoBehaviour
     {
         foreach (var _btn in multiplyButton)
         {
-            _btn.enabled = false;
+            _btn.gameObject.SetActive(false);
         }
         
         foreach (var _btn in divideButtons)
         {
-            _btn.enabled = false;
+            _btn.gameObject.SetActive(false);
         }
     }
 }

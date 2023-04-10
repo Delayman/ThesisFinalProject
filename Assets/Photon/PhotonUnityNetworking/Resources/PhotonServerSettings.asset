@@ -54,6 +54,7 @@ MonoBehaviour:
   - ToggleActivatorSwitch
   - ToggleComSwitch
   - ToggleReceiverSwitch
+  - AddPasswordDigit
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

@@ -32,7 +32,8 @@ public class FinalPasswordPuzzle : Interactable
     {
         ButtonOBJ.Play();
     }
-
+    
+    [PunRPC]
     private void AddPasswordDigit()
     {
         ctr.inputPassword += this.name;

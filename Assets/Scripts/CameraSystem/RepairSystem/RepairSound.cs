@@ -49,7 +49,7 @@ public class RepairSound : Interactable
     private void Cooldown()
     {
         ctr.EnableAllButton();
-        textBox.AddTime(addedTime);
+        textBox.AddTime(textBox.timer);
         textBox.isResetting = false;
         textBox.isTimeOut = false;
         isOn = false;

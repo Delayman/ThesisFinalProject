@@ -38,7 +38,6 @@ public class MazePuzzleController : MonoBehaviour
 
         if (!isCompleted || isDisableAfterCompleted) return;
 
-        // rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
         Winsound.Play();    
@@ -47,7 +46,7 @@ public class MazePuzzleController : MonoBehaviour
         CutScenePlay.PassPuzzle += 1;
         cutplay.CutScene2();
         timer.TriggerCompleteTimerSix();
+        
         isDisableAfterCompleted = true;
-
     }
 }
