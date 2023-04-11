@@ -22,6 +22,8 @@ public class FPS_PlayerMovement : MonoBehaviour
 
     bool isrun;
     bool isrunable;
+    public bool isDisableMoving;
+    
     private PhotonView _view;
 
     //Y axis limit cam rotation stuff
@@ -80,10 +82,12 @@ public class FPS_PlayerMovement : MonoBehaviour
             Vector3 moveVertical = transform.forward * verticalMove;
 
             Vector3 velocity = (moveHorizontal + moveVertical).normalized * playerMoveSpeed;
-
-            //Apply moving speed
+            
             if(velocity != Vector3.zero)
             {
+                //Apply moving speed
+                if (isDisableMoving) return;
+                
                 PlayerSpeedSet();
                 rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
             }
@@ -94,6 +98,7 @@ public class FPS_PlayerMovement : MonoBehaviour
                 foot2.enabled = false;
                 isrun = false;
             }
+            
             Staminacontroller();
 
             //Getting Input from mouse to move screen

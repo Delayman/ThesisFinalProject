@@ -12,18 +12,26 @@ public class MultiplyButton : Interactable
     [Tooltip("Set starting state of value")]
     public float state = 1;
     [Tooltip("Value for multiply (Ex. 1 * VALUE)")]
-    public float multiplyNum;
+    public float multiplyNum = 2;
 
     private bool isOn;
 
     private ResultText resultText;
     public AudioSource ButtonOBJ;
 
+    private void Awake()
+    {
+        state = 1;
+        multiplyNum = 2;
+    }
+    
     private void Start()
     {
         resultText = FindObjectOfType<ResultText>();
         state = 1;
-        multiplyNum = state + 1;
+        multiplyNum = 2;
+        
+        // Debug.Log($"state : {state} | mulNum : {multiplyNum}");
     }
 
     public override string GetDescription()
@@ -50,6 +58,7 @@ public class MultiplyButton : Interactable
         resultText.UpdateText(state);
         resultText.MultiplyState(multiplyNum);
         resultText.ChangeStateToAll(multiplyNum);
-        
+        Debug.Log($"state : {state} | mulNum : {multiplyNum}");
+
     }
 }

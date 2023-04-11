@@ -195,6 +195,7 @@ MonoBehaviour:
   StaminaBar: {fileID: 0}
   foot1: {fileID: 2960981735873898993}
   foot2: {fileID: 466906556571134267}
+  isDisableMoving: 0
   camRotLimit: 85
   cam: {fileID: 4421393261196023202}
 --- !u!54 &4421393261113564725
@@ -467,6 +468,7 @@ MonoBehaviour:
   isDisableControlAndCam: 0
   isDisableUI: 0
   isDisableInteraction: 0
+  isDisableFPSMovement: 0
 --- !u!1 &4421393261196023205
 GameObject:
   m_ObjectHideFlags: 0

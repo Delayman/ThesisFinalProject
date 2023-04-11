@@ -9,6 +9,7 @@ public class DisablePlayerControl : MonoBehaviour
     [FormerlySerializedAs("isDisable")] public bool isDisableControlAndCam;
     public bool isDisableUI;
     public bool isDisableInteraction;
+    public bool isDisableFPSMovement;
 
     private FPS_PlayerMovement fps;
     private PlayerInteraction interaction;
@@ -28,6 +29,8 @@ public class DisablePlayerControl : MonoBehaviour
         fps.enabled = !isDisableControlAndCam;
         
         interaction.enabled = !isDisableInteraction;
+
+        this.gameObject.GetComponent<FPS_PlayerMovement>().isDisableMoving = isDisableFPSMovement;
 
         DisUI.SetActive(!isDisableUI);
     }

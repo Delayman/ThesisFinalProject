@@ -4,12 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using Photon.Pun;
 
 public class PlayerInteraction : MonoBehaviour
 {
     public float interactionDistance;
 
     public TextMeshProUGUI interactionText;
+    
+    private PhotonView _view;
+
     // public GameObject interactionHoldGO; // the ui parent to disable when not interacting
     // public UnityEngine.UI.Image interactionHoldProgress; // the progress bar for hold interaction type
 
@@ -17,7 +21,13 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Start()
     {
-        interactionText = GameObject.FindGameObjectWithTag("InteractTextField").GetComponent<TextMeshProUGUI>();
+        _view = GetComponent<PhotonView>();
+
+        if (_view.IsMine)
+        {
+            Debug.Log($"yes");
+            interactionText = GameObject.FindGameObjectWithTag("InteractTextField").GetComponent<TextMeshProUGUI>();
+        }
     }
 
     private void Update()
@@ -31,8 +41,8 @@ public class PlayerInteraction : MonoBehaviour
             var interactable = _hit.collider.GetComponent<Interactable>();
             var objCheck = _hit.collider.gameObject;
             
-             Debug.Log($"Looking at {objCheck.gameObject.name}");
-             Debug.Log($"Interact at {interactable.gameObject.name}");
+             // Debug.Log($"Looking at {objCheck.gameObject.name}");
+             // Debug.Log($"Interact at {interactable.gameObject.name}");
             
             if (interactable != null)
             {

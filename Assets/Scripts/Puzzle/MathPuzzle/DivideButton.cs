@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
@@ -12,18 +13,27 @@ public class DivideButton : Interactable
     [Tooltip("Set starting state of value")]
     public float state = 1;
     [Tooltip("Value for divide (Ex. 1/VALUE)")]
-    public float divideNum;
+    public float divideNum = 2;
 
     private bool isOn;
 
     private ResultText resultText;
 
     public AudioSource ButtonOBJ;
+
+    private void Awake()
+    {
+        state = 1;
+        divideNum = 2;
+    }
+
     private void Start()
     {
         resultText = FindObjectOfType<ResultText>();
         state = 1;
         divideNum = 2;
+        
+        // Debug.Log($"state : {state} | mulNum : {divideNum}");
     }
 
     public override string GetDescription()
@@ -50,5 +60,6 @@ public class DivideButton : Interactable
         resultText.UpdateText(state);
         resultText.DivideState(divideNum);
         resultText.ChangeStateToAll(divideNum);
+        Debug.Log($"state : {state} | mulNum : {divideNum}");
     }
 }
