@@ -92,6 +92,7 @@ public class FPS_PlayerMovement : MonoBehaviour
                 PlayerAnimationEvent.Invoke(0);
                 foot1.enabled = false;
                 foot2.enabled = false;
+                isrun = false;
             }
             Staminacontroller();
 
