@@ -7,7 +7,7 @@ using TMPro;
 public class MultiplyButton : Interactable
 {
     private string OffText = "[E] to <color=red>use</color> button";
-    private const string ActivatedText = "This button is already actived";
+    private const string ActivatedText = "[E] to <color=red>use</color> button";
     
     [Tooltip("Set starting state of value")]
     public float state = 1;

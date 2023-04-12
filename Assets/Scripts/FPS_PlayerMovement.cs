@@ -46,7 +46,6 @@ public class FPS_PlayerMovement : MonoBehaviour
     private void Start()
     {
         _view = GetComponent<PhotonView>();
-        this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
         if (_view.IsMine)
         {
             //Finding Rigibody to move character
@@ -57,6 +56,9 @@ public class FPS_PlayerMovement : MonoBehaviour
             Cursor.visible = false;
 
             StaminaBar = GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<Slider>();
+
+            this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
+
         }
 
         if (!_view.IsMine)
@@ -174,7 +176,7 @@ public class FPS_PlayerMovement : MonoBehaviour
                 PlayerAnimationEvent.Invoke(2);
                 foot1.enabled = false;
                 foot2.enabled = true;
-                Debug.Log("Run!");
+                // Debug.Log("Run!");
             }
             else if ((Input.GetKey(KeyCode.LeftShift) && PlayerCurrentStamina < 0))
             {
@@ -185,7 +187,7 @@ public class FPS_PlayerMovement : MonoBehaviour
                 StartCoroutine(runablecooldown());
                 foot1.enabled = true;
                 foot2.enabled = false;
-                Debug.Log("Out of stamina!");
+                //Debug.Log("Out of stamina!");
             }
             else if (!Input.GetKey(KeyCode.LeftShift))
             {
