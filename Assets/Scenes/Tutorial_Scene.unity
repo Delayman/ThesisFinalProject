@@ -5894,6 +5894,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4224673418302402770, guid: 45c8a3abeb2550a4d954c5b9e46a4553, type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4421393261113564617, guid: 45c8a3abeb2550a4d954c5b9e46a4553, type: 3}
       propertyPath: m_Name
       value: DummyPlayer
@@ -5948,7 +5952,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8344752384610472106, guid: 45c8a3abeb2550a4d954c5b9e46a4553, type: 3}
       propertyPath: sceneViewId
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45c8a3abeb2550a4d954c5b9e46a4553, type: 3}
@@ -7618,10 +7622,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1854236502}
     m_Modifications:
-    - target: {fileID: 4681664120559828617, guid: b8d327a205500e24d959bea0a6fcf227, type: 3}
-      propertyPath: hidingOffSet.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7347515092449371524, guid: b8d327a205500e24d959bea0a6fcf227, type: 3}
       propertyPath: m_Name
       value: Cabinet
@@ -9376,7 +9376,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4917756232107709633, guid: d398b4847c7bfdb42a55ea52876410a3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4917756232107709662, guid: d398b4847c7bfdb42a55ea52876410a3, type: 3}
       propertyPath: m_RootOrder

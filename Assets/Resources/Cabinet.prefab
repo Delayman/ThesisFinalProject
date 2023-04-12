@@ -51,7 +51,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 3.5
   MaxDistance: 5
   Pan2D: 0
   rolloffMode: 0
@@ -1274,7 +1274,7 @@ MonoBehaviour:
   interactionType: 0
   hidingRadius: 10
   hidingOffSet: {x: 0, y: 2, z: 0}
-  getOutOffSet: {x: -5, y: 2, z: 0}
+  getOutOffSet: {x: 2, y: 2, z: 0}
   hidingRotationOffSet: {x: 0, y: 0, z: 0}
   isOccupy: 0
   HideSound: {fileID: 1387536668}
@@ -1289,8 +1289,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.085623
-  m_Center: {x: -0.00000069538737, y: 0.8999999, z: 0.18562254}
+  m_Radius: 0.65260065
+  m_Center: {x: -0.00000069538737, y: 0.8999999, z: 0.31}
 --- !u!1 &3302326820573916985
 GameObject:
   m_ObjectHideFlags: 0
