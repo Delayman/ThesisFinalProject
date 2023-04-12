@@ -73,6 +73,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     {
         if (_view.IsMine)
         {
+
             //Getting Input from keyboard
             float horizontalMove = Input.GetAxisRaw("Horizontal");
             float verticalMove = Input.GetAxisRaw("Vertical");

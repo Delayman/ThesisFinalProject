@@ -23,6 +23,8 @@ public class PressAllPlateController : MonoBehaviour
 
     public CutScenePlay cutplay;
     public AudioSource Winsound;
+    public GameObject Startpoint;
+    public GameObject MainGame;
     private void Awake()
     {
         activatedList ??= new List<Checker>();
@@ -69,11 +71,12 @@ public class PressAllPlateController : MonoBehaviour
         }
     }
 
-    private void ResetThisPuzzle()
+    public void ResetThisPuzzle()
     {
         isCompleted = false;
         checkList.Clear();
         ResetColor();
+        MainGame.transform.position = Startpoint.transform.position;
     }
 
     private void ResetColor()
