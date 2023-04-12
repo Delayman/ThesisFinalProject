@@ -24,8 +24,8 @@ public class IcePuzzleController : MonoBehaviour
         //rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
         NoComplete.SetActive(true);
         HaveBeenComplete.SetActive(false);
-        CutScenePlay.PassPuzzle += 1;
-        cutplay.CutScene2();
+        
+        
         timer = FindObjectOfType<TimerManager>();
 
     }
@@ -40,6 +40,8 @@ public class IcePuzzleController : MonoBehaviour
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
         Winsound.Play();
+        CutScenePlay.PassPuzzle += 1;
+        cutplay.CutScene2();
         var counter = GetComponentInParent<Counter>();
         counter.AddScore();
         timer.TriggerCompleteTimerFive();

@@ -83,6 +83,7 @@ public class MathPuzzleController : MonoBehaviour
         HaveBeenComplete.SetActive(true);
         timer.TriggerCompleteTimerFour();
         Winsound.Play();
+        CutScenePlay.PassPuzzle += 1;
         //var counter = GetComponentInParent<Counter>();
         //counter.AddScore();
 
@@ -97,7 +98,7 @@ public class MathPuzzleController : MonoBehaviour
     void PlayCutscene()
     {
         cutplay.CutScene1();
-        CutScenePlay.PassPuzzle += 1;
+        
         cutplay.CutScene2();
     }
 }

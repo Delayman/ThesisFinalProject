@@ -224,10 +224,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
+  m_Radius: 0.20793326
+  m_Height: 1.9999996
   m_Direction: 1
-  m_Center: {x: 0, y: -0.1, z: 0}
+  m_Center: {x: -4.7729583e-13, y: -0.09999997, z: 0.0070331725}
 --- !u!114 &8344752384610472106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +248,6 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 6740146939462136849}
-  - {fileID: 2160766690179086274}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

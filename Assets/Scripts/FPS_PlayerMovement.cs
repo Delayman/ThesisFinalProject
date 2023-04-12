@@ -46,6 +46,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     private void Start()
     {
         _view = GetComponent<PhotonView>();
+        this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
         if (_view.IsMine)
         {
             //Finding Rigibody to move character
