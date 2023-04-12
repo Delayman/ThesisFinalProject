@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
+using Photon.Voice.Unity;
+using Photon.Voice.PUN;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -25,6 +27,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     public bool isDisableMoving;
     
     private PhotonView _view;
+    private PhotonVoiceView voiceView;
 
     //Y axis limit cam rotation stuff
     [SerializeField]
@@ -143,14 +146,12 @@ public class FPS_PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.V))
         {
-            var audioSource = GetComponent<AudioSource>();
-            audioSource.enabled = true;
+            this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = true;
         }
         
         if (Input.GetKeyUp(KeyCode.V))
         {
-            var audioSource = GetComponent<AudioSource>();
-            audioSource.enabled = false;
+            this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
         }
     }
 

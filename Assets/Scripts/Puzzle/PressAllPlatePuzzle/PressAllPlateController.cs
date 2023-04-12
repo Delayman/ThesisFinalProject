@@ -77,6 +77,7 @@ public class PressAllPlateController : MonoBehaviour
         checkList.Clear();
         ResetColor();
         MainGame.transform.position = Startpoint.transform.position;
+        MainGame.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
 
     private void ResetColor()

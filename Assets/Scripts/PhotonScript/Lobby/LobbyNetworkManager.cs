@@ -79,7 +79,14 @@ public class LobbyNetworkManager : MonoBehaviourPunCallbacks
         
         Debug.Log($"Joined room : {PhotonNetwork.CurrentRoom.Name}");
 
-        if (PhotonNetwork.IsMasterClient) startGameBtn.interactable = true;
+        if (PhotonNetwork.IsMasterClient)
+        {
+            startGameBtn.interactable = true;
+        }
+        else
+        {
+            startGameBtn.gameObject.SetActive(false);
+        }
         
         leaveRoomBtn.interactable = true;
         startGameBtn.gameObject.SetActive(true);
@@ -206,6 +213,7 @@ public class LobbyNetworkManager : MonoBehaviourPunCallbacks
     
     public void OnPressedStartGame()
     {
+        startGameBtn.gameObject.SetActive(false);
         PhotonNetwork.LoadLevel("Scenes/Lab_Map2");
     }
 
@@ -213,7 +221,7 @@ public class LobbyNetworkManager : MonoBehaviourPunCallbacks
     {
         var _tempObj = GameObject.Find("Saved role ID");
         
-        Debug.Log($"Slider : {_tempObj}");
+        // Debug.Log($"Slider : {_tempObj}");
         _tempObj.GetComponent<SavedRole>().SavedRoleID(roleDropDown.value);
     }
 }

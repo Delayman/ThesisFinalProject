@@ -43,6 +43,11 @@ public class PlatePuzzleControl : Interactable
         ButtonOBJ.Play();
     }
 
+    // private void Update()
+    // {
+    //     Debug.Log($"Speed : {movingObjRb.velocity}");
+    // }
+
     [PunRPC]
     private void CheckDirectionButton()
     {
@@ -51,23 +56,23 @@ public class PlatePuzzleControl : Interactable
             case "N" :
                 /*var forward = transform.forward;
                 movingObjRb.AddForce(movingObjRb.position + forward * speed);*/
-                movingObjRb.AddForce(transform.forward * force);
+                movingObjRb.AddForce(transform.forward * force, ForceMode.Impulse);
                 break;
             case "S" :
                 /* var back = transform.forward;
                  movingObjRb.AddForce(movingObjRb.position + -back * speed);*/
-                movingObjRb.AddForce(-transform.forward * force);
+                movingObjRb.AddForce(-transform.forward * force, ForceMode.Impulse);
                 break;
             case "W" :
              /*   var right = transform.right;
                 movingObjRb.AddForce(movingObjRb.position + -right * speed);*/
-                movingObjRb.AddForce(-transform.right * force);
-                break;
+             movingObjRb.AddForce(-transform.right * force, ForceMode.Impulse);
+             break;
             case "E" :
                /* var left = transform.right;
                 movingObjRb.AddForce(movingObjRb.position + left * speed);*/
-                movingObjRb.AddForce(transform.right * force);
-                break;
+               movingObjRb.AddForce(transform.right * force, ForceMode.Impulse);
+               break;
         }
     }
 }
