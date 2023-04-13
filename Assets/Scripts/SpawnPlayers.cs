@@ -6,7 +6,10 @@ using Photon.Pun;
 
 public class SpawnPlayers : MonoBehaviour
 {
-    [SerializeField] private GameObject _playerPrefabs;
+    private GameObject _playerPrefabs;
+    [SerializeField] private GameObject _RunnerA;
+    [SerializeField] private GameObject _RunnerB;
+    [SerializeField] private GameObject _Watcher;
     [SerializeField] private List<GameObject> spawner;
     [SerializeField] private List<GameObject> player_Ui;
 
@@ -19,9 +22,9 @@ public class SpawnPlayers : MonoBehaviour
             
         switch (id)
         {
-            case 0 : spawnPos = spawner[0].transform.localPosition; player_Ui[0].SetActive(true); break;
-            case 1 : spawnPos = spawner[1].transform.localPosition; player_Ui[1].SetActive(true); break;
-            case 2 : spawnPos = spawner[2].transform.localPosition; player_Ui[2].SetActive(true); break;
+            case 0 : spawnPos = spawner[0].transform.localPosition; player_Ui[0].SetActive(true); _playerPrefabs = _Watcher; break;
+            case 1 : spawnPos = spawner[1].transform.localPosition; player_Ui[1].SetActive(true); _playerPrefabs = _RunnerA; break;
+            case 2 : spawnPos = spawner[2].transform.localPosition; player_Ui[2].SetActive(true); _playerPrefabs = _RunnerB; break;
             // default: Debug.Log("Role out of bound"); break;
             }
 

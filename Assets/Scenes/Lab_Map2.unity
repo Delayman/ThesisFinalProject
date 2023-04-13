@@ -5458,7 +5458,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228e1005107fa2649a5791de3b64b04c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPrefabs: {fileID: 4421393261113564617, guid: 45c8a3abeb2550a4d954c5b9e46a4553, type: 3}
+  _RunnerA: {fileID: 4421393261113564617, guid: a48eead123972a448823911e66dedff0, type: 3}
+  _RunnerB: {fileID: 4421393261113564617, guid: 331cca25c2e12c242bd03564f6651404, type: 3}
+  _Watcher: {fileID: 4421393261113564617, guid: 45c8a3abeb2550a4d954c5b9e46a4553, type: 3}
   spawner:
   - {fileID: 214699556}
   - {fileID: 1291298868}

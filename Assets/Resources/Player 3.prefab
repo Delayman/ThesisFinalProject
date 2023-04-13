@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 2937873146202804029}
   - component: {fileID: 72538201882426368}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player 3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -992,7 +992,7 @@ PrefabInstance:
     - target: {fileID: -700291334668687702, guid: d592f48f49f76c04b938b1f57703a116, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 5e20f0773c85913479d0104911c2a5d3, type: 2}
+      objectReference: {fileID: 2100000, guid: c80f5344669747b48a972ee6d3f3d75d, type: 2}
     - target: {fileID: 919132149155446097, guid: d592f48f49f76c04b938b1f57703a116, type: 3}
       propertyPath: m_Name
       value: Unarmed Idle
