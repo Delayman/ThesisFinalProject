@@ -79,7 +79,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     {
         if (_view.IsMine)
         {
-
+            //Stop ctrl z
             //Getting Input from keyboard
             float horizontalMove = Input.GetAxisRaw("Horizontal");
             float verticalMove = Input.GetAxisRaw("Vertical");
@@ -96,10 +96,20 @@ public class FPS_PlayerMovement : MonoBehaviour
                 if (isDisableMoving) return;
                 
                 PlayerSpeedSet();
-                rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+                // rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+                rb.AddForce(velocity*10f,ForceMode.Force);
+
+                Vector3 flatVe1 = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
+                if (flatVe1.magnitude > playerMoveSpeed)
+                {
+                    Vector3 limitedVe1 = flatVe1.normalized * playerMoveSpeed;
+                    rb.velocity = new Vector3(limitedVe1.x, rb.velocity.y, limitedVe1.z);
+                }
+
             }
             else
             {
+                rb.velocity = Vector3.zero;
                 PlayerAnimationEvent.Invoke(0);
                 foot1.enabled = false;
                 foot2.enabled = false;
@@ -167,6 +177,7 @@ public class FPS_PlayerMovement : MonoBehaviour
 
     void PlayerSpeedSet()
     {
+     //   Vector3 flatVe1 = new Vector3(rb.velocity.x ,0f , rb.velocity.z);
         if(isrunable)
         {
             if (Input.GetKey(KeyCode.LeftShift)&& PlayerCurrentStamina >= 0)
@@ -176,6 +187,12 @@ public class FPS_PlayerMovement : MonoBehaviour
                 PlayerAnimationEvent.Invoke(2);
                 foot1.enabled = false;
                 foot2.enabled = true;
+
+               /* if (flatVe1.magnitude > playerMoveSpeed)
+                {
+                    Vector3 limitedVe1 = flatVe1.normalized* playerMoveSpeed;
+                    rb.velocity = new Vector3(limitedVe1.x,rb.velocity.y,limitedVe1.z);
+                }*/
                 // Debug.Log("Run!");
             }
             else if ((Input.GetKey(KeyCode.LeftShift) && PlayerCurrentStamina < 0))
@@ -187,6 +204,12 @@ public class FPS_PlayerMovement : MonoBehaviour
                 StartCoroutine(runablecooldown());
                 foot1.enabled = true;
                 foot2.enabled = false;
+
+               /* if (flatVe1.magnitude > playerMoveSpeed)
+                {
+                    Vector3 limitedVe1 = flatVe1.normalized * playerMoveSpeed;
+                    rb.velocity = new Vector3(limitedVe1.x, rb.velocity.y, limitedVe1.z);
+                }*/
                 //Debug.Log("Out of stamina!");
             }
             else if (!Input.GetKey(KeyCode.LeftShift))
@@ -196,6 +219,12 @@ public class FPS_PlayerMovement : MonoBehaviour
                 PlayerAnimationEvent.Invoke(1);
                 foot1.enabled = true;
                 foot2.enabled = false;
+
+              /*  if (flatVe1.magnitude > playerMoveSpeed)
+                {
+                    Vector3 limitedVe1 = flatVe1.normalized * playerMoveSpeed;
+                    rb.velocity = new Vector3(limitedVe1.x, rb.velocity.y, limitedVe1.z);
+                }*/
                 // Debug.Log("Walk!");
             }
         }

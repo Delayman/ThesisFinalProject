@@ -6589,6 +6589,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290366726}
   m_CullTransparentMesh: 1
+--- !u!1 &1312430878 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2693484068078908800, guid: b8d327a205500e24d959bea0a6fcf227, type: 3}
+  m_PrefabInstance: {fileID: 1566483113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1312430886
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1312430878}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1.7999998, z: 0.7}
+  m_Center: {x: -0.00000071525574, y: 0.8999999, z: 0.7}
 --- !u!1 &1331956991
 GameObject:
   m_ObjectHideFlags: 0
@@ -7622,6 +7640,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1854236502}
     m_Modifications:
+    - target: {fileID: 596551686, guid: b8d327a205500e24d959bea0a6fcf227, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7347515092449371524, guid: b8d327a205500e24d959bea0a6fcf227, type: 3}
       propertyPath: m_Name
       value: Cabinet
@@ -9376,7 +9398,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4917756232107709633, guid: d398b4847c7bfdb42a55ea52876410a3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4917756232107709662, guid: d398b4847c7bfdb42a55ea52876410a3, type: 3}
       propertyPath: m_RootOrder

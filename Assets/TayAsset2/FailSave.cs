@@ -8,7 +8,7 @@ public class FailSave : MonoBehaviour
     private int id = 0;
     public void OnTriggerEnter(Collider other)
     {
-        if (other)
+        if (other.tag == "Player")
         {
             //other.GetComponent<SavedRole>();
             id = SavedRole.savedRoleID;

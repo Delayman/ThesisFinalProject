@@ -8,7 +8,7 @@ public class BlockWatcher : MonoBehaviour
     private int id = 0;
     public void OnTriggerEnter(Collider other)
     {
-        if (other)
+        if (other.tag == "Player")
         {
             id = SavedRole.savedRoleID;
             var spawnPos = new Vector3();

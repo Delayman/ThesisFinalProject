@@ -1021,7 +1021,7 @@ MonoBehaviour:
   SfxSlider: {fileID: 3895305560977739944}
   FullScreentoggle: {fileID: 3895305559131179037}
   AmbiSlider: {fileID: 3895305560732169157}
-  AmbiMixer: {fileID: 24100000, guid: 70f29e2b5941cf446b209145c3f8ad36, type: 2}
+  AmbiMixer: {fileID: 24100000, guid: 77d09bf1c01c5ac41a032fd9a56ba798, type: 2}
 --- !u!1 &3895305559480901229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2872,6 +2872,18 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MainMenuUI, Assembly-CSharp
+        m_MethodName: OnOptionBack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
