@@ -1204,6 +1204,7 @@ MonoBehaviour:
   movingObj: {fileID: 1933645114}
   speed: 1
   force: 0
+  delay: 2
   ButtonOBJ: {fileID: 0}
 --- !u!65 &78795740
 BoxCollider:
@@ -2226,6 +2227,7 @@ MonoBehaviour:
   movingObj: {fileID: 1933645114}
   speed: 1
   force: 5
+  delay: 2
   ButtonOBJ: {fileID: 1881052971}
 --- !u!114 &144702960
 MonoBehaviour:
@@ -5733,6 +5735,7 @@ MonoBehaviour:
   movingObj: {fileID: 1933645114}
   speed: 1
   force: 0
+  delay: 2
   ButtonOBJ: {fileID: 0}
 --- !u!65 &240045008
 BoxCollider:
@@ -5996,6 +5999,7 @@ MonoBehaviour:
   movingObj: {fileID: 1933645114}
   speed: 1
   force: 5
+  delay: 2
   ButtonOBJ: {fileID: 608245915}
 --- !u!114 &257551235
 MonoBehaviour:
@@ -16927,6 +16931,7 @@ MonoBehaviour:
   movingObj: {fileID: 1933645114}
   speed: 1
   force: 0
+  delay: 2
   ButtonOBJ: {fileID: 0}
 --- !u!65 &970017887
 BoxCollider:
@@ -19980,6 +19985,7 @@ MonoBehaviour:
   movingObj: {fileID: 1933645114}
   speed: 1
   force: 5
+  delay: 2
   ButtonOBJ: {fileID: 877244347}
 --- !u!114 &1052185007
 MonoBehaviour:
@@ -24197,6 +24203,7 @@ MonoBehaviour:
   movingObj: {fileID: 1933645114}
   speed: 1
   force: 0
+  delay: 2
   ButtonOBJ: {fileID: 0}
 --- !u!65 &1440877808
 BoxCollider:
@@ -28542,6 +28549,7 @@ MonoBehaviour:
   movingObj: {fileID: 1933645114}
   speed: 1
   force: 5
+  delay: 2
   ButtonOBJ: {fileID: 1177544750}
 --- !u!114 &1738978013
 MonoBehaviour:
@@ -30400,6 +30408,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardPrefab: {fileID: 1058008955}
+  delay: 2
+  btnList:
+  - {fileID: 240291148}
+  - {fileID: 352569299}
+  - {fileID: 80527792}
+  - {fileID: 2029441681}
   NoComplete: {fileID: 2084901294}
   HaveBeenComplete: {fileID: 1391334575}
   cutplay: {fileID: 1176912294}
@@ -30488,6 +30502,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rewardPrefab: {fileID: 1797031625}
+  delay: 2
+  btnList:
+  - {fileID: 1738978009}
+  - {fileID: 1052185003}
+  - {fileID: 144702956}
+  - {fileID: 257551231}
   NoComplete: {fileID: 1337497978}
   HaveBeenComplete: {fileID: 614280160}
   cutplay: {fileID: 1176912294}

@@ -67,6 +67,20 @@ public class ComputerPuzzleController : MonoBehaviour
         CutScenePlay.PassPuzzle += 1;
         cutplay.CutScene2();
         timer.TriggerCompleteTimerOne();
+        DisableColliderCom();
         //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
+    }
+
+    private void DisableColliderCom()
+    {
+        foreach (var correctPC in correctObjList)
+        {
+            correctPC.GetComponent<BoxCollider>().enabled = false;
+        }
+        
+        foreach (var wrongPC in wrongObjList)
+        {
+            wrongPC.GetComponent<BoxCollider>().enabled = false;
+        }
     }
 }

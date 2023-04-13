@@ -8,10 +8,12 @@ public class PressAllPlateController : MonoBehaviour
 {
     [Tooltip("Set what to show when completed puzzle")]
     [SerializeField] private GameObject rewardPrefab;
-    
+    [SerializeField] private float delay = 2f;
+
     private Checker checker;
     private List<Checker> activatedList;
     private List<bool> checkList;
+    public List<GameObject> btnList;
     
     private bool isCompleted;
     private bool isDisableAfterCompleted;
@@ -34,7 +36,6 @@ public class PressAllPlateController : MonoBehaviour
     private void Start()
     {
         activatedList = FindObjectsOfType<Checker>().ToList();
-       // rewardPrefab.GetComponent<Renderer>().material.color = Color.red;
         NoComplete.SetActive(true);
         HaveBeenComplete.SetActive(false);
         timer = FindObjectOfType<TimerManager>();
@@ -87,5 +88,21 @@ public class PressAllPlateController : MonoBehaviour
             _obj.gameObject.GetComponent<MeshRenderer>().material.color = Color.red;
             _obj.isPressed = false;
         }
+    }
+    
+    public IEnumerator ButtonDelay()
+    {
+        foreach (var btn in btnList)
+        {
+            btn.gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
+        
+        yield return new WaitForSeconds(delay);
+        
+        foreach (var btn in btnList)
+        {
+            btn.gameObject.GetComponent<BoxCollider>().enabled = true;
+        }
+        
     }
 }

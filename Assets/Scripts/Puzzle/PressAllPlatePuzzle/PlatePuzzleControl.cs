@@ -13,10 +13,12 @@ public class PlatePuzzleControl : Interactable
     [Tooltip("Set how fast the object will move")]
     [SerializeField] [Range(0.1f, 5f)] private float speed;
     [SerializeField][Range(1f, 10000000f)] private float force;
+    [SerializeField] private float delay = 2f;
 
     private GameObject directionButtons;
     private Rigidbody movingObjRb;
-    
+    private PressAllPlateController ctrl;
+
     private const string feedbackText = "[E] to <color=red>push</color> the button.";
 
     public AudioSource ButtonOBJ;
@@ -25,6 +27,7 @@ public class PlatePuzzleControl : Interactable
         directionButtons = gameObject;
         movingObj = GameObject.FindWithTag("ObjectiveObj");
         movingObjRb = movingObj.GetComponent<Rigidbody>();
+        ctrl = FindObjectOfType<PressAllPlateController>();
     }
 
     public override string GetDescription()
@@ -43,11 +46,6 @@ public class PlatePuzzleControl : Interactable
         ButtonOBJ.Play();
     }
 
-    // private void Update()
-    // {
-    //     Debug.Log($"Speed : {movingObjRb.velocity}");
-    // }
-
     [PunRPC]
     private void CheckDirectionButton()
     {
@@ -57,21 +55,25 @@ public class PlatePuzzleControl : Interactable
                 /*var forward = transform.forward;
                 movingObjRb.AddForce(movingObjRb.position + forward * speed);*/
                 movingObjRb.AddForce(transform.forward * force, ForceMode.Impulse);
+                StartCoroutine(ctrl.ButtonDelay());
                 break;
             case "S" :
                 /* var back = transform.forward;
                  movingObjRb.AddForce(movingObjRb.position + -back * speed);*/
                 movingObjRb.AddForce(-transform.forward * force, ForceMode.Impulse);
+                StartCoroutine(ctrl.ButtonDelay());
                 break;
             case "W" :
              /*   var right = transform.right;
                 movingObjRb.AddForce(movingObjRb.position + -right * speed);*/
              movingObjRb.AddForce(-transform.right * force, ForceMode.Impulse);
+             StartCoroutine(ctrl.ButtonDelay());
              break;
             case "E" :
                /* var left = transform.right;
                 movingObjRb.AddForce(movingObjRb.position + left * speed);*/
                movingObjRb.AddForce(transform.right * force, ForceMode.Impulse);
+               StartCoroutine(ctrl.ButtonDelay());
                break;
         }
     }

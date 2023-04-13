@@ -6,6 +6,9 @@ public class IcePuzzleController : MonoBehaviour
 {
     [Tooltip("Set what to show when completed puzzle")]
     [SerializeField] private GameObject rewardPrefab;
+    [SerializeField] private float delay = 2f;
+
+    public List<GameObject> btnList;
 
     private IcePuzzleGoal goal;
     private bool isCompleted;
@@ -47,6 +50,22 @@ public class IcePuzzleController : MonoBehaviour
         timer.TriggerCompleteTimerFive();
         isDisableAfterCompleted = true;
 
+    }
+    
+    public IEnumerator IceButtonDelay()
+    {
+        foreach (var btn in btnList)
+        {
+            btn.gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
+        
+        yield return new WaitForSeconds(delay);
+        
+        foreach (var btn in btnList)
+        {
+            btn.gameObject.GetComponent<BoxCollider>().enabled = true;
+        }
+        
     }
     
 }

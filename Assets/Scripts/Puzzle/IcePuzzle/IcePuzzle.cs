@@ -15,6 +15,7 @@ public class IcePuzzle : Interactable
     private GameObject directionButtons;
     private Rigidbody movingObjRb;
     private IcePuzzleGoal goal;
+    private IcePuzzleController ctrl;
 
     public AudioSource ButtonOBJ;
 
@@ -25,6 +26,7 @@ public class IcePuzzle : Interactable
         directionButtons = gameObject;
         movingObjRb = movingObj.GetComponent<Rigidbody>();
         goal = FindObjectOfType<IcePuzzleGoal>();
+        ctrl = FindObjectOfType<IcePuzzleController>();
     }
 
     public override string GetDescription()
@@ -50,15 +52,19 @@ public class IcePuzzle : Interactable
         {
             case "N" :
                 movingObjRb.AddForce(transform.forward * force);
+                StartCoroutine(ctrl.IceButtonDelay());
                 break;
             case "S" :
                 movingObjRb.AddForce(-transform.forward * force);
+                StartCoroutine(ctrl.IceButtonDelay());
                 break;
             case "W" :
                 movingObjRb.AddForce(-transform.right * force);
+                StartCoroutine(ctrl.IceButtonDelay());
                 break;
             case "E" :
                 movingObjRb.AddForce(transform.right * force);
+                StartCoroutine(ctrl.IceButtonDelay());
                 break;
         }
     }

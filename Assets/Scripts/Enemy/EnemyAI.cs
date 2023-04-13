@@ -139,8 +139,6 @@ public class EnemyAI : MonoBehaviour
     
     private IEnumerator SearchTimer()
     {
-        Debug.Log($"Trigger Timer");
-
         yield return new WaitForSeconds(searchingTime);
         isSearchingPlayer = false;
     }
