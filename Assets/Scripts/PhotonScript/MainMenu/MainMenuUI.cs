@@ -7,6 +7,7 @@ public class MainMenuUI : MonoBehaviour
     public GameObject OptionCanvas;
     public GameObject TutorialCanvas;
     public GameObject ESC;
+    public GameObject Credit;
     public void OnStartGameAndNoPressed()
     {
         SceneManager.LoadScene("Scenes/Lobby");
@@ -40,6 +41,14 @@ public class MainMenuUI : MonoBehaviour
     public void OnOptionBack()
     {
         ESC.SetActive(true);
+    }
+    public void OnCreditPress()
+    {
+        Credit.SetActive(true);
+    }
+    public void OnBackCreditPress()
+    {
+        Credit.SetActive(false);
     }
 
 }
