@@ -25,7 +25,6 @@ public class PlayerInteraction : MonoBehaviour
 
         if (_view.IsMine)
         {
-            Debug.Log($"yes");
             interactionText = GameObject.FindGameObjectWithTag("InteractTextField").GetComponent<TextMeshProUGUI>();
         }
     }

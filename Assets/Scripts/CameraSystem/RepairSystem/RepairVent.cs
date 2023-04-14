@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class RepairVent : Interactable
 {
@@ -33,15 +34,16 @@ public class RepairVent : Interactable
 
     public override void Interact()
     {
-        isOn = true;
-        
-        Repair();
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("Repair", RpcTarget.All);
     }
 
+    [PunRPC]
     private void Repair()
     {
         textBox.isResetting = true;
         ctr.DisableAllButton();
+        isOn = true;
         Invoke(nameof(Cooldown), repairTime);
         Sound.Play();
     }
@@ -49,7 +51,7 @@ public class RepairVent : Interactable
     private void Cooldown()
     {
         ctr.EnableAllButton();
-        textBox.AddTime(textBox.timer);
+        textBox.AddTime(textBox.maxTimer);
         textBox.isResetting = false;
         textBox.isTimeOut = false;
         isOn = false;

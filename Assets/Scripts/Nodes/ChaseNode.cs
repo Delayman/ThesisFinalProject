@@ -51,7 +51,6 @@ public class ChaseNode : Node
 
     private void PlayAnimation()
     {
-        Debug.Log("Chase Path");
         MonsterAnimator.SetInteger("EMAnimationID",3);
         //foot.enabled = false;
         //footrun.enabled = true;

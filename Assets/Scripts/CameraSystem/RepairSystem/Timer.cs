@@ -6,15 +6,18 @@ using UnityEngine;
 public class Timer : MonoBehaviour
 {
     public float timer = 10f;
+    public float maxTimer;
     public bool isTimeOut;
     public bool isResetting;
 
     private SystemBrokeDownController ctr;
     
+    
     private void Start()
     {
         isTimeOut = false;
         isResetting = false;
+        maxTimer = timer;
 
         ctr = FindObjectOfType<SystemBrokeDownController>();
     }

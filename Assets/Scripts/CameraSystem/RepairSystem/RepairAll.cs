@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class RepairAll : Interactable
 {
@@ -33,13 +34,15 @@ public class RepairAll : Interactable
 
     public override void Interact()
     {
-        isOn = true;
-        
-        Repair();
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("RepairAllSystem", RpcTarget.All);
     }
 
-    private void Repair()
+    [PunRPC]
+    private void RepairAllSystem()
     {
+        isOn = true;
+
         foreach (var textBox in textBoxList)
         {
             textBox.isResetting = true;
@@ -54,7 +57,7 @@ public class RepairAll : Interactable
     {
         foreach (var textBox in textBoxList)
         {
-            textBox.AddTime(textBox.timer);
+            textBox.AddTime(textBox.maxTimer);
             textBox.isResetting = false;
             textBox.isTimeOut = false;
         }

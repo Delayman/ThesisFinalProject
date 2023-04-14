@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -8,9 +10,16 @@ public class SystemBrokeDownController : MonoBehaviour
 {
     [SerializeField] private GameObject camBrokeUI;
     [SerializeField] private GameObject soundBrokeUI;
-    [SerializeField] private GameObject ventBrokeUI;
+    [SerializeField] private List<GameObject> ventBrokeUI;
     
     [SerializeField] private Button lureButton;
+    
+    private PhotonView _view;
+
+    private void Start()
+    {
+        _view = GetComponent<PhotonView>();
+    }
 
     public void BrokeCam()
     {
@@ -25,7 +34,12 @@ public class SystemBrokeDownController : MonoBehaviour
     
     public void BrokeVent()
     {
-        ventBrokeUI.SetActive(true);
+        if (!_view.IsMine) return;
+
+        foreach (var ventUI in ventBrokeUI)
+        {
+            ventUI.SetActive(true);
+        }
     }
     
     public void RepairCam()
@@ -41,13 +55,22 @@ public class SystemBrokeDownController : MonoBehaviour
     
     public void RepairVent()
     {
-        ventBrokeUI.SetActive(false);
+        if (!_view.IsMine) return;
+
+        foreach (var ventUI in ventBrokeUI)
+        {
+            ventUI.SetActive(false);
+        }
     }
     
     public void RepairAll()
     {
         camBrokeUI.SetActive(false);
         soundBrokeUI.SetActive(false);
-        ventBrokeUI.SetActive(false);
+        
+        foreach (var ventUI in ventBrokeUI)
+        {
+            ventUI.SetActive(false);
+        }
     }
 }

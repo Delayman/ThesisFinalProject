@@ -985,6 +985,7 @@ GameObject:
   - component: {fileID: 69399883}
   - component: {fileID: 69399885}
   - component: {fileID: 69399886}
+  - component: {fileID: 69399887}
   m_Layer: 0
   m_Name: CameraController
   m_TagString: Untagged
@@ -1100,8 +1101,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   camBrokeUI: {fileID: 232557010}
   soundBrokeUI: {fileID: 1847015652}
-  ventBrokeUI: {fileID: 173978475}
+  ventBrokeUI:
+  - {fileID: 173978475}
+  - {fileID: 182869600}
+  - {fileID: 1005878589}
   lureButton: {fileID: 393121574948970103}
+--- !u!114 &69399887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69399880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 60
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &76242695 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7097611303066156433, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
@@ -1716,6 +1742,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6802786148759819012, guid: ad5dd943527bfd4459ce3112242b5bbf, type: 3}
   m_PrefabInstance: {fileID: 1590826496}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &88337720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88337719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 55
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &115068770
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,7 +1954,7 @@ GameObject:
   m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &120699148
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4059,6 +4107,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3204821107215218231, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3204821107215218231, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_TagString
+      value: VentBrokeUI
+      objectReference: {fileID: 0}
     - target: {fileID: 4133758017768309603, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -4892,6 +4948,11 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &182869600 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3204821107215218231, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+  m_PrefabInstance: {fileID: 182869572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &204316598
 GameObject:
   m_ObjectHideFlags: 0
@@ -5985,6 +6046,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6802786148625651211, guid: ad5dd943527bfd4459ce3112242b5bbf, type: 3}
   m_PrefabInstance: {fileID: 1590826496}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &256477882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 256477881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 56
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &257551231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4449858663362089870, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
@@ -9121,6 +9204,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6802786149898588218, guid: ad5dd943527bfd4459ce3112242b5bbf, type: 3}
   m_PrefabInstance: {fileID: 1590826496}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &482432232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 482432231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 58
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &484512053
 GameObject:
   m_ObjectHideFlags: 0
@@ -12674,6 +12779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 12
+  maxTimer: 0
   isTimeOut: 0
   isResetting: 0
 --- !u!1 &796589213 stripped
@@ -14104,6 +14210,28 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6802786148163087943, guid: ad5dd943527bfd4459ce3112242b5bbf, type: 3}
   m_PrefabInstance: {fileID: 1590826496}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &919386820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919386819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 57
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &929302552
 GameObject:
   m_ObjectHideFlags: 0
@@ -14390,6 +14518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 8
+  maxTimer: 0
   isTimeOut: 0
   isResetting: 0
 --- !u!1 &938965320
@@ -17677,6 +17806,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 3204821107215218231, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3204821107215218231, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+      propertyPath: m_TagString
+      value: VentBrokeUI
+      objectReference: {fileID: 0}
     - target: {fileID: 4133758017768309603, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -18510,6 +18647,11 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!1 &1005878589 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3204821107215218231, guid: f51b926e752cb174ebe5821a8844dda5, type: 3}
+  m_PrefabInstance: {fileID: 1005878561}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1007117351
 GameObject:
   m_ObjectHideFlags: 0
@@ -19106,7 +19248,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3364372474434861771, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
       propertyPath: m_TagString
-      value: MathBtn
+      value: MathButton
       objectReference: {fileID: 0}
     - target: {fileID: 3364372474434861771, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -19118,7 +19260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3364372474972600878, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
       propertyPath: m_TagString
-      value: MathBtn
+      value: MathButton
       objectReference: {fileID: 0}
     - target: {fileID: 3364372474972600878, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -19126,7 +19268,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3364372475318456105, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
       propertyPath: m_TagString
-      value: MathBtn
+      value: MathButton
       objectReference: {fileID: 0}
     - target: {fileID: 3364372475318456105, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -19362,7 +19504,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4472265264110785991, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
       propertyPath: m_TagString
-      value: MathBtn
+      value: MathButton
       objectReference: {fileID: 0}
     - target: {fileID: 4472265264110785991, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -19370,7 +19512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4472265264855441600, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
       propertyPath: m_TagString
-      value: MathBtn
+      value: MathButton
       objectReference: {fileID: 0}
     - target: {fileID: 4472265264855441600, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -19382,7 +19524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4472265265393672229, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
       propertyPath: m_TagString
-      value: MathBtn
+      value: MathButton
       objectReference: {fileID: 0}
     - target: {fileID: 4472265265393672229, guid: 937e30b8a6c8cd24ca0e6fe452643522, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -34436,6 +34578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: 10
+  maxTimer: 0
   isTimeOut: 0
   isResetting: 0
 --- !u!1 &2119282174 stripped
@@ -35840,6 +35983,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8201573302863378219, guid: 0c159cebfa201be48a0ae1e22ad8b296, type: 3}
+      propertyPath: m_TagString
+      value: VentBrokeUI
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c159cebfa201be48a0ae1e22ad8b296, type: 3}
 --- !u!1 &393121574948970026 stripped
@@ -36715,3 +36862,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cad348aac5e85b4893b13b5754990f3, type: 3}
+--- !u!1 &3467462446691839446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1689038895965226532, guid: 5cad348aac5e85b4893b13b5754990f3, type: 3}
+  m_PrefabInstance: {fileID: 3467462446691839445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3467462446691839447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3467462446691839446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 59
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

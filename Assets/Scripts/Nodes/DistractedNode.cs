@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
-public class DistractedMode : Node
+public class DistractedNode : Node
 {
     private Transform distractTarget;
     private NavMeshAgent agent;
@@ -16,7 +16,7 @@ public class DistractedMode : Node
     private AudioSource footrun;
     private AudioSource DangerMusic;
     private AudioSource Detected;
-    public DistractedMode(NavMeshAgent _agent, EnemyAI _enemy, Animator _animator, AudioSource _foot, AudioSource _footrun, AudioSource _DangerMusic, AudioSource _Detected)
+    public DistractedNode(NavMeshAgent _agent, EnemyAI _enemy, Animator _animator, AudioSource _foot, AudioSource _footrun, AudioSource _DangerMusic, AudioSource _Detected)
     {
         agent = _agent;
         enemmy = _enemy;

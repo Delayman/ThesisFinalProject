@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class RepairCam : Interactable
 {
@@ -35,13 +36,14 @@ public class RepairCam : Interactable
 
     public override void Interact()
     {
-        isOn = true;
-        
-        Repair();
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("RepairCamera", RpcTarget.All);
     }
-
-    private void Repair()
+    
+    [PunRPC]
+    private void RepairCamera()
     {
+        isOn = true;
         textBox.isResetting = true;
         ctr.DisableAllButton();
         Invoke(nameof(Cooldown), repairTime);
@@ -51,7 +53,7 @@ public class RepairCam : Interactable
     private void Cooldown()
     {
         ctr.EnableAllButton();
-        textBox.AddTime(textBox.timer);
+        textBox.AddTime(textBox.maxTimer);
         textBox.isResetting = false;
         textBox.isTimeOut = false;
         isOn = false;

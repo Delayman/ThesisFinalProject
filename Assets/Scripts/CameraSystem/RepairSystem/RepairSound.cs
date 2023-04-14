@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class RepairSound : Interactable
 {
@@ -33,13 +34,14 @@ public class RepairSound : Interactable
 
     public override void Interact()
     {
-        isOn = true;
-        
-        Repair();
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("RepairVoice", RpcTarget.All);
     }
-
-    private void Repair()
+    
+    [PunRPC]
+    private void RepairVoice()
     {
+        isOn = true;
         textBox.isResetting = true;
         ctr.DisableAllButton();
         Invoke(nameof(Cooldown), repairTime);
@@ -49,7 +51,7 @@ public class RepairSound : Interactable
     private void Cooldown()
     {
         ctr.EnableAllButton();
-        textBox.AddTime(textBox.timer);
+        textBox.AddTime(textBox.maxTimer);
         textBox.isResetting = false;
         textBox.isTimeOut = false;
         isOn = false;

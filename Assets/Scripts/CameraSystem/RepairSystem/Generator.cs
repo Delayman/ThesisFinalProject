@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class Generator : Interactable
@@ -9,11 +10,6 @@ public class Generator : Interactable
     private const string clickText = "[E] to add power";
     public AudioSource GeneraterSound;
     private bool isHeld;
-    
-    private void Start()
-    {
-        
-    }
 
     public override string GetDescription()
     {
@@ -22,9 +18,11 @@ public class Generator : Interactable
 
     public override void Interact()
     {
-        AddPower();
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("AddPower", RpcTarget.All);
     }
 
+    [PunRPC]
     private void AddPower()
     {
         var generatorTimer = GetComponent<GeneratorTimer>();
