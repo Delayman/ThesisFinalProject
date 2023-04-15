@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
-using TMPro;
 
 public class MultiplyButton : Interactable
 {
@@ -30,8 +27,6 @@ public class MultiplyButton : Interactable
         resultText = FindObjectOfType<ResultText>();
         state = 1;
         multiplyNum = 2;
-        
-        // Debug.Log($"state : {state} | mulNum : {multiplyNum}");
     }
 
     public override string GetDescription()
@@ -43,7 +38,6 @@ public class MultiplyButton : Interactable
     {
         var PV = GetComponent<PhotonView>();
         PV.RPC("GetTextBoxMul", RpcTarget.All);
-        ButtonSound();
     }
     public void ButtonSound()
     {
@@ -58,6 +52,9 @@ public class MultiplyButton : Interactable
         resultText.UpdateText(state);
         resultText.MultiplyState(multiplyNum);
         resultText.ChangeStateToAll(multiplyNum);
+        
+        ButtonSound();
+
         Debug.Log($"state : {state} | mulNum : {multiplyNum}");
 
     }

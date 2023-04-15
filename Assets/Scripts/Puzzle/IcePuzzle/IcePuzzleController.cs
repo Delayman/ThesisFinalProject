@@ -39,7 +39,6 @@ public class IcePuzzleController : MonoBehaviour
         
         if (!isCompleted || isDisableAfterCompleted) return;
 
-        //rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
         Winsound.Play();

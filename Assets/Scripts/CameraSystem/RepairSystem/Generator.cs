@@ -5,11 +5,15 @@ using UnityEngine;
 
 public class Generator : Interactable
 {
-    [SerializeField] private float delay = 0.5f;
+    [SerializeField] private float delay = 1f;
     [SerializeField] private float powerToAdd = 10;
     private const string clickText = "[E] to add power";
     public AudioSource GeneraterSound;
+    
+    
     private bool isHeld;
+
+    private bool isInTutorial;
 
     public override string GetDescription()
     {
@@ -18,11 +22,30 @@ public class Generator : Interactable
 
     public override void Interact()
     {
-        var PV = GetComponent<PhotonView>();
-        PV.RPC("AddPower", RpcTarget.All);
+        isInTutorial = GetComponent<GeneratorTimer>().isTutorialScene;
+        if (isInTutorial)
+        {
+            AddPower();
+        }
+        else
+        {
+            var PV = GetComponent<PhotonView>();
+            PV.RPC("AddPowerOnline", RpcTarget.All);
+        }
     }
 
     [PunRPC]
+    private void AddPowerOnline()
+    {
+        var generatorTimer = GetComponent<GeneratorTimer>();
+
+        generatorTimer.AddTime(powerToAdd);
+
+        GeneraterSound.Play();
+        
+        StartCoroutine(AddPowerDelay());
+    }
+    
     private void AddPower()
     {
         var generatorTimer = GetComponent<GeneratorTimer>();
@@ -30,14 +53,15 @@ public class Generator : Interactable
         generatorTimer.AddTime(powerToAdd);
 
         GeneraterSound.Play();
+        
+        StartCoroutine(AddPowerDelay());
     }
 
-    // private IEnumerator HoldToAddPower()
-    // {
-    //     while (isHeld)
-    //     {
-    //         AddPower();
-    //         yield return new WaitForSeconds(delay);
-    //     }
-    // }
+    private IEnumerator AddPowerDelay()
+    {
+        this.gameObject.GetComponent<BoxCollider>().enabled = false;
+        yield return new WaitForSeconds(delay);
+        this.gameObject.GetComponent<BoxCollider>().enabled = true;
+
+    }
 }

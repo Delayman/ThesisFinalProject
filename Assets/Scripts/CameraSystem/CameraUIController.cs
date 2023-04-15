@@ -11,7 +11,6 @@ public class CameraUIController : MonoBehaviour
 
     private CameraButtonController camBtnCtr;
     private CameraButton camExitBtn;
-    private List<RoleSetting> roleSettings;
 
     private GameObject watcher;
 
@@ -19,7 +18,6 @@ public class CameraUIController : MonoBehaviour
 
     private void Start()
     {
-        roleSettings = FindObjectsOfType<RoleSetting>().ToList();
         camBtnCtr = FindObjectOfType<CameraButtonController>();
         camExitBtn = FindObjectOfType<CameraButton>();
 
@@ -28,8 +26,6 @@ public class CameraUIController : MonoBehaviour
 
     public void HideCamUI()
     {
-        // audio.enabled = true;
-        
         LockCursor();
         camBtnCtr.DisableAllCam(); 
         camUI.SetActive(false);
@@ -41,37 +37,8 @@ public class CameraUIController : MonoBehaviour
     public void StartCamUI()
     {
         FreeCursor();
-        DisableAudioWhenStartCam();
         camBtnCtr.Cam1();
         camUI.SetActive(true);
-    }
-
-    // private bool FindWatcher()
-    // {
-    //     foreach (var _role in roleSettings)
-    //     {
-    //         if (_role.roleName == role)
-    //         {
-    //             watcher = _role.gameObject;
-    //             return true;
-    //         }
-    //     }
-    //
-    //     return false;
-    // }
-
-    private void DisableAudioWhenStartCam()
-    {
-        // var isfound = FindWatcher();
-
-        // if (isfound)
-        // {
-        //     audio = watcher.GetComponentInChildren(typeof(AudioListener)) as AudioListener;
-        //     audio.enabled = false;
-        // }
-        // else
-        //     Debug.Log($"Player with <color=red>WATCHER role</color> was NOT FOUND");
-        
     }
 
     private static void LockCursor()

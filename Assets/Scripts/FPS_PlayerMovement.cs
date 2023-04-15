@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Photon.Pun;
@@ -24,6 +25,7 @@ public class FPS_PlayerMovement : MonoBehaviour
 
     bool isrun;
     bool isrunable;
+    private bool isDisableVoiceChat;
     public bool isDisableMoving;
     
     private PhotonView _view;
@@ -57,8 +59,7 @@ public class FPS_PlayerMovement : MonoBehaviour
 
             StaminaBar = GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<Slider>();
 
-            this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
-
+            // this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
         }
 
         if (!_view.IsMine)
@@ -150,9 +151,16 @@ public class FPS_PlayerMovement : MonoBehaviour
             PushToTalk();
 
             StaminaBar.value = PlayerCurrentStamina;
-
         }
     
+    }
+
+    private void LateUpdate()
+    {
+        if (isDisableVoiceChat) return;
+            
+        this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
+        isDisableVoiceChat = true;
     }
 
     private void PushToTalk()

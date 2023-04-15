@@ -63,11 +63,10 @@ public class CameraButton : Interactable
         {
             var distance = Vector3.Distance(player.transform.position,this.gameObject.transform.position);
 
-            if (distance < 15f)
-            {
-                targetPlayer = player.gameObject.GetComponent<DisablePlayerControl>();
-                targetPlayerInteraction = player.gameObject.GetComponent<PlayerInteraction>();
-            }
+            if (!(distance < 15f)) continue;
+            
+            targetPlayer = player.gameObject.GetComponent<DisablePlayerControl>();
+            targetPlayerInteraction = player.gameObject.GetComponent<PlayerInteraction>();
         }
     }
 
@@ -79,6 +78,8 @@ public class CameraButton : Interactable
             camUi.StartCamUI();
             targetPlayer.isDisableControlAndCam = true;
             targetPlayerInteraction.enabled = false;
+
+            this.gameObject.GetComponent<BoxCollider>().enabled = false;
             
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible= true;
@@ -89,6 +90,8 @@ public class CameraButton : Interactable
             ESC.SetActive(true);
             targetPlayer.isDisableControlAndCam = false;
             targetPlayerInteraction.enabled = true;
+            
+            this.gameObject.GetComponent<BoxCollider>().enabled = true;
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible= false;

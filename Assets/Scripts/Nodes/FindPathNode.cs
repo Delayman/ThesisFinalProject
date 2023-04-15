@@ -88,22 +88,18 @@ public class FindPathNode : Node
         if (_distance < 1.5f)
         {
             // Debug.Log($"Remove path");
-
             tempPath.Remove(tempPath[0]);
         }
 
         if (_distance < 1.5f && tempPath.Count == 1)
         {
             // Debug.Log($"Add path for loop");
-
             tempPath.AddRange(savedPath);
         }
     }
 
     private void PlayAnimation(int _value)
     {
-        // Debug.Log($"Find Path");
         MonsterAnimator.SetInteger("EMAnimationID",_value);
-        
     }
 }

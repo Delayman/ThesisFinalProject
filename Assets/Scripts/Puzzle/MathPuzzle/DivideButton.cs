@@ -1,9 +1,5 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
-using TMPro;
 
 public class DivideButton : Interactable
 {
@@ -32,8 +28,6 @@ public class DivideButton : Interactable
         resultText = FindObjectOfType<ResultText>();
         state = 1;
         divideNum = 2;
-        
-        // Debug.Log($"state : {state} | mulNum : {divideNum}");
     }
 
     public override string GetDescription()
@@ -45,7 +39,6 @@ public class DivideButton : Interactable
     {
         var PV = GetComponent<PhotonView>();
         PV.RPC("GetTextBoxDiv", RpcTarget.All);
-        ButtonSound();
     }
     public void ButtonSound()
     {
@@ -60,6 +53,9 @@ public class DivideButton : Interactable
         resultText.UpdateText(state);
         resultText.DivideState(divideNum);
         resultText.ChangeStateToAll(divideNum);
+        
+        ButtonSound();
+
         Debug.Log($"state : {state} | mulNum : {divideNum}");
     }
 }

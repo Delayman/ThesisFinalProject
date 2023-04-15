@@ -99,14 +99,15 @@ public class EnemyAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            isDetectedPlayer = true;
-            targetedPlayer = other.gameObject;
-            // Debug.Log($"player : {targetedPlayer.name}");
-
-            StopCoroutine(StopChaseTimer());
-        }
+        if (!other.CompareTag("Player")) return;
+        
+        targetedPlayer = other.gameObject;
+        var playerStatus = targetedPlayer.GetComponent<PlayerStatus>();
+            
+        if(playerStatus.isHidden) return;
+            
+        isDetectedPlayer = true;
+        StopCoroutine(StopChaseTimer());
     }
 
     private void OnTriggerExit(Collider other)
@@ -121,9 +122,15 @@ public class EnemyAI : MonoBehaviour
     {
         if (collision.collider.CompareTag("Player"))
         {
-            PhotonNetwork.LoadLevel("Scenes/Result");
+            var PV = GetComponent<PhotonView>();
+            PV.RPC("GameOver", RpcTarget.All); 
         }
-        
+    }
+    
+    [PunRPC]
+    private void GameOver()
+    {
+        PhotonNetwork.LoadLevel("Scenes/Result");
     }
 
     private void TriggerSearchTimer()

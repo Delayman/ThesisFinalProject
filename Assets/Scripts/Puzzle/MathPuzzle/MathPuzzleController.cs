@@ -35,8 +35,7 @@ public class MathPuzzleController : MonoBehaviour
     public List<MultiplyButton> mulBtnList;
 
     private ResultText resultTxt;
-    //public PlayableDirector cutseen1;
-    //private List<DisablePlayerControl> DisAblePlayerlist;
+    
     private void Start()
     {
         NoComplete.SetActive(true);
@@ -78,14 +77,11 @@ public class MathPuzzleController : MonoBehaviour
     private void CheckCompleted()
     {
         if (!isCompleted || isDisableAfterCompleted) return;
-        // rewardPrefab.GetComponent<Renderer>().material.color = Color.green;
         NoComplete.SetActive(false);
         HaveBeenComplete.SetActive(true);
         timer.TriggerCompleteTimerFour();
         Winsound.Play();
         CutScenePlay.PassPuzzle += 1;
-        //var counter = GetComponentInParent<Counter>();
-        //counter.AddScore();
 
         PlayCutscene();
 

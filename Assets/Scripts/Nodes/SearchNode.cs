@@ -31,22 +31,21 @@ public class SearchNode : Node
     public override NodeState Evaluate()
     {
         targetPlayer = EnemyAI.targetedPlayer;
-
-        playerStatus = targetPlayer.GetComponent<PlayerStatus>();
-
-        if (playerStatus.isHidden)
+        
+        if (targetPlayer.TryGetComponent<PlayerStatus>(out var playerStatus))
         {
-            EnemyAI.isDetectedPlayer = false; 
-            PlayAnimation();
-            agent.isStopped = true;
+            if (playerStatus.isHidden)
+            {
+                EnemyAI.isDetectedPlayer = false; 
+                PlayAnimation();
+                agent.isStopped = true;
 
-            EnemyAI.isSearchingPlayer = true;
-            EnemyAI.isTriggerSearchTime = true;
+                EnemyAI.isSearchingPlayer = true;
+                EnemyAI.isTriggerSearchTime = true;
+            }
         }
 
         return NodeState.RUNNING;
-
-        // return EnemyAI.isSearchingPlayer ? NodeState.RUNNING : NodeState.SUCCESS;
     }
 
     private void PlayAnimation()

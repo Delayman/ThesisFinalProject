@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Serialization;
@@ -12,24 +9,16 @@ public class ResultText : MonoBehaviour
     [Tooltip("Set where number will show (IN ORDER LEFT TO RIGHT)")]
     [SerializeField] private List<TextMeshProUGUI> placeholder;
     private TextMeshProUGUI currentText;
-    private MathPuzzleController mathPuzzleController;
+    [SerializeField] private MathPuzzleController mathPuzzleController;
 
     public List<MultiplyButton> multiplyButton;
     public List<DivideButton> divideButtons;
 
     private float num;
 
-    private void Awake()
-    {
-        multiplyButton ??= new List<MultiplyButton>();
-        divideButtons ??= new List<DivideButton>();
-    }
-
     private void Start()
     {
-        // multiplyButton = FindObjectsOfType<MultiplyButton>().ToList();
-        // divideButtons = FindObjectsOfType<DivideButton>().ToList();
-        mathPuzzleController = FindObjectOfType<MathPuzzleController>();
+        // mathPuzzleController = FindObjectOfType<MathPuzzleController>();
         
         DisableAllBtn();
         multiplyButton[0].gameObject.SetActive(true);
@@ -57,8 +46,6 @@ public class ResultText : MonoBehaviour
             case 3 :
                 currentText = placeholder[3];
                 DisableAllBtn();
-                // multiplyButton[2].gameObject.SetActive(true);
-                // divideButtons[2].gameObject.SetActive(true);
                 break;
         }
     }
@@ -83,12 +70,16 @@ public class ResultText : MonoBehaviour
         {
             _btn.state++;
             _btn.multiplyNum = _value + 1;
+            
+            Debug.Log($"Btn mul num : {_btn.multiplyNum} state : {_btn.state}");
         }
         
         foreach (var _btn in divideButtons)
         {
-            _btn.state++;
+            _btn.state += 1;
             _btn.divideNum = _value + 1;
+            
+            Debug.Log($"Btn div num : {_btn.divideNum} state : {_btn.state}");
         }
         
         mathPuzzleController.CheckAnswer();

@@ -54,7 +54,7 @@ public class PlayerInteraction : MonoBehaviour
         }
 
         // if we miss, hide the UI
-        if (!successfulHit)
+        if (!successfulHit && interactionText != null)
         {
             interactionText.text = "";
             //interactionHoldGO.SetActive(false);

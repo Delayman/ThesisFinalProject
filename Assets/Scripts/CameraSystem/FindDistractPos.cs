@@ -14,11 +14,13 @@ public class FindDistractPos : MonoBehaviour
 
     public void OnPressedPlaySound()
     {
+        
         foreach (var cam in CameraList)
         {
             if (cam.name.Contains(camID.ToString()) && cam.active)
             {
                 chosenCam = cam;
+                Debug.Log($"camID : {chosenCam.name}");
             }
         }
 
