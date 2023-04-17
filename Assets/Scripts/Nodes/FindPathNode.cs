@@ -50,6 +50,11 @@ public class FindPathNode : Node
             
             return NodeState.FAILURE;
         }
+
+        if (EnemyAI.isDistractedbyPlayer)
+        {
+            return NodeState.SUCCESS;
+        }
         
         // var PVPath = enemy.GetComponent<PhotonView>();
         // PVPath.RPC("GetPath", RpcTarget.All);

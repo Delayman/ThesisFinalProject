@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using Photon.Voice.Unity;
 using Photon.Voice.PUN;
+using Photon.Voice.Unity.UtilityScripts;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -30,7 +31,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     private bool isPushToTalk;
     
     private PhotonView _view;
-    private PhotonVoiceView voiceView;
+    // private PhotonVoiceView voiceView;
 
     //Y axis limit cam rotation stuff
     [SerializeField]
@@ -41,9 +42,12 @@ public class FPS_PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private Camera cam;
+    
+    public float micBoostP1,micBoostP2,micBoostP3 = 4f;
 
+    private VoiceAnalyticLogger vcLogger;
     public float VCTimer;
-    public int VCUsage;
+    public float VCUsage;
 
     void Awake()
     {
@@ -53,6 +57,20 @@ public class FPS_PlayerMovement : MonoBehaviour
     private void Start()
     {
         _view = GetComponent<PhotonView>();
+        vcLogger = FindObjectOfType<VoiceAnalyticLogger>();
+
+        var enemyAI = FindObjectOfType<EnemyAI>().gameObject;
+        var enemyGFX = GetComponentInChildren<EnemyGFX>().gameObject;
+        
+        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
+        {
+            enemyGFX.SetActive(false);
+        }
+        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+        {
+            enemyGFX.SetActive(false);
+        }
+        
         if (_view.IsMine)
         {
             //Finding Rigibody to move character
@@ -77,8 +95,20 @@ public class FPS_PlayerMovement : MonoBehaviour
         StaminaBar.maxValue = PlayerMaxStamina;
         StaminaBar.value = PlayerCurrentStamina;
         
-        // var audioSource = GetComponent<AudioSource>();
-        // audioSource.enabled = false;
+        var _micAmplifier = GetComponent<MicAmplifier>();
+        
+        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
+        {
+            _micAmplifier.AmplificationFactor = micBoostP1;
+        }
+        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+        {
+            _micAmplifier.AmplificationFactor = micBoostP2;
+        }
+        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
+        {
+            _micAmplifier.AmplificationFactor = micBoostP3;
+        }
     }
 
     private void FixedUpdate() 
@@ -161,35 +191,64 @@ public class FPS_PlayerMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (isPushToTalk)
-        {
-            VCTimer += Time.deltaTime;
-            // Debug.Log($"VC : {VCTimer} Usage : {VCUsage}");
-        }
+        // if (isPushToTalk)
+        // {
+        //     VCTimer += Time.deltaTime;
+        //     // Debug.Log($"VC : {VCTimer} Usage : {VCUsage}");
+        // }
         
         if (isDisableVoiceChat) return;
 
         if (!_view.IsMine) return;
         
-        this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
+        // this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
         isDisableVoiceChat = true;
     }
 
     private void PushToTalk()
     {
-        if (Input.GetKeyDown(KeyCode.V))
+        if (Input.GetKey(KeyCode.V))
         {
-            this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = true;
-            VCUsage += 1;
-
-            isPushToTalk = true;
+            this.gameObject.GetComponent<Recorder>().TransmitEnabled = true;
+            
+            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
+            {
+                vcLogger.AddVCCountToP1();
+            }
+            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+            {
+                vcLogger.AddVCCountToP2();
+            }
+            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
+            {
+                vcLogger.AddVCCountToP3();
+            }
+            
+            // VCUsage += 1;
+            //
+            // isPushToTalk = true;
         }
         
-        if (Input.GetKeyUp(KeyCode.V))
+        if (!Input.GetKey(KeyCode.V))
         {
-            this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
+            this.gameObject.GetComponent<Recorder>().TransmitEnabled = true;
+
+            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
+            {
+                vcLogger.StopVCTimerToP1();
+            }
             
-            isPushToTalk = false;
+            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+            {
+                vcLogger.StopVCTimerToP2();
+            }
+            
+            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
+            {
+                vcLogger.StopVCTimerToP3();
+            }
+            
+            // isPushToTalk = false;
         }
     }
 

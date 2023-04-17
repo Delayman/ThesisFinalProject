@@ -39,49 +39,51 @@ MonoBehaviour:
   - ClickRpc
   - DestroyRpc
   - HeresWhy
-  - DestroySpaceship
-  - Fire
-  - RespawnSpaceship
-  - PlayCutscene
-  - AddPowerToAllClient
-  - CheckDirectionButton
-  - GetTextBox
-  - ResetPos
-  - ToggleSwitch
-  - GetTextBoxDiv
-  - GetTextBoxMul
-  - SetMazeComplete
-  - ToggleActivatorSwitch
-  - ToggleComSwitch
-  - ToggleReceiverSwitch
   - AddPasswordDigit
-  - AddPower
-  - Repair
-  - RepairCamera
-  - RepairVoice
-  - RepairAllSystem
-  - GameOver
   - AddPowerOnline
   - BrokeVentRpc
-  - HideSetting
-  - RepairVentRpc
-  - HidePlayer
+  - ChangeToChase
+  - CheckDirectionButton
+  - DestroySpaceship
+  - EndDistractedRPC
+  - Fire
+  - GameOver
   - GetOut
+  - GetPath
   - GetPlayerOut
+  - GetTextBoxDiv
+  - GetTextBoxMul
   - HidePlayerA
   - HidePlayerB
   - HideRunnerA
-  - CalledSearchRPC
-  - StopDetectedPlayer
-  - TriggerSearchRPC
-  - StartSearchPlayer
-  - SetChaseToPlayer
-  - StartChase
-  - StoppingChase
-  - ChangeToChase
-  - FindPath
-  - GetPath
+  - HideSetting
+  - Lure
+  - PlayCutscene
+  - PlayerLureSound
+  - Repair
+  - RepairAllSystem
+  - RepairCamera
+  - RepairVentRpc
+  - RepairVoice
+  - RespawnSpaceship
   - SetChaseToPlayerRPC
+  - SetMazeComplete
+  - StartChase
+  - StartDistractedRPC
+  - StopDetectedPlayer
+  - StoppingChase
+  - ToggleActivatorSwitch
+  - ToggleComSwitch
+  - ToggleReceiverSwitch
+  - AddVCCountToP1RPC
+  - AddVCCountToP2RPC
+  - AddVCCountToP3RPC
+  - AddVCTimerToP1RPC
+  - AddVCTimerToP2RPC
+  - AddVCTimerToP3RPC
+  - StopVCTimerToP1RPC
+  - StopVCTimerToP2RPC
+  - StopVCTimerToP3RPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

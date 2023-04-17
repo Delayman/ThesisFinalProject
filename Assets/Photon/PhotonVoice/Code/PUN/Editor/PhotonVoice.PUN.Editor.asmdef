@@ -5,7 +5,9 @@
         "PhotonVoice.Editor",
         "PhotonVoice",
         "PhotonRealtime",
-        "PhotonUnityNetworking"
+        "PhotonUnityNetworking",
+        "UnityEditor.TestRunner",
+        "UnityEngine.TestRunner"
     ],
     "includePlatforms": [
         "Editor"

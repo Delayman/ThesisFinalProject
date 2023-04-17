@@ -8,11 +8,14 @@ using UnityEngine.Analytics;
 public class Analytic : MonoBehaviour
 {
     private TimerManager timerManager;
-    private List<FPS_PlayerMovement> vcGetterList = new List<FPS_PlayerMovement>();
-
+    private VoiceAnalyticLogger voiceLogger;
+    
+    // private List<FPS_PlayerMovement> vcGetterList = new List<FPS_PlayerMovement>();
+    
+    //Here!
     public float timerP1, timerP2, timerP3, timerP4, timerP5, timerP6, finalTimer;
     public float voiceChatTimerWatcher, voiceChatTimerRunnerA, voiceChatTimerRunnerB;
-    public int voiceChatUsageWatcher, voiceChatUsageRunnerA, voiceChatUsageRunnerB;
+    public float voiceChatUsageWatcher, voiceChatUsageRunnerA, voiceChatUsageRunnerB;
 
     public string roomName;
     
@@ -33,15 +36,24 @@ public class Analytic : MonoBehaviour
     private void Start()
     {
         timerManager = FindObjectOfType<TimerManager>();
+        voiceLogger = FindObjectOfType<VoiceAnalyticLogger>();
+    }
+
+    private void Update()
+    {
+        // if (vcGetterList.Count != 3) return;
+            
+        voiceChatTimerWatcher = Mathf.Round(voiceLogger.VCTimerP1);
+        voiceChatTimerRunnerA = Mathf.Round(voiceLogger.VCTimerP2);
+        voiceChatTimerRunnerB = Mathf.Round(voiceLogger.VCTimerP3);
+
+        voiceChatUsageWatcher = voiceLogger.VCUseageP1;
+        voiceChatUsageRunnerA = voiceLogger.VCUseageP2;
+        voiceChatUsageRunnerB = voiceLogger.VCUseageP3;
     }
 
     private void FixedUpdate()
     {
-        if (vcGetterList.Count != 3)
-        {
-            vcGetterList = FindObjectsOfType<FPS_PlayerMovement>().ToList();
-        }
-            
         timerP1 = timerManager.finpTimer1;
         timerP2 = timerManager.finpTimer2;
         timerP3 = timerManager.finpTimer3;
@@ -52,19 +64,9 @@ public class Analytic : MonoBehaviour
         finalTimer = Mathf.Round(ScoreManager.totalTime);
 
         roomName = SavedRole.roomName;
-        
-        if (vcGetterList.Count != 3) return;
-            
-        voiceChatTimerWatcher = Mathf.Round(vcGetterList[0].VCTimer);
-        voiceChatTimerRunnerA = Mathf.Round(vcGetterList[1].VCTimer);
-        voiceChatTimerRunnerB = Mathf.Round(vcGetterList[2].VCTimer);
-        
-        voiceChatUsageWatcher = vcGetterList[0].VCUsage;
-        voiceChatUsageRunnerA = vcGetterList[1].VCUsage;
-        voiceChatUsageRunnerB = vcGetterList[2].VCUsage;
-
-        //for sending data testing ONLY
     }
+    
+    //for sending data testing ONLY
 
     // private void TestSendData()
     // {

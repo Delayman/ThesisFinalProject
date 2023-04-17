@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class DistractPos : MonoBehaviour
 {
+    [SerializeField] private Button lureButton;
+    
     public GameObject distractPos;
-    public float delay = 4f;
     private Transform distractPoint;
 
     private void Start()
@@ -17,15 +19,17 @@ public class DistractPos : MonoBehaviour
 
     public void PlaySound()
     {
-        EnemyAI.DistractPos = distractPoint;
-        EnemyAI.isDistractedbyPlayer = true;
-        StartCoroutine(IceButtonDelay());
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("PlayerLureSound", RpcTarget.All);
+        
     }
 
-    private IEnumerator IceButtonDelay()
+    [PunRPC]
+    public void PlayerLureSound()
     {
-        this.GetComponent<Button>().enabled = false;
-        yield return new WaitForSeconds(delay);
-        this.GetComponent<Button>().enabled = true;
+        Debug.Log($"chosenDistractPos : {distractPos.transform.position}");
+
+        EnemyAI.DistractPos = distractPos.transform;
+        EnemyAI.isDistractedbyPlayer = true;
     }
 }

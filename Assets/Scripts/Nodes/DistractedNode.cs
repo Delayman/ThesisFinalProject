@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Events;
+using Photon.Pun;
 
 public class DistractedNode : Node
 {
-    private Transform distractTarget;
+    // private Transform distractTarget;
     private NavMeshAgent agent;
     private EnemyAI enemmy;
-    private bool isDistracted;
-    private bool isFinishedPath;
+    // private bool isDistracted;
+    // private bool isFinishedPath;
     private Animator MonsterAnimator;
     public DistractedNode(NavMeshAgent _agent, EnemyAI _enemy, Animator _animator, AudioSource _foot, AudioSource _footrun, AudioSource _DangerMusic, AudioSource _Detected)
     {
@@ -21,30 +21,34 @@ public class DistractedNode : Node
 
     public override NodeState Evaluate()
     {
-        isDistracted = EnemyAI.isDistractedbyPlayer;
-        isFinishedPath = false;
+        enemmy.StartDistracted();
+        
+        Debug.Log($"Lure");
 
-        if (isDistracted && !isFinishedPath)
+        if (EnemyAI.isDistractedbyPlayer && !enemmy.isFinishedPath)
         {
-            PlayAnimation();
-
-            distractTarget = EnemyAI.DistractPos;
-            agent.SetDestination(distractTarget.position);
+            Debug.Log($"Get Lure to {EnemyAI.DistractPos.position}");
             CheckFinish();
         }
 
-        return !isFinishedPath ? NodeState.SUCCESS : NodeState.FAILURE;
+        return !enemmy.isFinishedPath ? NodeState.SUCCESS : NodeState.FAILURE;
     }
 
     private void CheckFinish()
     {
-        var _distance = Vector3.Distance(distractTarget.position, agent.transform.position);
+        PlayAnimation();
+
+        agent.ResetPath();
+        agent.isStopped = true;
+            
+        agent.SetDestination(EnemyAI.DistractPos.position);
+        agent.isStopped = false;
         
-        if (_distance < 5f)
-        {
-            isFinishedPath = true;
-            EnemyAI.isDistractedbyPlayer = false;
-        }
+        var _distance = Vector3.Distance(EnemyAI.DistractPos.position, agent.transform.position);
+
+        if (!(_distance < 5f)) return;
+
+        enemmy.EndDistracted();
     }
 
     private void PlayAnimation()

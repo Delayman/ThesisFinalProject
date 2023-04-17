@@ -2,7 +2,9 @@
     "name": "PunDemos.DemoHubEditor",
     "references": [
         "PhotonUnityNetworking",
-        "PhotonRealtime"
+        "PhotonRealtime",
+        "UnityEditor.TestRunner",
+        "UnityEngine.TestRunner"
     ],
     "includePlatforms": [
         "Editor"

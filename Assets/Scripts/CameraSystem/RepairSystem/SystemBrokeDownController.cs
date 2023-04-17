@@ -13,7 +13,8 @@ public class SystemBrokeDownController : MonoBehaviour
     [SerializeField] private List<GameObject> ventBrokeUI;
     
     [SerializeField] private Button lureButton;
-    
+    public float delay = 5f;
+
     private PhotonView _view;
 
     private void Start()
@@ -67,8 +68,6 @@ public class SystemBrokeDownController : MonoBehaviour
     [PunRPC]
     public void RepairVentRpc()
     {
-        if (!_view.IsMine) return;
-
         foreach (var ventUI in ventBrokeUI)
         {
             ventUI.SetActive(false);
@@ -84,5 +83,12 @@ public class SystemBrokeDownController : MonoBehaviour
         {
             ventUI.SetActive(false);
         }
+    }
+
+    public IEnumerator LureBtnDelay()
+    {
+        lureButton.interactable = false;
+        yield return new WaitForSeconds(delay);
+        lureButton.interactable = true;
     }
 }

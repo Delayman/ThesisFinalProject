@@ -11,47 +11,47 @@ public class DataPoster : MonoBehaviour
         var _data = FindObjectOfType<Analytic>();
         
         var roomName = Analytics.CustomEvent(
-            "PuzzleTimer",
+            "RoomName",
             new Dictionary<string, object>
             {
-                {"Room Name", _data.roomName},
+                {"Room_Name", _data.roomName},
             });
         
         var timeResult = Analytics.CustomEvent(
             "PuzzleTimer",
             new Dictionary<string, object>
             {
-                {"Puzzle A", _data.timerP1},
-                {"Puzzle B", _data.timerP2},
-                {"Puzzle C", _data.timerP3},
-                {"Puzzle D", _data.timerP4},
-                {"Puzzle E", _data.timerP5},
-                {"Puzzle F", _data.timerP6},
-                {"Final Time", _data.finalTimer}
+                {"Puzzle_A", _data.timerP1},
+                {"Puzzle_B", _data.timerP2},
+                {"Puzzle_C", _data.timerP3},
+                {"Puzzle_D", _data.timerP4},
+                {"Puzzle_E", _data.timerP5},
+                {"Puzzle_F", _data.timerP6},
+                {"Final_Time", _data.finalTimer}
             });
 
         var vcTimerResult = Analytics.CustomEvent(
             "VoiceChatTimer",
             new Dictionary<string, object>
             {
-                {"Watcher VC Timer", _data.voiceChatTimerWatcher},
-                {"Runner A VC Timer", _data.voiceChatTimerRunnerA},
-                {"Runner B VC Timer", _data.voiceChatTimerRunnerB},
+                {"Watcher_VC_Timer", _data.voiceChatTimerWatcher},
+                {"Runner_A_VC_Timer", _data.voiceChatTimerRunnerA},
+                {"Runner_B_VC_Timer", _data.voiceChatTimerRunnerB},
             });
         
         var vcUsageResult = Analytics.CustomEvent(
-            "VoiceChatTimer",
+            "VoiceChatUsage",
             new Dictionary<string, object>
             {
-                {"Watcher VC Usage", _data.voiceChatUsageWatcher},
-                {"Runner A VC Usage", _data.voiceChatUsageRunnerA},
-                {"Runner B VC Usage", _data.voiceChatUsageRunnerB},
+                {"Watcher_VC_Usage", _data.voiceChatUsageWatcher},
+                {"Runner_A_VC_Usage", _data.voiceChatUsageRunnerA},
+                {"Runner_B_VC_Usage", _data.voiceChatUsageRunnerB},
             });
         
         Debug.Log($"Room name Result : {roomName} + {_data.roomName}");
         Debug.Log($"Total time Result : {timeResult} + {_data.finalTimer}");
-        Debug.Log($"VC time Result : {vcTimerResult} + {_data.voiceChatTimerWatcher}");
-        Debug.Log($"VC usage Result : {vcUsageResult} + {_data.voiceChatUsageWatcher}");
+        Debug.Log($"VC time Result : {vcTimerResult} + P1 :{_data.voiceChatTimerWatcher} + P2 :{_data.voiceChatTimerRunnerA} + P3 :{_data.voiceChatTimerRunnerB}");
+        Debug.Log($"VC usage Result : {vcUsageResult} + P1 : {_data.voiceChatUsageWatcher} + P2 : {_data.voiceChatUsageRunnerA} + P3 : {_data.voiceChatUsageRunnerB}");
 
         //For dummies testing ONLY
 

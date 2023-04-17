@@ -4,7 +4,9 @@
         "PhotonRealtime",
         "PhotonUnityNetworking",
         "PhotonUnityNetworking.Utilities",
-		 "PhotonUnityNetworking.Editor"
+		 "PhotonUnityNetworking.Editor",
+		 "UnityEditor.TestRunner",
+		 "UnityEngine.TestRunner"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [

@@ -629,6 +629,7 @@ MonoBehaviour:
   enemyRunSpeed: 7
   enemyWalkSpeed: 3.5
   isTriggerChaseTimer: 0
+  isFinishedPath: 0
   foot: {fileID: 595780050}
   footrun: {fileID: 1631018191}
   DangerMusic: {fileID: 1197161735}
@@ -664,9 +665,8 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 3631065727853060989}
+  observableSearch: 0
+  ObservedComponents: []
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -685,7 +685,7 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
-  m_UseLocal: 1
+  m_UseLocal: 0
 --- !u!1 &1990791249228656091
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,18 +811,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 34723403800629107, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 34723403800629107, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 34723403800629107, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 34723403800629107, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -862,85 +850,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 572491228971900220, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 572491228971900220, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 572491228971900220, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.55
-      objectReference: {fileID: 0}
-    - target: {fileID: 572491228971900220, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 572491228971900220, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 572491228971900220, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 2267291806829141582, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
-    - {fileID: 7517876852536737354, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
 --- !u!4 &4256653567608321312 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 34723403800629107, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
   m_PrefabInstance: {fileID: 4281224626897205843}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4022772250184351189 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 917103824631875462, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
-  m_PrefabInstance: {fileID: 4281224626897205843}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7197380730591499493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4022772250184351189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ShowLayerWeightsInspector: 1
-  ShowParameterInspector: 1
-  m_SynchronizeParameters:
-  - Type: 3
-    SynchronizeType: 1
-    Name: EMAnimationID
-  m_SynchronizeLayers:
-  - SynchronizeType: 0
-    LayerIndex: 0
---- !u!114 &9044862475926218906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4022772250184351189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents:
-  - {fileID: 7197380730591499493}
-  sceneViewId: 0
-  InstantiationId: 0
-  isRuntimeInstantiated: 0

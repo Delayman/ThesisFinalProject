@@ -133,10 +133,10 @@ GameObject:
   - component: {fileID: 5496313424302957435}
   - component: {fileID: 2937873146202804029}
   - component: {fileID: 72538201882426368}
-  - component: {fileID: 4810625591335492003}
-  - component: {fileID: 8999117029107458460}
+  - component: {fileID: 7869432215045320609}
+  - component: {fileID: 8373909602271712834}
   m_Layer: 0
-  m_Name: Player 2
+  m_Name: Player 4
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -186,8 +186,8 @@ MonoBehaviour:
   isDisableMoving: 0
   camRotLimit: 85
   cam: {fileID: 4421393261196023202}
-  micBoostP1: 0
-  micBoostP2: 0
+  micBoostP1: 4
+  micBoostP2: 4
   micBoostP3: 4
   VCTimer: 0
   VCUsage: 0
@@ -462,7 +462,7 @@ MonoBehaviour:
   isDisableUI: 0
   isDisableInteraction: 0
   isDisableFPSMovement: 0
---- !u!114 &4810625591335492003
+--- !u!114 &7869432215045320609
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -486,7 +486,7 @@ MonoBehaviour:
   frameDuration: 20000
   bitrate: 30000
   sourceType: 0
-  microphoneType: 1
+  microphoneType: 0
   audioClip: {fileID: 0}
   loopAudioClip: 1
   recordingEnabled: 1
@@ -503,7 +503,7 @@ MonoBehaviour:
   useOnAudioFilterRead: 0
   useMicrophoneTypeFallback: 1
   recordWhenJoined: 1
---- !u!114 &8999117029107458460
+--- !u!114 &8373909602271712834
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1054,7 +1054,7 @@ PrefabInstance:
     - target: {fileID: -700291334668687702, guid: d592f48f49f76c04b938b1f57703a116, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 73628e792f433424c80d606164950e47, type: 2}
+      objectReference: {fileID: 2100000, guid: 5e20f0773c85913479d0104911c2a5d3, type: 2}
     - target: {fileID: 919132149155446097, guid: d592f48f49f76c04b938b1f57703a116, type: 3}
       propertyPath: m_Name
       value: Unarmed Idle

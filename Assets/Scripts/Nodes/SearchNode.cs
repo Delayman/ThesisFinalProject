@@ -41,7 +41,7 @@ public class SearchNode : Node
                 if (GameObject.FindObjectOfType<PlayerHidingStatus>().isPlayerAHiding)
                 {
                     Debug.Log($"Hide Player A");
-                    enemy.StopEverything();
+                    // enemy.StopEverything();
                     // enemy.SearchRpc();
                     PlayAnimation();
                     
@@ -55,7 +55,7 @@ public class SearchNode : Node
                 if (GameObject.FindObjectOfType<PlayerHidingStatus>().isPlayerBHiding)
                 {
                     Debug.Log($"Hide Player B");
-                    enemy.StopEverything();
+                    // enemy.StopEverything();
                     // enemy.SearchRpc();
                     PlayAnimation();
                     

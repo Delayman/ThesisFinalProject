@@ -29,6 +29,7 @@ public class EnemyAI : MonoBehaviour
     public static bool isSearchingPlayer;
     public static bool isDistractedbyPlayer;
     public bool isTriggerChaseTimer;
+    public bool isFinishedPath;
 
     public static bool isSetToStopEverything;
     
@@ -70,11 +71,11 @@ public class EnemyAI : MonoBehaviour
     {
         var _chaseNode = new ChaseNode(agent, this, _animator);
         var _findPathNode = new FindPathNode(pratolPaths, agent, this, _animator , foot , footrun , DangerMusic , Detected);
-        var _distractedMode = new DistractedNode(agent, this, _animator, foot, footrun, DangerMusic, Detected);
+        // var _distractedMode = new DistractedNode(agent, this, _animator, foot, footrun, DangerMusic, Detected);
         // var _searchNode = new SearchNode(agent, this, _animator, foot, footrun, DangerMusic, Detected);
 
         var _chaseSequnce = new Sequnce(new List<Node> {_chaseNode});
-        var _pratol = new Sequnce(new List<Node> {_findPathNode, _distractedMode});
+        var _pratol = new Sequnce(new List<Node> {_findPathNode});
 
         topNode = new Selector(new List<Node> {_pratol, _chaseSequnce});
     }
@@ -82,8 +83,11 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         topNode.Evaluate();
-        
-        Debug.Log($"{isDetectedPlayer}");
+
+        // if (DistractPos != null)
+        // {
+        //     Debug.Log($"Dis pos : {DistractPos.position}");
+        // }
         
         if (topNode.NodeState == NodeState.FAILURE)
         {
@@ -125,7 +129,7 @@ public class EnemyAI : MonoBehaviour
         
         isDetectedPlayer = true;
         
-        Debug.Log($"Currently hunt + {targetedPlayer.GetComponent<PlayerStatus>().PlayerName} + {isDetectedPlayer}");
+        // Debug.Log($"Currently hunt + {targetedPlayer.GetComponent<PlayerStatus>().PlayerName} + {isDetectedPlayer}");
     }
 
     private void OnTriggerExit(Collider other)
@@ -167,12 +171,37 @@ public class EnemyAI : MonoBehaviour
         isDetectedPlayer = false;
         isTriggerChaseTimer = false;
     }
-
-    public void StopEverything()
+    
+    public void StartDistracted()
     {
         var PV = GetComponent<PhotonView>();
-        PV.RPC("StopDetectedPlayer", RpcTarget.All); 
+        PV.RPC("StartDistractedRPC", RpcTarget.All); 
     }
+    
+    [PunRPC]
+    public void StartDistractedRPC()
+    {
+        isFinishedPath = false;
+    }
+    
+    public void EndDistracted()
+    {
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("EndDistractedRPC", RpcTarget.All); 
+    }
+    
+    [PunRPC]
+    public void EndDistractedRPC()
+    {
+        isFinishedPath = true;
+        isDistractedbyPlayer = false;
+    }
+
+    // public void StopEverything()
+    // {
+    //     var PV = GetComponent<PhotonView>();
+    //     PV.RPC("StopDetectedPlayer", RpcTarget.All); 
+    // }
 
     // public void SearchRpc()
     // {
@@ -180,12 +209,12 @@ public class EnemyAI : MonoBehaviour
     //     PV.RPC("StartSearchPlayer", RpcTarget.All); 
     // }
     
-    [PunRPC]
-    public void StopDetectedPlayer()
-    {
-        isDetectedPlayer = false;
-        agent.isStopped = true;
-    }
+    // [PunRPC]
+    // public void StopDetectedPlayer()
+    // {
+    //     isDetectedPlayer = false;
+    //     agent.isStopped = true;
+    // }
     
     // [PunRPC]
     // public void StartSearchPlayer()

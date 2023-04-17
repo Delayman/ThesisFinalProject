@@ -1,7 +1,9 @@
 {
     "name": "PunDemos.DemoSlotcarEditor",
     "references": [
-        "PhotonUnityNetworking.Demos"
+        "PhotonUnityNetworking.Demos",
+        "UnityEditor.TestRunner",
+        "UnityEngine.TestRunner"
     ],
     "includePlatforms": [
         "Editor"

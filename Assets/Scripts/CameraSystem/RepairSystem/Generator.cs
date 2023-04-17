@@ -5,11 +5,10 @@ using UnityEngine;
 
 public class Generator : Interactable
 {
-    [SerializeField] private float delay = 1f;
+    [SerializeField] private float delay = 3f;
     [SerializeField] private float powerToAdd = 10;
     private const string clickText = "[E] to add power";
     public AudioSource GeneraterSound;
-    
     
     private bool isHeld;
 
@@ -26,11 +25,13 @@ public class Generator : Interactable
         if (isInTutorial)
         {
             AddPower();
+            GeneraterSound.Play();
         }
         else
         {
             var PV = GetComponent<PhotonView>();
             PV.RPC("AddPowerOnline", RpcTarget.All);
+            GeneraterSound.Play();
         }
     }
 
@@ -40,8 +41,6 @@ public class Generator : Interactable
         var generatorTimer = GetComponent<GeneratorTimer>();
 
         generatorTimer.AddTime(powerToAdd);
-
-        GeneraterSound.Play();
         
         StartCoroutine(AddPowerDelay());
     }
@@ -51,8 +50,6 @@ public class Generator : Interactable
         var generatorTimer = GetComponent<GeneratorTimer>();
 
         generatorTimer.AddTime(powerToAdd);
-
-        GeneraterSound.Play();
         
         StartCoroutine(AddPowerDelay());
     }
