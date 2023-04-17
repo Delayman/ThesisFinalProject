@@ -184,6 +184,11 @@ MonoBehaviour:
   isDisableMoving: 0
   camRotLimit: 85
   cam: {fileID: 4421393261196023202}
+  micBoostP1: 0
+  micBoostP2: 0
+  micBoostP3: 4
+  VCTimer: 0
+  VCUsage: 0
 --- !u!54 &4421393261113564725
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -438,6 +443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isHidden: 0
   requestHiding: 0
+  PlayerName: 
 --- !u!114 &72538201882426368
 MonoBehaviour:
   m_ObjectHideFlags: 0

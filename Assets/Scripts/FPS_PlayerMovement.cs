@@ -59,8 +59,8 @@ public class FPS_PlayerMovement : MonoBehaviour
         _view = GetComponent<PhotonView>();
         vcLogger = FindObjectOfType<VoiceAnalyticLogger>();
 
-        var enemyAI = FindObjectOfType<EnemyAI>().gameObject;
-        var enemyGFX = GetComponentInChildren<EnemyGFX>().gameObject;
+       /* var enemyAI = FindObjectOfType<EnemyAI>().gameObject;
+         var enemyGFX = GetComponentInChildren<EnemyGFX>().gameObject;
         
         if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
         {
@@ -70,7 +70,7 @@ public class FPS_PlayerMovement : MonoBehaviour
         {
             enemyGFX.SetActive(false);
         }
-        
+        */
         if (_view.IsMine)
         {
             //Finding Rigibody to move character
@@ -94,9 +94,9 @@ public class FPS_PlayerMovement : MonoBehaviour
 
         StaminaBar.maxValue = PlayerMaxStamina;
         StaminaBar.value = PlayerCurrentStamina;
-        
+
         var _micAmplifier = GetComponent<MicAmplifier>();
-        
+
         if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
         {
             _micAmplifier.AmplificationFactor = micBoostP1;
@@ -344,4 +344,5 @@ public class FPS_PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(2.0f);
         isrunable = true;
     }
+
 }

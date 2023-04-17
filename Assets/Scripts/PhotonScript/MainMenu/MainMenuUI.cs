@@ -8,6 +8,7 @@ public class MainMenuUI : MonoBehaviour
     public GameObject TutorialCanvas;
     public GameObject ESC;
     public GameObject Credit;
+    public GameObject Mic;
     public void OnStartGameAndNoPressed()
     {
         SceneManager.LoadScene("Scenes/Lobby");
@@ -49,6 +50,14 @@ public class MainMenuUI : MonoBehaviour
     public void OnBackCreditPress()
     {
         Credit.SetActive(false);
+    }
+    public void OnMicPress()
+    {
+        Mic.SetActive(true);
+    }
+    public void OnMicCancelPress()
+    {
+        Mic.SetActive(false);
     }
 
 }
