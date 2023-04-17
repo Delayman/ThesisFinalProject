@@ -1940,7 +1940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1980565459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1960,13 +1960,6 @@ MonoBehaviour:
   timerP5: 5
   timerP6: 69
   finalTimer: 111
-  timerTP1: 0
-  timerTP2: 0
-  timerTP3: 0
-  timerTP4: 0
-  timerTP5: 0
-  timerTP6: 0
-  finalTTimer: 0
 --- !u!4 &1980565460
 Transform:
   m_ObjectHideFlags: 0

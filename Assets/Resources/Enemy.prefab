@@ -625,11 +625,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  searchingTime: 10
+  huntTime: 15
+  enemyRunSpeed: 7
+  enemyWalkSpeed: 3.5
+  isTriggerChaseTimer: 0
   foot: {fileID: 595780050}
   footrun: {fileID: 1631018191}
   DangerMusic: {fileID: 1197161735}
   Detected: {fileID: 1460414679}
+  playerNeedToRPC: {fileID: 0}
 --- !u!135 &1387557312635756292
 SphereCollider:
   m_ObjectHideFlags: 0

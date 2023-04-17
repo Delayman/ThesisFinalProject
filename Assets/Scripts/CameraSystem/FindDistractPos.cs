@@ -11,7 +11,6 @@ public class FindDistractPos : MonoBehaviour
     [Tooltip("Do NOT put anything in this space")]
     public GameObject chosenCam;
 
-
     public void OnPressedPlaySound()
     {
         
@@ -20,7 +19,6 @@ public class FindDistractPos : MonoBehaviour
             if (cam.name.Contains(camID.ToString()) && cam.active)
             {
                 chosenCam = cam;
-                Debug.Log($"camID : {chosenCam.name}");
             }
         }
 

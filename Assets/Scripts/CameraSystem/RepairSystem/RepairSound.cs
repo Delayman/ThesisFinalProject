@@ -6,7 +6,7 @@ using Photon.Pun;
 public class RepairSound : Interactable
 {
     [SerializeField] private Timer textBox;
-    [SerializeField] private float addedTime = 10f;
+    [SerializeField] private bool isTutorial;
     [SerializeField] private float repairTime = 5f;
     
     private RepairPanelController ctr;
@@ -34,12 +34,28 @@ public class RepairSound : Interactable
 
     public override void Interact()
     {
-        var PV = GetComponent<PhotonView>();
-        PV.RPC("RepairVoice", RpcTarget.All);
+        if (isTutorial)
+        {
+            RepairVoiceNoRpc();
+        }
+        else
+        {
+            var PV = GetComponent<PhotonView>();
+            PV.RPC("RepairVoice", RpcTarget.All);
+        }
     }
     
     [PunRPC]
     private void RepairVoice()
+    {
+        isOn = true;
+        textBox.isResetting = true;
+        ctr.DisableAllButton();
+        Invoke(nameof(Cooldown), repairTime);
+        Sound.Play();
+    }
+    
+    private void RepairVoiceNoRpc()
     {
         isOn = true;
         textBox.isResetting = true;

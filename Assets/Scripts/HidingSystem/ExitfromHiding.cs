@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class ExitfromHiding : Interactable
 {
     private const string OnText = "[E] to get out.";
-    private HidingScript hoster;
+    private HidingScript hideBox;
 
     public AudioSource HideSound;
 
     private void Start()
     {
-        hoster = GetComponentInParent<HidingScript>();
+        hideBox = GetComponentInParent<HidingScript>();
     }
 
     public override string GetDescription()
@@ -21,12 +22,14 @@ public class ExitfromHiding : Interactable
 
     public override void Interact()
     {
-        GetOut();
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("GetOut", RpcTarget.All);
     }
-
+    
+    [PunRPC]
     private void GetOut()
     {
-        hoster.GetPlayerOut();
+        hideBox.GetPlayerOut();
         HideSound.Play();
     }
 }

@@ -100,6 +100,7 @@ public class LobbyNetworkManager : MonoBehaviourPunCallbacks
         DontDestroyOnLoad(_tempObj);
 
         _tempObj.GetComponent<SavedRole>().SavedRoleID(roleDropDown.value);
+        _tempObj.GetComponent<SavedRole>().SavedRoomName(PhotonNetwork.CurrentRoom.Name);
 
         UpdatePlayerList();
     }

@@ -8,6 +8,13 @@ public class PlayerStatus : MonoBehaviour
 {
     public bool isHidden;
     public bool requestHiding;
+    
+    public string PlayerName;
+
+    private void Start()
+    {
+        PlayerName = this.gameObject.name;
+    }
 
     private void OnTriggerStay(Collider col)
     {

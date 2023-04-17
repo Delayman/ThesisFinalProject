@@ -39,6 +39,8 @@ public class DivideButton : Interactable
     {
         var PV = GetComponent<PhotonView>();
         PV.RPC("GetTextBoxDiv", RpcTarget.All);
+        ButtonSound();
+
     }
     public void ButtonSound()
     {
@@ -53,9 +55,5 @@ public class DivideButton : Interactable
         resultText.UpdateText(state);
         resultText.DivideState(divideNum);
         resultText.ChangeStateToAll(divideNum);
-        
-        ButtonSound();
-
-        Debug.Log($"state : {state} | mulNum : {divideNum}");
     }
 }

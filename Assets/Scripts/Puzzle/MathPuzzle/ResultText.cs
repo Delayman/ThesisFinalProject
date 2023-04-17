@@ -71,7 +71,7 @@ public class ResultText : MonoBehaviour
             _btn.state++;
             _btn.multiplyNum = _value + 1;
             
-            Debug.Log($"Btn mul num : {_btn.multiplyNum} state : {_btn.state}");
+            // Debug.Log($"Btn mul num : {_btn.multiplyNum} state : {_btn.state}");
         }
         
         foreach (var _btn in divideButtons)
@@ -79,7 +79,7 @@ public class ResultText : MonoBehaviour
             _btn.state += 1;
             _btn.divideNum = _value + 1;
             
-            Debug.Log($"Btn div num : {_btn.divideNum} state : {_btn.state}");
+            // Debug.Log($"Btn div num : {_btn.divideNum} state : {_btn.state}");
         }
         
         mathPuzzleController.CheckAnswer();

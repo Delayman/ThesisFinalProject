@@ -12,19 +12,11 @@ public class DistractedNode : Node
     private bool isDistracted;
     private bool isFinishedPath;
     private Animator MonsterAnimator;
-    private AudioSource foot;
-    private AudioSource footrun;
-    private AudioSource DangerMusic;
-    private AudioSource Detected;
     public DistractedNode(NavMeshAgent _agent, EnemyAI _enemy, Animator _animator, AudioSource _foot, AudioSource _footrun, AudioSource _DangerMusic, AudioSource _Detected)
     {
         agent = _agent;
         enemmy = _enemy;
         this.MonsterAnimator = _animator;
-        foot = _foot;
-        footrun = _footrun;
-        DangerMusic = _DangerMusic;
-        Detected = _Detected;
     }
 
     public override NodeState Evaluate()
@@ -58,9 +50,5 @@ public class DistractedNode : Node
     private void PlayAnimation()
     {
         MonsterAnimator.SetInteger("EMAnimationID",2);
-        //foot.enabled = true;
-        //footrun.enabled = false;
-        //DangerMusic.enabled = false;
-        //Detected.Stop();
     }
 }

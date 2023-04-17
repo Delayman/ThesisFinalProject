@@ -43,7 +43,7 @@ public class PlayerInteraction : MonoBehaviour
              // Debug.Log($"Looking at {objCheck.gameObject.name}");
              // Debug.Log($"Interact at {interactable.gameObject.name}");
             
-            if (interactable != null)
+            if (interactable != null && interactionText != null)
             {
                 interactionText.text = interactable.GetDescription();
                 HandleInteraction(interactable);

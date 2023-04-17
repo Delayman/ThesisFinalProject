@@ -34,8 +34,13 @@ public class SystemBrokeDownController : MonoBehaviour
     
     public void BrokeVent()
     {
-        if (!_view.IsMine) return;
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("BrokeVentRpc", RpcTarget.All);
+    }
 
+    [PunRPC]
+    public void BrokeVentRpc()
+    {
         foreach (var ventUI in ventBrokeUI)
         {
             ventUI.SetActive(true);
@@ -54,6 +59,13 @@ public class SystemBrokeDownController : MonoBehaviour
     }
     
     public void RepairVent()
+    {
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("RepairVentRpc", RpcTarget.All);
+    }
+    
+    [PunRPC]
+    public void RepairVentRpc()
     {
         if (!_view.IsMine) return;
 

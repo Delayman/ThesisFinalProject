@@ -38,6 +38,7 @@ public class MultiplyButton : Interactable
     {
         var PV = GetComponent<PhotonView>();
         PV.RPC("GetTextBoxMul", RpcTarget.All);
+        ButtonSound();
     }
     public void ButtonSound()
     {
@@ -52,10 +53,5 @@ public class MultiplyButton : Interactable
         resultText.UpdateText(state);
         resultText.MultiplyState(multiplyNum);
         resultText.ChangeStateToAll(multiplyNum);
-        
-        ButtonSound();
-
-        Debug.Log($"state : {state} | mulNum : {multiplyNum}");
-
     }
 }

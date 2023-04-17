@@ -47,7 +47,7 @@ public class CutScenePlay : MonoBehaviour
 
     public void CutScene2()
     {
-        Debug.Log("PassPuzzle = "+PassPuzzle);
+        // Debug.Log("PassPuzzle = "+PassPuzzle);
         if (PassPuzzle == 5)
         {
             foreach (var player in DisAblePlayerlist)

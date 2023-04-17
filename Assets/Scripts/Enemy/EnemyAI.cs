@@ -13,10 +13,11 @@ public class EnemyAI : MonoBehaviour
     
     [FormerlySerializedAs("_pratolPaths")] [SerializeField] private List<GameObject> pratolPaths = new List<GameObject>();
     
-    // [SerializeField] private float chasingRange = 3f;
-
-    // [SerializeField] private Transform playerTransform;
-    public float searchingTime = 10f;
+    public float huntTime = 15f;
+    public float enemyRunSpeed = 7f;
+    public float enemyWalkSpeed = 3.5f;
+    
+    // public float searchingTime = 10f;
 
     private Material material;
     private NavMeshAgent agent;
@@ -27,7 +28,9 @@ public class EnemyAI : MonoBehaviour
     public static bool isDetectedPlayer;
     public static bool isSearchingPlayer;
     public static bool isDistractedbyPlayer;
-    public static bool isTriggerSearchTime = true;
+    public bool isTriggerChaseTimer;
+
+    public static bool isSetToStopEverything;
     
     public static Transform DistractPos;
     public static GameObject targetedPlayer;
@@ -38,6 +41,8 @@ public class EnemyAI : MonoBehaviour
     public AudioSource footrun;
     public AudioSource DangerMusic;
     public AudioSource Detected;
+
+    public GameObject playerNeedToRPC;
     
     #endregion
     
@@ -63,12 +68,12 @@ public class EnemyAI : MonoBehaviour
 
     private void ConstructBehaviourTree()
     {
-        var _chaseNode = new ChaseNode(agent, this, _animator, foot, footrun, DangerMusic, Detected);
+        var _chaseNode = new ChaseNode(agent, this, _animator);
         var _findPathNode = new FindPathNode(pratolPaths, agent, this, _animator , foot , footrun , DangerMusic , Detected);
         var _distractedMode = new DistractedNode(agent, this, _animator, foot, footrun, DangerMusic, Detected);
-        var _searchNode = new SearchNode(agent, this, _animator, foot, footrun, DangerMusic, Detected);
+        // var _searchNode = new SearchNode(agent, this, _animator, foot, footrun, DangerMusic, Detected);
 
-        var _chaseSequnce = new Sequnce(new List<Node> {_chaseNode, _searchNode});
+        var _chaseSequnce = new Sequnce(new List<Node> {_chaseNode});
         var _pratol = new Sequnce(new List<Node> {_findPathNode, _distractedMode});
 
         topNode = new Selector(new List<Node> {_pratol, _chaseSequnce});
@@ -77,18 +82,15 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
         topNode.Evaluate();
+        
+        Debug.Log($"{isDetectedPlayer}");
+        
         if (topNode.NodeState == NodeState.FAILURE)
         {
             agent.isStopped = true;
         }
-
-        if (isSearchingPlayer && isTriggerSearchTime)
-        {
-            TriggerSearchTimer();
-            isTriggerSearchTime = false;
-        }
     }
-
+    
     private void OnDrawGizmosSelected()
     {
         var _transformPos = transform.position;
@@ -101,21 +103,47 @@ public class EnemyAI : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
         
-        targetedPlayer = other.gameObject;
-        var playerStatus = targetedPlayer.GetComponent<PlayerStatus>();
-            
-        if(playerStatus.isHidden) return;
-            
+        playerNeedToRPC = other.gameObject;
+        
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("StartChase", RpcTarget.All);
+
+        // var playerStatus = targetedPlayer.GetComponent<PlayerStatus>();
+        // var playerHideStatus = FindObjectOfType<PlayerHidingStatus>();
+        
+        // if (playerStatus.PlayerName.Contains("3") && !playerHideStatus.isPlayerBHiding)
+        // {
+        //     isDetectedPlayer = true;
+        //     Debug.Log($"Currently hunt + {targetedPlayer.GetComponent<PlayerStatus>().PlayerName} + {isDetectedPlayer}");
+        // }
+    }
+    
+    [PunRPC]
+    public void StartChase()
+    {
+        targetedPlayer = playerNeedToRPC;
+        
         isDetectedPlayer = true;
-        StopCoroutine(StopChaseTimer());
+        
+        Debug.Log($"Currently hunt + {targetedPlayer.GetComponent<PlayerStatus>().PlayerName} + {isDetectedPlayer}");
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            StartCoroutine(StopChaseTimer());
+            var PV = GetComponent<PhotonView>();
+            PV.RPC("StoppingChase", RpcTarget.All);
         }
+    }
+
+    [PunRPC]
+    public void StoppingChase()
+    {
+        if (isTriggerChaseTimer) return;
+        
+        isTriggerChaseTimer = true;
+        StartCoroutine(StopChaseTimer());
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -132,21 +160,57 @@ public class EnemyAI : MonoBehaviour
     {
         PhotonNetwork.LoadLevel("Scenes/Result");
     }
-
-    private void TriggerSearchTimer()
-    {
-        StartCoroutine(SearchTimer());
-    }
-
+    
     private IEnumerator StopChaseTimer()
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(huntTime);
         isDetectedPlayer = false;
+        isTriggerChaseTimer = false;
+    }
+
+    public void StopEverything()
+    {
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("StopDetectedPlayer", RpcTarget.All); 
+    }
+
+    // public void SearchRpc()
+    // {
+    //     var PV = GetComponent<PhotonView>();
+    //     PV.RPC("StartSearchPlayer", RpcTarget.All); 
+    // }
+    
+    [PunRPC]
+    public void StopDetectedPlayer()
+    {
+        isDetectedPlayer = false;
+        agent.isStopped = true;
     }
     
-    private IEnumerator SearchTimer()
-    {
-        yield return new WaitForSeconds(searchingTime);
-        isSearchingPlayer = false;
-    }
+    // [PunRPC]
+    // public void StartSearchPlayer()
+    // {
+    //     isSearchingPlayer = true;
+    //     isTriggerSearchTime = true;
+    // }
+
+    // private void TriggerSearchTimer()
+    // {
+    //     var PV = GetComponent<PhotonView>();
+    //     PV.RPC("CalledSearchRPC", RpcTarget.All);
+    // }
+    
+    // [PunRPC]
+    // public void CalledSearchRPC()
+    // {
+    //     StartCoroutine(SearchTimer());
+    // }
+    
+    
+    // private IEnumerator SearchTimer()
+    // {
+    //     yield return new WaitForSeconds(searchingTime);
+    //     isSearchingPlayer = false;
+    //     isTriggerSearchTime = false;
+    // }
 }

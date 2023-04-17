@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using Photon.Pun;
 
 public class HidingScript : Interactable
 {
@@ -38,6 +39,13 @@ public class HidingScript : Interactable
 
     public override void Interact()
     {
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("HideSetting", RpcTarget.All);
+    }
+
+    [PunRPC]
+    public void HideSetting()
+    {
         isOccupy = !isOccupy;
         
         ChooseTargetPlayer();
@@ -48,6 +56,11 @@ public class HidingScript : Interactable
     {
         float distance;
 
+        if (playerList.Count <= 0)
+        {
+            playerList = FindObjectsOfType<PlayerInteraction>().ToList();
+        }
+        
         foreach (var player in playerList)
         {
             distance = Vector3.Distance(player.transform.position,hidingSpot.transform.position);
@@ -67,14 +80,46 @@ public class HidingScript : Interactable
         targetPlayer.transform.position = this.transform.position + hidingOffSet;
         
         targetPlayer.transform.eulerAngles = this.transform.eulerAngles + hidingRotationOffSet;
-        targetPlayer.gameObject.GetComponent<PlayerStatus>().isHidden = true;
+        
+        if (targetPlayer.GetComponent<PlayerStatus>().PlayerName.Contains("2"))
+        {
+            var PV = GetComponent<PhotonView>();
+            PV.RPC("HidePlayerA", RpcTarget.All);
+        }
+        
+        if (targetPlayer.GetComponent<PlayerStatus>().PlayerName.Contains("3"))
+        {
+            var PV = GetComponent<PhotonView>();
+            PV.RPC("HidePlayerB", RpcTarget.All);
+        }
+        
+        // Debug.Log($"Player name : {targetPlayer.GetComponent<PlayerStatus>().PlayerName}");
         
         var disableTargetPlayer = targetPlayer.gameObject.GetComponent<DisablePlayerControl>();
         disableTargetPlayer.isDisableFPSMovement = true;
         
         HideSound.Play();
     }
+    
+    [PunRPC]
+    public void HidePlayerA()
+    {
+        var hidePlayer = FindObjectOfType<PlayerHidingStatus>();
+        hidePlayer.isPlayerAHiding = true;
+        
+        // Debug.Log($"Player name : {targetPlayer.GetComponent<PlayerStatus>().PlayerName} Status : {hidePlayer.isPlayerAHiding}");
+    }
+    
+    [PunRPC]
+    public void HidePlayerB()
+    {
+        var hidePlayer = FindObjectOfType<PlayerHidingStatus>();
+        hidePlayer.isPlayerBHiding = true;
+        
+        // Debug.Log($"Player name : {targetPlayer.GetComponent<PlayerStatus>().PlayerName} Status : {hidePlayer.isPlayerBHiding}");
+    }
 
+    [PunRPC]
     public void GetPlayerOut()
     {
         isOccupy = false;
@@ -85,7 +130,16 @@ public class HidingScript : Interactable
         var disableTargetPlayer = targetPlayer.gameObject.GetComponent<DisablePlayerControl>();
         disableTargetPlayer.isDisableFPSMovement = false;
         
-        targetPlayer.gameObject.GetComponent<PlayerStatus>().isHidden = false;
-
+        if (targetPlayer.GetComponent<PlayerStatus>().PlayerName.Contains("2"))
+        {
+            var hidePlayer = FindObjectOfType<PlayerHidingStatus>();
+            hidePlayer.isPlayerAHiding = false;
+        }
+        
+        if (targetPlayer.GetComponent<PlayerStatus>().PlayerName.Contains("3"))
+        {
+            var hidePlayer = FindObjectOfType<PlayerHidingStatus>();
+            hidePlayer.isPlayerBHiding = false;
+        }
     }
 }

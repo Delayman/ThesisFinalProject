@@ -62,6 +62,26 @@ MonoBehaviour:
   - RepairAllSystem
   - GameOver
   - AddPowerOnline
+  - BrokeVentRpc
+  - HideSetting
+  - RepairVentRpc
+  - HidePlayer
+  - GetOut
+  - GetPlayerOut
+  - HidePlayerA
+  - HidePlayerB
+  - HideRunnerA
+  - CalledSearchRPC
+  - StopDetectedPlayer
+  - TriggerSearchRPC
+  - StartSearchPlayer
+  - SetChaseToPlayer
+  - StartChase
+  - StoppingChase
+  - ChangeToChase
+  - FindPath
+  - GetPath
+  - SetChaseToPlayerRPC
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

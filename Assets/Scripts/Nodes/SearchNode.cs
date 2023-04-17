@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using Photon.Pun;
 
 public class SearchNode : Node
 {
@@ -31,30 +32,50 @@ public class SearchNode : Node
     public override NodeState Evaluate()
     {
         targetPlayer = EnemyAI.targetedPlayer;
-        
+        // Debug.Log($"target in search + {targetPlayer.GetComponent<PlayerStatus>().PlayerName}");
+
         if (targetPlayer.TryGetComponent<PlayerStatus>(out var playerStatus))
         {
-            if (playerStatus.isHidden)
+            if (playerStatus.PlayerName.Contains("2") && EnemyAI.isDetectedPlayer)
             {
-                EnemyAI.isDetectedPlayer = false; 
-                PlayAnimation();
-                agent.isStopped = true;
-
-                EnemyAI.isSearchingPlayer = true;
-                EnemyAI.isTriggerSearchTime = true;
+                if (GameObject.FindObjectOfType<PlayerHidingStatus>().isPlayerAHiding)
+                {
+                    Debug.Log($"Hide Player A");
+                    enemy.StopEverything();
+                    // enemy.SearchRpc();
+                    PlayAnimation();
+                    
+                    return NodeState.RUNNING;
+                }
+                return NodeState.FAILURE;
+            }
+            
+            if (playerStatus.PlayerName.Contains("3") && EnemyAI.isDetectedPlayer)
+            {
+                if (GameObject.FindObjectOfType<PlayerHidingStatus>().isPlayerBHiding)
+                {
+                    Debug.Log($"Hide Player B");
+                    enemy.StopEverything();
+                    // enemy.SearchRpc();
+                    PlayAnimation();
+                    
+                    return NodeState.RUNNING;
+                }
+                return NodeState.FAILURE;
             }
         }
 
         return NodeState.RUNNING;
     }
 
+    [PunRPC]
+    public void HideRunnerA()
+    {
+        
+    }
+    
     private void PlayAnimation()
     {
-        //Debug.Log($"Search");
         MonsterAnimator.SetInteger("EMAnimationID",1);
-        //foot.enabled = false;
-        //footrun.enabled = false;
-        //DangerMusic.enabled = false;
-        //Detected.Stop();
     }
 }

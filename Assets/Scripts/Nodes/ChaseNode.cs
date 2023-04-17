@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Timers;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Events;
+using Photon.Pun;
 
 public class ChaseNode : Node
 {
@@ -13,48 +13,60 @@ public class ChaseNode : Node
     private Animator MonsterAnimator;
     
     private GameObject targetPlayer;
-    private PlayerStatus playerStatus;
-    private AudioSource foot;
-    private AudioSource footrun;
-    private AudioSource DangerMusic;
-    private AudioSource Detected;
-
-    public ChaseNode(NavMeshAgent _agent, EnemyAI _enemy, Animator _animator, AudioSource _foot, AudioSource _footrun, AudioSource _DangerMusic, AudioSource _Detected)
+    private PlayerHidingStatus playerHideStatus;
+    
+    public ChaseNode(NavMeshAgent _agent, EnemyAI _enemy, Animator _animator)
     {
         this.agent = _agent;
         this.enemy = _enemy;
         chaseTimer = 0f;
         this.MonsterAnimator = _animator;
-        foot = _foot;
-        footrun = _footrun;
-        DangerMusic = _DangerMusic;
-        Detected = _Detected;
     }
     public override NodeState Evaluate()
     {
         targetPlayer = EnemyAI.targetedPlayer;
-        
+
+        // Debug.Log($"Target : {targetPlayer} name : {playerName}");
+
         if (targetPlayer != null)
         {
-            playerStatus = targetPlayer.GetComponent<PlayerStatus>();
-
-            agent.isStopped = false;
-            agent.speed = 7.5f;
-            agent.angularSpeed = 180f;
-            agent.SetDestination(targetPlayer.transform.position);
-            PlayAnimation();
+            // Debug.Log($"hunt + {targetPlayer.GetComponent<PlayerStatus>().PlayerName} + {EnemyAI.isDetectedPlayer}");
+            // var PV = enemy.GetComponent<PhotonView>();
+            // PV.RPC("SetChaseToPlayer", RpcTarget.All);
+            Debug.Log($"Run u fuck");
+            SetChaseToPlayer();
+            
             return NodeState.RUNNING;
         }
 
         return NodeState.SUCCESS;
     }
 
+    [PunRPC]
+    public void SetChaseToPlayerRPC()
+    {
+        agent.ResetPath();
+        agent.isStopped = true;
+        agent.speed = enemy.enemyRunSpeed;
+        agent.angularSpeed = 450f;
+        agent.SetDestination(targetPlayer.transform.position);
+        agent.isStopped = false;
+        PlayAnimation();
+    }
+    
+    public void SetChaseToPlayer()
+    {
+        agent.ResetPath();
+        agent.isStopped = true;
+        agent.speed = enemy.enemyRunSpeed;
+        agent.angularSpeed = 450f;
+        agent.SetDestination(targetPlayer.transform.position);
+        agent.isStopped = false;
+        PlayAnimation();
+    }
+
     private void PlayAnimation()
     {
         MonsterAnimator.SetInteger("EMAnimationID",3);
-        //foot.enabled = false;
-        //footrun.enabled = true;
-        //DangerMusic.enabled = true;
-        //Detected.Play();
     }
 }

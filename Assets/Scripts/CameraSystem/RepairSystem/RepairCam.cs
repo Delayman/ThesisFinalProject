@@ -7,7 +7,7 @@ using Photon.Pun;
 public class RepairCam : Interactable
 {
     [SerializeField] private Timer textBox;
-    [SerializeField] private float addedTime = 10f;
+    [SerializeField] private bool isTutorial;
     [SerializeField] private float repairTime = 5f;
 
     private RepairPanelController ctr;
@@ -36,12 +36,28 @@ public class RepairCam : Interactable
 
     public override void Interact()
     {
-        var PV = GetComponent<PhotonView>();
-        PV.RPC("RepairCamera", RpcTarget.All);
+        if (isTutorial)
+        {
+            RepairCameraNoRpc();
+        }
+        else
+        {
+            var PV = GetComponent<PhotonView>();
+            PV.RPC("RepairCamera", RpcTarget.All);
+        }
     }
     
     [PunRPC]
     private void RepairCamera()
+    {
+        isOn = true;
+        textBox.isResetting = true;
+        ctr.DisableAllButton();
+        Invoke(nameof(Cooldown), repairTime);
+        Sound.Play();
+    }
+    
+    private void RepairCameraNoRpc()
     {
         isOn = true;
         textBox.isResetting = true;

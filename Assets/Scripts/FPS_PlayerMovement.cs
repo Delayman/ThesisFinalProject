@@ -27,6 +27,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     bool isrunable;
     private bool isDisableVoiceChat;
     public bool isDisableMoving;
+    private bool isPushToTalk;
     
     private PhotonView _view;
     private PhotonVoiceView voiceView;
@@ -40,6 +41,10 @@ public class FPS_PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private Camera cam;
+
+    public float VCTimer;
+    public int VCUsage;
+
     void Awake()
     {
         isrun = false;
@@ -152,13 +157,20 @@ public class FPS_PlayerMovement : MonoBehaviour
 
             StaminaBar.value = PlayerCurrentStamina;
         }
-    
     }
 
     private void LateUpdate()
     {
+        if (isPushToTalk)
+        {
+            VCTimer += Time.deltaTime;
+            // Debug.Log($"VC : {VCTimer} Usage : {VCUsage}");
+        }
+        
         if (isDisableVoiceChat) return;
-            
+
+        if (!_view.IsMine) return;
+        
         this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
         isDisableVoiceChat = true;
     }
@@ -168,11 +180,16 @@ public class FPS_PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.V))
         {
             this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = true;
+            VCUsage += 1;
+
+            isPushToTalk = true;
         }
         
         if (Input.GetKeyUp(KeyCode.V))
         {
             this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
+            
+            isPushToTalk = false;
         }
     }
 

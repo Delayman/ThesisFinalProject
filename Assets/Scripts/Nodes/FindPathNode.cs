@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Events;
+using Photon.Pun;
 
 public class FindPathNode : Node
 {
     private readonly List<GameObject> savedPath = new List<GameObject>();
     private readonly List<GameObject> tempPath= new List<GameObject>();
     private NavMeshAgent agent;
-    private EnemyAI enemmy;
+    private EnemyAI enemy;
     private bool isDetected, isDistracted, isSearching;
     private Animator MonsterAnimator;
     private AudioSource foot;
@@ -22,7 +22,7 @@ public class FindPathNode : Node
         savedPath.AddRange(_path);
         tempPath.AddRange(_path);
         agent = _agent;
-        enemmy = _enemmy;
+        enemy = _enemmy;
         MonsterAnimator = _animator;
         foot = _foot;
         footrun = _footrun;
@@ -33,49 +33,59 @@ public class FindPathNode : Node
     public override NodeState Evaluate()
     {
         isDetected = EnemyAI.isDetectedPlayer;
-        isDistracted = EnemyAI.isDistractedbyPlayer;
-        isSearching = EnemyAI.isSearchingPlayer;
-
-        if (!isSearching)
+        // isDistracted = EnemyAI.isDistractedbyPlayer;
+        // isSearching = EnemyAI.isSearchingPlayer;
+        
+        if (isDetected)
         {
-            FindPath();
-            if (isDetected && !isSearching)
-            {
-                PlayAnimation(3);
-                foot.enabled = false;
-                footrun.enabled = true;
-                DangerMusic.enabled = true;
-                Detected.Play();
-                return NodeState.FAILURE;
-            }
+            // var PV = enemy.GetComponent<PhotonView>();
+            // PV.RPC("ChangeToChase", RpcTarget.All);
+            Debug.Log($"Chasing");
+            PlayAnimation(3);
             
-            if(!isDetected)
-            {
-                PlayAnimation(2);
-                foot.enabled = true;
-                footrun.enabled = false;
-                DangerMusic.enabled = false;
-                Detected.Stop();
-            }
-
-            if (isSearching)
-            {
-                PlayAnimation(1); 
-                foot.enabled = false;
-                footrun.enabled = false;
-                DangerMusic.enabled = false;
-                Detected.Stop();
-            }
+            foot.enabled = false;
+            footrun.enabled = true;
+            DangerMusic.enabled = true;
+            Detected.Play();
+            
+            return NodeState.FAILURE;
         }
+        
+        // var PVPath = enemy.GetComponent<PhotonView>();
+        // PVPath.RPC("GetPath", RpcTarget.All);
+        
+        FindPath();
+        
+        foot.enabled = true;
+        footrun.enabled = false;
+        DangerMusic.enabled = false;
+        Detected.Stop();
         
         return NodeState.SUCCESS;
     }
     
-    private void FindPath()
+    [PunRPC]
+    public void ChangeToChase()
     {
+        Debug.Log($"Chasing");
+        PlayAnimation(3);
+    }
+
+    [PunRPC]
+    public void GetPath()
+    {
+        FindPath();
+    }
+    
+    public void FindPath()
+    {
+        PlayAnimation(2);
+
+        Debug.Log($"Find Path");
+        
         var _distance = Vector3.Distance(tempPath[0].transform.position, agent.transform.position);
-        agent.speed = 3.5f;
-        agent.angularSpeed = 120f;
+        agent.speed = enemy.enemyWalkSpeed;
+        agent.angularSpeed = 180f;
         // Debug.Log($"Distance left : {_distance}");
         
         if (tempPath.Count > 0)
