@@ -268,7 +268,7 @@ public class FPS_PlayerMovement : MonoBehaviour
                     vcLogger.StopVCTimerToP3();
                 }
             }
-            Debug.Log("Unpress V!!");
+            //Debug.Log("Unpress V!!");
         }
     }
 
