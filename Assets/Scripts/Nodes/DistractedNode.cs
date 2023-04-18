@@ -21,7 +21,7 @@ public class DistractedNode : Node
 
     public override NodeState Evaluate()
     {
-        enemmy.StartDistracted();
+        // enemmy.StartDistracted();
         
         Debug.Log($"Lure");
 
@@ -48,7 +48,7 @@ public class DistractedNode : Node
 
         if (!(_distance < 5f)) return;
 
-        enemmy.EndDistracted();
+        // enemmy.EndDistracted();
     }
 
     private void PlayAnimation()

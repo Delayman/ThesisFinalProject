@@ -30,30 +30,15 @@ public class ChaseNode : Node
 
         if (targetPlayer != null)
         {
-            // Debug.Log($"hunt + {targetPlayer.GetComponent<PlayerStatus>().PlayerName} + {EnemyAI.isDetectedPlayer}");
-            // var PV = enemy.GetComponent<PhotonView>();
-            // PV.RPC("SetChaseToPlayer", RpcTarget.All);
             Debug.Log($"Run u fuck");
             SetChaseToPlayer();
             
-            return NodeState.RUNNING;
+            return NodeState.SUCCESS;
         }
 
         return NodeState.SUCCESS;
     }
 
-    [PunRPC]
-    public void SetChaseToPlayerRPC()
-    {
-        agent.ResetPath();
-        agent.isStopped = true;
-        agent.speed = enemy.enemyRunSpeed;
-        agent.angularSpeed = 450f;
-        agent.SetDestination(targetPlayer.transform.position);
-        agent.isStopped = false;
-        PlayAnimation();
-    }
-    
     public void SetChaseToPlayer()
     {
         agent.ResetPath();

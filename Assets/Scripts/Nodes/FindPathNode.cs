@@ -32,33 +32,20 @@ public class FindPathNode : Node
 
     public override NodeState Evaluate()
     {
-        isDetected = EnemyAI.isDetectedPlayer;
-        // isDistracted = EnemyAI.isDistractedbyPlayer;
-        // isSearching = EnemyAI.isSearchingPlayer;
-        
-        if (isDetected)
-        {
-            // var PV = enemy.GetComponent<PhotonView>();
-            // PV.RPC("ChangeToChase", RpcTarget.All);
-            Debug.Log($"Chasing");
-            PlayAnimation(3);
-            
-            foot.enabled = false;
-            footrun.enabled = true;
-            DangerMusic.enabled = true;
-            Detected.Play();
-            
-            return NodeState.FAILURE;
-        }
+        // isDetected = EnemyAI.isDetectedPlayer;
 
-        if (EnemyAI.isDistractedbyPlayer)
-        {
-            return NodeState.SUCCESS;
-        }
-        
-        // var PVPath = enemy.GetComponent<PhotonView>();
-        // PVPath.RPC("GetPath", RpcTarget.All);
-        
+        // if (isDetected)
+        // {
+        //     PlayAnimation(3);
+        //     
+        //     foot.enabled = false;
+        //     footrun.enabled = true;
+        //     DangerMusic.enabled = true;
+        //     Detected.Play();
+        //     
+        //     return NodeState.FAILURE;
+        // }
+
         FindPath();
         
         foot.enabled = true;
@@ -68,25 +55,12 @@ public class FindPathNode : Node
         
         return NodeState.SUCCESS;
     }
-    
-    [PunRPC]
-    public void ChangeToChase()
-    {
-        Debug.Log($"Chasing");
-        PlayAnimation(3);
-    }
 
-    [PunRPC]
-    public void GetPath()
-    {
-        FindPath();
-    }
-    
     public void FindPath()
     {
-        PlayAnimation(2);
+        // PlayAnimation(2);
 
-        Debug.Log($"Find Path");
+        // Debug.Log($"Find Path");
         
         var _distance = Vector3.Distance(tempPath[0].transform.position, agent.transform.position);
         agent.speed = enemy.enemyWalkSpeed;

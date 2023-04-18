@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class IcePuzzleReset : Interactable
 {
@@ -23,11 +24,20 @@ public class IcePuzzleReset : Interactable
 
     public override void Interact()
     {
-        icePuzzle.movingObj.transform.position = originPos;
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("ResetIcePos", RpcTarget.All);
+        
         ButtonSound();
     }
     public void ButtonSound()
     {
         ButtonOBJ.Play();
+    }
+
+    [PunRPC]
+    public void ResetIcePos()
+    {
+        icePuzzle.movingObj.transform.position = originPos;
+        
     }
 }

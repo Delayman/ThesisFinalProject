@@ -18,16 +18,16 @@ public class DataPoster : MonoBehaviour
             });
         
         var timeResult = Analytics.CustomEvent(
-            "PuzzleTimer",
+            "Puzzle_Timer",
             new Dictionary<string, object>
             {
-                {"Puzzle_A", _data.timerP1},
-                {"Puzzle_B", _data.timerP2},
-                {"Puzzle_C", _data.timerP3},
-                {"Puzzle_D", _data.timerP4},
-                {"Puzzle_E", _data.timerP5},
-                {"Puzzle_F", _data.timerP6},
-                {"Final_Time", _data.finalTimer}
+                {"T_Puzzle_A", _data.timerP1},
+                {"T_Puzzle_B", _data.timerP2},
+                {"T_Puzzle_C", _data.timerP3},
+                {"T_Puzzle_D", _data.timerP4},
+                {"T_Puzzle_E", _data.timerP5},
+                {"T_Puzzle_F", _data.timerP6},
+                {"T_Final_Time", _data.finalTimer}
             });
 
         var vcTimerResult = Analytics.CustomEvent(

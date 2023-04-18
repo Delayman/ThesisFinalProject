@@ -48,6 +48,9 @@ public class FPS_PlayerMovement : MonoBehaviour
     private VoiceAnalyticLogger vcLogger;
     public float VCTimer;
     public float VCUsage;
+    
+    public GameObject enemyAI;
+    public GameObject enemyGFX;
 
     void Awake()
     {
@@ -58,19 +61,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     {
         _view = GetComponent<PhotonView>();
         vcLogger = FindObjectOfType<VoiceAnalyticLogger>();
-
-       /* var enemyAI = FindObjectOfType<EnemyAI>().gameObject;
-         var enemyGFX = GetComponentInChildren<EnemyGFX>().gameObject;
         
-        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
-        {
-            enemyGFX.SetActive(false);
-        }
-        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
-        {
-            enemyGFX.SetActive(false);
-        }
-        */
         if (_view.IsMine)
         {
             //Finding Rigibody to move character
@@ -81,8 +72,25 @@ public class FPS_PlayerMovement : MonoBehaviour
             Cursor.visible = false;
 
             StaminaBar = GameObject.FindGameObjectWithTag("StaminaBar").GetComponent<Slider>();
+            
+            var _micAmplifier = GetComponent<MicAmplifier>();
 
-            // this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
+            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
+            {
+                _micAmplifier.AmplificationFactor = micBoostP1;
+            }
+            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+            {
+                _micAmplifier.AmplificationFactor = micBoostP2;
+            }
+            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
+            {
+                _micAmplifier.AmplificationFactor = micBoostP3;
+            }
+            
+            this.gameObject.GetComponent<Recorder>().RecordingEnabled = false;
+
+            // enemyGFX.SetActive(false);
         }
 
         if (!_view.IsMine)
@@ -94,27 +102,29 @@ public class FPS_PlayerMovement : MonoBehaviour
 
         StaminaBar.maxValue = PlayerMaxStamina;
         StaminaBar.value = PlayerCurrentStamina;
-
-        var _micAmplifier = GetComponent<MicAmplifier>();
-
+        
+        enemyAI = FindObjectOfType<EnemyAI>().gameObject;
+        enemyGFX = enemyAI.GetComponentInChildren<EnemyGFX>().gameObject;
+        
         if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
         {
-            _micAmplifier.AmplificationFactor = micBoostP1;
-        }
-        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+            enemyGFX.SetActive(true);
+        }else 
+        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3") ||
+            this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
         {
-            _micAmplifier.AmplificationFactor = micBoostP2;
+            enemyGFX.SetActive(false);
         }
-        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
-        {
-            _micAmplifier.AmplificationFactor = micBoostP3;
-        }
+        
+        // Debug.Log($"{enemyAI.gameObject.name}");
     }
 
     private void FixedUpdate() 
     {
         if (_view.IsMine)
         {
+            PushToTalk();
+
             //Stop ctrl z
             //Getting Input from keyboard
             float horizontalMove = Input.GetAxisRaw("Horizontal");
@@ -177,32 +187,21 @@ public class FPS_PlayerMovement : MonoBehaviour
                 cam.transform.localEulerAngles = new Vector3(currentCamRotX, 0f ,0f);
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                // Cursor.lockState = CursorLockMode.None;
-                // Cursor.visible = true;
-            }
-
-            PushToTalk();
-
             StaminaBar.value = PlayerCurrentStamina;
         }
     }
 
     private void LateUpdate()
     {
-        // if (isPushToTalk)
-        // {
-        //     VCTimer += Time.deltaTime;
-        //     // Debug.Log($"VC : {VCTimer} Usage : {VCUsage}");
-        // }
+        // Debug.Log($"{enemyAI.name}");
         
-        if (isDisableVoiceChat) return;
+        // enemyGFX.SetActive(false);
 
-        if (!_view.IsMine) return;
+        // if (isDisableVoiceChat) return;
+
+        // if (!_view.IsMine) return;
         
-        // this.gameObject.GetComponent<PhotonVoiceView>().RecorderInUse.TransmitEnabled = false;
-        isDisableVoiceChat = true;
+        // isDisableVoiceChat = true;
     }
 
     private void PushToTalk()
@@ -211,27 +210,26 @@ public class FPS_PlayerMovement : MonoBehaviour
         {
             this.gameObject.GetComponent<Recorder>().TransmitEnabled = true;
             
+            //Watcher
             if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
             {
                 vcLogger.AddVCCountToP1();
             }
+            //Runner A
             if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
             {
                 vcLogger.AddVCCountToP2();
             }
+            //Runner B
             if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
             {
                 vcLogger.AddVCCountToP3();
             }
-            
-            // VCUsage += 1;
-            //
-            // isPushToTalk = true;
         }
         
         if (!Input.GetKey(KeyCode.V))
         {
-            this.gameObject.GetComponent<Recorder>().TransmitEnabled = true;
+            this.gameObject.GetComponent<Recorder>().TransmitEnabled = false;
 
             if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
             {
@@ -247,8 +245,6 @@ public class FPS_PlayerMovement : MonoBehaviour
             {
                 vcLogger.StopVCTimerToP3();
             }
-            
-            // isPushToTalk = false;
         }
     }
 

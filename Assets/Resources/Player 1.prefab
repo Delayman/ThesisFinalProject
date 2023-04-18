@@ -191,6 +191,8 @@ MonoBehaviour:
   micBoostP3: 4
   VCTimer: 0
   VCUsage: 0
+  enemyAI: {fileID: 0}
+  enemyGFX: {fileID: 0}
 --- !u!54 &4421393261113564725
 Rigidbody:
   m_ObjectHideFlags: 0

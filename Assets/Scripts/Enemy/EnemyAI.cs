@@ -49,7 +49,6 @@ public class EnemyAI : MonoBehaviour
     
     private void Awake()
     {
-        //material = GetComponentInChildren<MeshRenderer>().material;
         pratolPaths = GameObject.FindGameObjectsWithTag("EnemyPath").ToList();
         
         if(!TryGetComponent<NavMeshAgent>(out var _agent)) return;
@@ -69,87 +68,27 @@ public class EnemyAI : MonoBehaviour
 
     private void ConstructBehaviourTree()
     {
-        var _chaseNode = new ChaseNode(agent, this, _animator);
+        // var _chaseNode = new ChaseNode(agent, this, _animator);
         var _findPathNode = new FindPathNode(pratolPaths, agent, this, _animator , foot , footrun , DangerMusic , Detected);
         // var _distractedMode = new DistractedNode(agent, this, _animator, foot, footrun, DangerMusic, Detected);
         // var _searchNode = new SearchNode(agent, this, _animator, foot, footrun, DangerMusic, Detected);
 
-        var _chaseSequnce = new Sequnce(new List<Node> {_chaseNode});
+        // var _chaseSequnce = new Sequnce(new List<Node> {_chaseNode});
         var _pratol = new Sequnce(new List<Node> {_findPathNode});
 
-        topNode = new Selector(new List<Node> {_pratol, _chaseSequnce});
+        topNode = new Selector(new List<Node> {_pratol});
     }
 
     private void Update()
     {
         topNode.Evaluate();
 
-        // if (DistractPos != null)
-        // {
-        //     Debug.Log($"Dis pos : {DistractPos.position}");
-        // }
-        
         if (topNode.NodeState == NodeState.FAILURE)
         {
             agent.isStopped = true;
         }
     }
     
-    private void OnDrawGizmosSelected()
-    {
-        var _transformPos = transform.position;
-        
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(_transformPos, 3f);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.CompareTag("Player")) return;
-        
-        playerNeedToRPC = other.gameObject;
-        
-        var PV = GetComponent<PhotonView>();
-        PV.RPC("StartChase", RpcTarget.All);
-
-        // var playerStatus = targetedPlayer.GetComponent<PlayerStatus>();
-        // var playerHideStatus = FindObjectOfType<PlayerHidingStatus>();
-        
-        // if (playerStatus.PlayerName.Contains("3") && !playerHideStatus.isPlayerBHiding)
-        // {
-        //     isDetectedPlayer = true;
-        //     Debug.Log($"Currently hunt + {targetedPlayer.GetComponent<PlayerStatus>().PlayerName} + {isDetectedPlayer}");
-        // }
-    }
-    
-    [PunRPC]
-    public void StartChase()
-    {
-        targetedPlayer = playerNeedToRPC;
-        
-        isDetectedPlayer = true;
-        
-        // Debug.Log($"Currently hunt + {targetedPlayer.GetComponent<PlayerStatus>().PlayerName} + {isDetectedPlayer}");
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            var PV = GetComponent<PhotonView>();
-            PV.RPC("StoppingChase", RpcTarget.All);
-        }
-    }
-
-    [PunRPC]
-    public void StoppingChase()
-    {
-        if (isTriggerChaseTimer) return;
-        
-        isTriggerChaseTimer = true;
-        StartCoroutine(StopChaseTimer());
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.CompareTag("Player"))
@@ -164,38 +103,74 @@ public class EnemyAI : MonoBehaviour
     {
         PhotonNetwork.LoadLevel("Scenes/Result");
     }
+
+    // private void OnTriggerEnter(Collider other)
+    // {
+    //     if (!other.CompareTag("Player")) return;
+    //     
+    //     playerNeedToRPC = other.gameObject;
+    //     
+    //     var PV = GetComponent<PhotonView>();
+    //     PV.RPC("StartChase", RpcTarget.All);
+    // }
+
+    // [PunRPC]
+    // public void StartChase()
+    // {
+    //     targetedPlayer = playerNeedToRPC;
+    //     
+    //     isDetectedPlayer = true;
+    // }
+    //
+    // private void OnTriggerExit(Collider other)
+    // {
+    //     if (other.CompareTag("Player"))
+    //     {
+    //         var PV = GetComponent<PhotonView>();
+    //         PV.RPC("StoppingChase", RpcTarget.All);
+    //     }
+    // }
+
+    // [PunRPC]
+    // public void StoppingChase()
+    // {
+    //     if (isTriggerChaseTimer) return;
+    //     
+    //     isTriggerChaseTimer = true;
+    //     StartCoroutine(StopChaseTimer());
+    // }
+
+    // private IEnumerator StopChaseTimer()
+    // {
+    //     yield return new WaitForSeconds(huntTime);
+    //     isDetectedPlayer = false;
+    //     isTriggerChaseTimer = false;
+    // }
     
-    private IEnumerator StopChaseTimer()
-    {
-        yield return new WaitForSeconds(huntTime);
-        isDetectedPlayer = false;
-        isTriggerChaseTimer = false;
-    }
-    
-    public void StartDistracted()
-    {
-        var PV = GetComponent<PhotonView>();
-        PV.RPC("StartDistractedRPC", RpcTarget.All); 
-    }
-    
-    [PunRPC]
-    public void StartDistractedRPC()
-    {
-        isFinishedPath = false;
-    }
-    
-    public void EndDistracted()
-    {
-        var PV = GetComponent<PhotonView>();
-        PV.RPC("EndDistractedRPC", RpcTarget.All); 
-    }
-    
-    [PunRPC]
-    public void EndDistractedRPC()
-    {
-        isFinishedPath = true;
-        isDistractedbyPlayer = false;
-    }
+    // public void StartDistracted()
+    // {
+    //     var PV = GetComponent<PhotonView>();
+    //     PV.RPC("StartDistractedRPC", RpcTarget.All); 
+    // }
+    //
+    // [PunRPC]
+    // public void StartDistractedRPC()
+    // {
+    //     isFinishedPath = false;
+    // }
+    //
+    // public void EndDistracted()
+    // {
+    //     var PV = GetComponent<PhotonView>();
+    //     PV.RPC("EndDistractedRPC", RpcTarget.All); 
+    // }
+    //
+    // [PunRPC]
+    // public void EndDistractedRPC()
+    // {
+    //     isFinishedPath = true;
+    //     isDistractedbyPlayer = false;
+    // }
 
     // public void StopEverything()
     // {

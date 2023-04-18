@@ -523,7 +523,7 @@ GameObject:
   - component: {fileID: 1387557312635756293}
   - component: {fileID: 1387557312635756292}
   - component: {fileID: 6963042164228163963}
-  - component: {fileID: 3631065727853060989}
+  - component: {fileID: 1596765222219067503}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -626,7 +626,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   huntTime: 15
-  enemyRunSpeed: 7
+  enemyRunSpeed: 8
   enemyWalkSpeed: 3.5
   isTriggerChaseTimer: 0
   isFinishedPath: 0
@@ -665,12 +665,13 @@ MonoBehaviour:
   prefixField: -1
   Synchronization: 3
   OwnershipTransfer: 0
-  observableSearch: 0
-  ObservedComponents: []
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 1596765222219067503}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &3631065727853060989
+--- !u!114 &1596765222219067503
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -679,13 +680,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 1387557312635756295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SynchronizePosition: 1
-  m_SynchronizeRotation: 1
-  m_SynchronizeScale: 0
-  m_UseLocal: 0
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
 --- !u!1 &1990791249228656091
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +867,14 @@ PrefabInstance:
     - target: {fileID: 34723403800629107, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7306244704301671381, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
+      propertyPath: m_SynchronizeLayers.Array.data[0].SynchronizeType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7306244704301671381, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
+      propertyPath: m_SynchronizeParameters.Array.data[0].SynchronizeType
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}

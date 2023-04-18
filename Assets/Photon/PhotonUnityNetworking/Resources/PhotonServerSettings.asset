@@ -84,6 +84,8 @@ MonoBehaviour:
   - StopVCTimerToP1RPC
   - StopVCTimerToP2RPC
   - StopVCTimerToP3RPC
+  - ResetIcePos
+  - EvaluateNodeRpc
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1
