@@ -28,7 +28,7 @@ public class FPS_PlayerMovement : MonoBehaviour
     bool isrunable;
     private bool isDisableVoiceChat;
     public bool isDisableMoving;
-    private bool isPushToTalk;
+    private bool isPushToTalkable;
     
     private PhotonView _view;
     // private PhotonVoiceView voiceView;
@@ -210,41 +210,65 @@ public class FPS_PlayerMovement : MonoBehaviour
         {
             this.gameObject.GetComponent<Recorder>().TransmitEnabled = true;
             
-            //Watcher
-            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
+            if(isPushToTalkable)
             {
-                vcLogger.AddVCCountToP1();
+                isPushToTalkable = false;
+                // Debug.Log("isPushToTalkable : " +isPushToTalkable);
+                // Debug.Log("Press counted!");
+                //Watcher
+                if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
+                {
+                    vcLogger.AddVCCountToP1();
+                }
+                //Runner A
+                if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+                {
+                    vcLogger.AddVCCountToP2();
+                }
+                //Runner B
+                if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
+                {
+                    vcLogger.AddVCCountToP3();
+                }
             }
-            //Runner A
-            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+            else if(isDisableVoiceChat)
             {
-                vcLogger.AddVCCountToP2();
+                isDisableVoiceChat = false;
             }
-            //Runner B
-            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
-            {
-                vcLogger.AddVCCountToP3();
-            }
+            // Debug.Log("Press V!!");
         }
         
-        if (!Input.GetKey(KeyCode.V))
+        else if (!Input.GetKey(KeyCode.V))
         {
             this.gameObject.GetComponent<Recorder>().TransmitEnabled = false;
 
-            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
+            if(!isPushToTalkable)
             {
-                vcLogger.StopVCTimerToP1();
+                isPushToTalkable = true;
             }
-            
-            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+
+            else if(!isDisableVoiceChat)
             {
-                vcLogger.StopVCTimerToP2();
+                isDisableVoiceChat = true;
+                // Debug.Log("Time saved!");
+                // Debug.Log("isDisableVoiceChat : " +isDisableVoiceChat);
+
+                if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
+                {
+                    vcLogger.StopVCTimerToP1();
+                }
+                
+                if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+                {
+                    vcLogger.StopVCTimerToP2();
+                }
+                
+                if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
+                {
+                    vcLogger.StopVCTimerToP3();
+                }
             }
-            
-            if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
-            {
-                vcLogger.StopVCTimerToP3();
-            }
+            Debug.Log("Unpress V!!");
         }
     }
 

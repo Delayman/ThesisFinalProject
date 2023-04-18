@@ -55,6 +55,7 @@ public class EnemyAI : MonoBehaviour
         if(!TryGetComponent<SphereCollider>(out var _sphere)) return;
 
         _animator = GetComponentInChildren<Animator>();
+        _animator.SetInteger("EMAnimationID",2);
         
         agent = _agent;
         sphereCollider = _sphere;

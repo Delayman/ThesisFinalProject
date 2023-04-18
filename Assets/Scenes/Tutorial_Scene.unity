@@ -4744,7 +4744,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4421393261113564617, guid: 331cca25c2e12c242bd03564f6651404, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4421393261113564727, guid: 331cca25c2e12c242bd03564f6651404, type: 3}
       propertyPath: m_RootOrder
@@ -5603,6 +5603,10 @@ PrefabInstance:
     - target: {fileID: 4421393261113564617, guid: 45c8a3abeb2550a4d954c5b9e46a4553, type: 3}
       propertyPath: m_Name
       value: DummyPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421393261113564617, guid: 45c8a3abeb2550a4d954c5b9e46a4553, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4421393261113564726, guid: 45c8a3abeb2550a4d954c5b9e46a4553, type: 3}
       propertyPath: StaminaBar
@@ -8814,6 +8818,7 @@ MonoBehaviour:
   TutorialCanvas: {fileID: 0}
   ESC: {fileID: 506212779}
   Credit: {fileID: 0}
+  Mic: {fileID: 0}
 --- !u!4 &1788147611
 Transform:
   m_ObjectHideFlags: 0
@@ -10778,6 +10783,30 @@ PrefabInstance:
     - target: {fileID: 6802786149380392519, guid: ad5dd943527bfd4459ce3112242b5bbf, type: 3}
       propertyPath: m_Name
       value: MaintenanceArea
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802786149394615473, guid: ad5dd943527bfd4459ce3112242b5bbf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802786149452463351, guid: ad5dd943527bfd4459ce3112242b5bbf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802786149452463351, guid: ad5dd943527bfd4459ce3112242b5bbf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802786149466873797, guid: ad5dd943527bfd4459ce3112242b5bbf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802786149853701729, guid: ad5dd943527bfd4459ce3112242b5bbf, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6802786149853701731, guid: ad5dd943527bfd4459ce3112242b5bbf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6802786149898588216, guid: ad5dd943527bfd4459ce3112242b5bbf, type: 3}
       propertyPath: isTutorial
