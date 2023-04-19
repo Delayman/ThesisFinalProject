@@ -627,7 +627,7 @@ MonoBehaviour:
   - {fileID: 0}
   huntTime: 15
   enemyRunSpeed: 8
-  enemyWalkSpeed: 3.5
+  enemyWalkSpeed: 4.5
   isTriggerChaseTimer: 0
   isFinishedPath: 0
   foot: {fileID: 595780050}
@@ -866,6 +866,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 34723403800629107, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 402837773789525306, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
+      propertyPath: sceneViewId
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7306244704301671381, guid: cd3de83abb8c1db489a095e51b4a1522, type: 3}
