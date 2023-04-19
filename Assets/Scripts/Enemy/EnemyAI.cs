@@ -53,9 +53,6 @@ public class EnemyAI : MonoBehaviour
         
         if(!TryGetComponent<NavMeshAgent>(out var _agent)) return;
         if(!TryGetComponent<SphereCollider>(out var _sphere)) return;
-
-        _animator = GetComponentInChildren<Animator>();
-        _animator.SetInteger("EMAnimationID",2);
         
         agent = _agent;
         sphereCollider = _sphere;
@@ -65,6 +62,8 @@ public class EnemyAI : MonoBehaviour
     private void Start()
     {
         ConstructBehaviourTree();
+        
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void ConstructBehaviourTree()
@@ -88,6 +87,10 @@ public class EnemyAI : MonoBehaviour
         {
             agent.isStopped = true;
         }
+        
+        if(_animator == null) return;
+        
+        _animator.SetInteger("EMAnimationID",2);
     }
     
     private void OnCollisionEnter(Collision collision)

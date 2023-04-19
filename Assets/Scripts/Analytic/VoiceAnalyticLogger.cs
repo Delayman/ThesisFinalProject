@@ -27,7 +27,9 @@ public class VoiceAnalyticLogger : MonoBehaviour
         AddVCTimerToP2();
         AddVCTimerToP3();
     }
-    
+
+    #region AddVCCount
+
     public void AddVCCountToP1()
     {
         var PV = GetComponent<PhotonView>();
@@ -44,30 +46,6 @@ public class VoiceAnalyticLogger : MonoBehaviour
     {
         var PV = GetComponent<PhotonView>();
         PV.RPC("AddVCCountToP3RPC", RpcTarget.All);
-    }
-    
-    public void AddVCTimerToP1()
-    {
-        if (!isPushToTalkP1) return;
-        
-        var PV = GetComponent<PhotonView>();
-        PV.RPC("AddVCTimerToP1RPC", RpcTarget.All);
-    }
-    
-    public void AddVCTimerToP2()
-    {
-        if (!isPushToTalkP2) return;
-        
-        var PV = GetComponent<PhotonView>();
-        PV.RPC("AddVCTimerToP2RPC", RpcTarget.All);
-    }
-    
-    public void AddVCTimerToP3()
-    {
-        if (!isPushToTalkP3) return;
-        
-        var PV = GetComponent<PhotonView>();
-        PV.RPC("AddVCTimerToP3RPC", RpcTarget.All);
     }
     
     [PunRPC]
@@ -109,7 +87,35 @@ public class VoiceAnalyticLogger : MonoBehaviour
 
         isPushToTalkP3 = true;
     }
+
+    #endregion
+
+    #region AddVCTimer
+
+    public void AddVCTimerToP1()
+    {
+        if (!isPushToTalkP1) return;
+        
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("AddVCTimerToP1RPC", RpcTarget.All);
+    }
     
+    public void AddVCTimerToP2()
+    {
+        if (!isPushToTalkP2) return;
+        
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("AddVCTimerToP2RPC", RpcTarget.All);
+    }
+    
+    public void AddVCTimerToP3()
+    {
+        if (!isPushToTalkP3) return;
+        
+        var PV = GetComponent<PhotonView>();
+        PV.RPC("AddVCTimerToP3RPC", RpcTarget.All);
+    }
+
     [PunRPC]
     public void AddVCTimerToP1RPC()
     {
@@ -127,10 +133,11 @@ public class VoiceAnalyticLogger : MonoBehaviour
     {
         VCTimerP3 += Time.deltaTime;
     }
-    
-    
-    //==============================//
-    
+
+    #endregion
+
+    #region StopVCTimer
+
     public void StopVCTimerToP1()
     {
         var PV = GetComponent<PhotonView>();
@@ -169,4 +176,6 @@ public class VoiceAnalyticLogger : MonoBehaviour
         isPushToTalkP3 = false;
         isCountedP3 = false;
     }
+
+    #endregion
 }

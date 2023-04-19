@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 72538201882426368}
   - component: {fileID: 7790121119441935180}
   - component: {fileID: 7926320661124761463}
+  - component: {fileID: 9182827925393073300}
   m_Layer: 0
   m_Name: Player 3
   m_TagString: Player
@@ -191,6 +192,8 @@ MonoBehaviour:
   micBoostP3: 4
   VCTimer: 0
   VCUsage: 0
+  enemyAI: {fileID: 0}
+  enemyGFX: {fileID: 0}
 --- !u!54 &4421393261113564725
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -516,6 +519,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amplificationFactor: 1
+--- !u!114 &9182827925393073300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4421393261113564617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3702f97bbb9bf7c46ad80524cd01cf71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4421393261196023205
 GameObject:
   m_ObjectHideFlags: 0

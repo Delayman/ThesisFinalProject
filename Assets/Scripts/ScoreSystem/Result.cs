@@ -21,8 +21,8 @@ public class Result : MonoBehaviour
         GetData();
 
         timeTextField.text = "Time : " + time + " sec.";
-        textField.text = "Score : " + score;
-        finalScoreTextField.text = "Final Score : " + (score - Mathf.Round(time / 100));
+        // textField.text = "Score : " + score;
+        // finalScoreTextField.text = "Final Score : " + (score - Mathf.Round(time / 100));
         
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

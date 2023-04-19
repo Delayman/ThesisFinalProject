@@ -102,20 +102,7 @@ public class FPS_PlayerMovement : MonoBehaviour
 
         StaminaBar.maxValue = PlayerMaxStamina;
         StaminaBar.value = PlayerCurrentStamina;
-        
-        enemyAI = FindObjectOfType<EnemyAI>().gameObject;
-        enemyGFX = enemyAI.GetComponentInChildren<EnemyGFX>().gameObject;
-        
-        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
-        {
-            enemyGFX.SetActive(true);
-        }else 
-        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3") ||
-            this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
-        {
-            enemyGFX.SetActive(false);
-        }
-        
+
         // Debug.Log($"{enemyAI.gameObject.name}");
     }
 
@@ -123,8 +110,6 @@ public class FPS_PlayerMovement : MonoBehaviour
     {
         if (_view.IsMine)
         {
-            PushToTalk();
-
             //Stop ctrl z
             //Getting Input from keyboard
             float horizontalMove = Input.GetAxisRaw("Horizontal");
@@ -193,6 +178,21 @@ public class FPS_PlayerMovement : MonoBehaviour
 
     private void LateUpdate()
     {
+        enemyAI = FindObjectOfType<EnemyAI>().gameObject;
+        enemyGFX = enemyAI.transform.GetChild(0).gameObject;
+        
+        if(enemyGFX == null) return;
+
+        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
+        {
+            enemyGFX.SetActive(true);
+        }else 
+        if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3") ||
+            this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+        {
+            enemyGFX.SetActive(false);
+        }
+        
         // Debug.Log($"{enemyAI.name}");
         
         // enemyGFX.SetActive(false);
@@ -204,73 +204,73 @@ public class FPS_PlayerMovement : MonoBehaviour
         // isDisableVoiceChat = true;
     }
 
-    private void PushToTalk()
-    {
-        if (Input.GetKey(KeyCode.V))
-        {
-            this.gameObject.GetComponent<Recorder>().TransmitEnabled = true;
-            
-            if(isPushToTalkable)
-            {
-                isPushToTalkable = false;
-                // Debug.Log("isPushToTalkable : " +isPushToTalkable);
-                // Debug.Log("Press counted!");
-                //Watcher
-                if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
-                {
-                    vcLogger.AddVCCountToP1();
-                }
-                //Runner A
-                if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
-                {
-                    vcLogger.AddVCCountToP2();
-                }
-                //Runner B
-                if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
-                {
-                    vcLogger.AddVCCountToP3();
-                }
-            }
-            else if(isDisableVoiceChat)
-            {
-                isDisableVoiceChat = false;
-            }
-            // Debug.Log("Press V!!");
-        }
-        
-        else if (!Input.GetKey(KeyCode.V))
-        {
-            this.gameObject.GetComponent<Recorder>().TransmitEnabled = false;
-
-            if(!isPushToTalkable)
-            {
-                isPushToTalkable = true;
-            }
-
-            else if(!isDisableVoiceChat)
-            {
-                isDisableVoiceChat = true;
-                // Debug.Log("Time saved!");
-                // Debug.Log("isDisableVoiceChat : " +isDisableVoiceChat);
-
-                if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
-                {
-                    vcLogger.StopVCTimerToP1();
-                }
-                
-                if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
-                {
-                    vcLogger.StopVCTimerToP2();
-                }
-                
-                if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
-                {
-                    vcLogger.StopVCTimerToP3();
-                }
-            }
-            //Debug.Log("Unpress V!!");
-        }
-    }
+    // private void PushToTalk()
+    // {
+    //     if (Input.GetKey(KeyCode.V))
+    //     {
+    //         this.gameObject.GetComponent<Recorder>().TransmitEnabled = true;
+    //         
+    //         if(isPushToTalkable)
+    //         {
+    //             isPushToTalkable = false;
+    //             // Debug.Log("isPushToTalkable : " +isPushToTalkable);
+    //             // Debug.Log("Press counted!");
+    //             //Watcher
+    //             if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
+    //             {
+    //                 vcLogger.AddVCCountToP1();
+    //             }
+    //             //Runner A
+    //             if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+    //             {
+    //                 vcLogger.AddVCCountToP2();
+    //             }
+    //             //Runner B
+    //             if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
+    //             {
+    //                 vcLogger.AddVCCountToP3();
+    //             }
+    //         }
+    //         else if(isDisableVoiceChat)
+    //         {
+    //             isDisableVoiceChat = false;
+    //         }
+    //         // Debug.Log("Press V!!");
+    //     }
+    //     
+    //     else if (!Input.GetKey(KeyCode.V))
+    //     {
+    //         this.gameObject.GetComponent<Recorder>().TransmitEnabled = false;
+    //
+    //         if(!isPushToTalkable)
+    //         {
+    //             isPushToTalkable = true;
+    //         }
+    //
+    //         else if(!isDisableVoiceChat)
+    //         {
+    //             isDisableVoiceChat = true;
+    //             // Debug.Log("Time saved!");
+    //             // Debug.Log("isDisableVoiceChat : " +isDisableVoiceChat);
+    //
+    //             if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("1"))
+    //             {
+    //                 vcLogger.StopVCTimerToP1();
+    //             }
+    //             
+    //             if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("4"))
+    //             {
+    //                 vcLogger.StopVCTimerToP2();
+    //             }
+    //             
+    //             if (this.gameObject.GetComponent<PlayerStatus>().name.Contains("3"))
+    //             {
+    //                 vcLogger.StopVCTimerToP3();
+    //             }
+    //         }
+    //         //Debug.Log("Unpress V!!");
+    //     }
+    // }
 
     PlayerEvent PlayerAnimationEvent = new PlayerEvent();
     public void playeranimationevent(UnityAction<int> listener)

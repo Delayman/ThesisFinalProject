@@ -212,7 +212,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &334705036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,7 +664,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.3607, y: 48}
+  m_AnchoredPosition: {x: 7.3607, y: 69}
   m_SizeDelta: {x: 365.2897, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1032323334
@@ -1960,6 +1960,13 @@ MonoBehaviour:
   timerP5: 5
   timerP6: 69
   finalTimer: 111
+  voiceChatTimerWatcher: 0
+  voiceChatTimerRunnerA: 0
+  voiceChatTimerRunnerB: 0
+  voiceChatUsageWatcher: 0
+  voiceChatUsageRunnerA: 0
+  voiceChatUsageRunnerB: 0
+  roomName: 
 --- !u!4 &1980565460
 Transform:
   m_ObjectHideFlags: 0
@@ -2096,7 +2103,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2106274463
 RectTransform:
   m_ObjectHideFlags: 0
