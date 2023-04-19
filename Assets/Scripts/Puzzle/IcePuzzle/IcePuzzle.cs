@@ -52,19 +52,23 @@ public class IcePuzzle : Interactable
         {
             case "N" :
                 movingObjRb.AddForce(transform.forward * force);
-                StartCoroutine(ctrl.IceButtonDelay());
+                // StartCoroutine(ctrl.IceButtonDelay());
+                ctrl.LockButton();
                 break;
             case "S" :
                 movingObjRb.AddForce(-transform.forward * force);
-                StartCoroutine(ctrl.IceButtonDelay());
+                // StartCoroutine(ctrl.IceButtonDelay());
+                ctrl.LockButton();
                 break;
             case "W" :
                 movingObjRb.AddForce(-transform.right * force);
-                StartCoroutine(ctrl.IceButtonDelay());
+                //  StartCoroutine(ctrl.IceButtonDelay());
+                ctrl.LockButton();
                 break;
             case "E" :
                 movingObjRb.AddForce(transform.right * force);
-                StartCoroutine(ctrl.IceButtonDelay());
+                //  StartCoroutine(ctrl.IceButtonDelay());
+                ctrl.LockButton();
                 break;
         }
     }

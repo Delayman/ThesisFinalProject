@@ -5,12 +5,13 @@ using UnityEngine;
 public class BlockICE : MonoBehaviour
 {
     public GameObject StartICEPoint;
-    public GameObject MainGameICE;
+    //public GameObject MainGameICE;
+    public IcePuzzleController PuzzleController;
     private void OnTriggerEnter(Collider other)
     {
-        if (other)
+        if (other.tag == "IceCube")
         {
-            MainGameICE.transform.position = StartICEPoint.transform.position;
+            PuzzleController.UnLockButton();
         }
     }
 }

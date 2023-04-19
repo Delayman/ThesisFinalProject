@@ -51,7 +51,7 @@ public class IcePuzzleController : MonoBehaviour
 
     }
     
-    public IEnumerator IceButtonDelay()
+   /* public IEnumerator IceButtonDelay()
     {
         foreach (var btn in btnList)
         {
@@ -65,6 +65,20 @@ public class IcePuzzleController : MonoBehaviour
             btn.gameObject.GetComponent<BoxCollider>().enabled = true;
         }
         
+    }*/
+    public void LockButton()
+    {
+        foreach (var btn in btnList)
+        {
+            btn.gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
+    }
+    public void UnLockButton()
+    {
+        foreach (var btn in btnList)
+        {
+            btn.gameObject.GetComponent<BoxCollider>().enabled = true;
+        }
     }
     
 }

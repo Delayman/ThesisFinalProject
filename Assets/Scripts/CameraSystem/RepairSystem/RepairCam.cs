@@ -42,6 +42,7 @@ public class RepairCam : Interactable
         }
         else
         {
+            Sound.Play();
             var PV = GetComponent<PhotonView>();
             PV.RPC("RepairCamera", RpcTarget.All);
         }
@@ -54,7 +55,6 @@ public class RepairCam : Interactable
         textBox.isResetting = true;
         ctr.DisableAllButton();
         Invoke(nameof(Cooldown), repairTime);
-        Sound.Play();
     }
     
     private void RepairCameraNoRpc()

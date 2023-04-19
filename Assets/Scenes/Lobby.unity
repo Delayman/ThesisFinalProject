@@ -156,6 +156,7 @@ MonoBehaviour:
   TutorialCanvas: {fileID: 0}
   ESC: {fileID: 0}
   Credit: {fileID: 0}
+  Mic: {fileID: 0}
 --- !u!4 &68112154
 Transform:
   m_ObjectHideFlags: 0
@@ -5480,7 +5481,7 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 20
-  m_CharacterLimit: 8
+  m_CharacterLimit: 6
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []

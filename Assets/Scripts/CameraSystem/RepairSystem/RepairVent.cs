@@ -40,6 +40,7 @@ public class RepairVent : Interactable
         }
         else
         {
+            Sound.Play();
             var PV = GetComponent<PhotonView>();
             PV.RPC("Repair", RpcTarget.All);
         }
@@ -52,7 +53,6 @@ public class RepairVent : Interactable
         ctr.DisableAllButton();
         isOn = true;
         Invoke(nameof(Cooldown), repairTime);
-        Sound.Play();
     }
     
     private void RepairNoRpc()
